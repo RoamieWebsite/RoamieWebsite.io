@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Roamie - Packages</title>
+
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="packages.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav>
+        <!-- Logo image -->
+        <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="packages.html">Package</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="login.php">
+                    <span>Login</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="logout.php">
+                    <span>Logout</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+        </ul>
+    </nav>
+
+    <!--Tab bar -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3 text-center blog-form bg-light">
+
+                    <h2 class="blog-sidebar-title"><b>Categories</b></h2>
+                    <hr />
+
+                    <p class="blog-sidebar-list"><b><span class="list-icon"> > </span> Spain</b></p>
+                    <p class="blog-sidebar-list"><b><span class="list-icon"> > </span> Paris </b></p>
+                    <p class="blog-sidebar-list"><b><span class="list-icon"> > </span> Amsterdam </b></p>
+                    <p class="blog-sidebar-list"><b><span class="list-icon"> > </span> Brussels</b></p>
+                    <p class="blog-sidebar-list"><b><span class="list-icon"> > </span> New York </b></p>
+
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+
+                    <p class="tags">Price €379pp - €1,149pp</p>
+
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <h2 class="blog-sidebar-title"><b>Tags</b></h2>
+                    <p class="product-sidebar-list"><b>#countries, #travelling</b></p>
+
+                </div>
+
+                <br><br>
+                <!--Sorting by -->
+                <div class="col-lg-9" style="padding-left: 30px;">
+                    <div class="row">
+                        <div class="col">
+                            Showing all 6 results
+                        </div>
+
+
+                    </div>
+                    <!-- Sorting by <div class="row"> -->
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <br>
+
+                    <div id="content">
+                        <div id="products">
+                            <ul>
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-1.jpg" class="img-thumbnail" alt="spain" />
+                                    </div>
+                                    <div class="product-description" data-name="Spain" data-price="1149">
+                                        <h3 class="product-name">Spain Package</h3>
+                                        <p class="product-price">&euro; 1149</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-1">Quantity</label>
+                                                <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                            </div>
+                                            <p><input type="submit" value="Add to cart" class="btn" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-secondary button-text"><i
+                                                class="fa fa-shopping-cart" aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-2.jpg" class="img-thumbnail" alt="paris" />
+                                    </div>
+                                    <div class="product-description" data-name="Paris" data-price="500">
+                                        <h3 class="product-name">Paris Package</h3>
+                                        <p class="product-price">&euro; 500</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-2">Quantity</label>
+                                                <input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
+                                            </div>
+                                            <div class="text-center">
+                                                <input type="submit" value class="btn"><i class="fa fa-shopping-cart"
+                                                    aria-hidden="true"></i> Learn more</a>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="./activities/paris.html" class="btn btn-secondary button-text"><i
+                                                class="fa fa-shopping-cart" aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-3.jpg" class="img-thumbnail" alt="amsterdam" />
+                                    </div>
+                                    <div class="product-description" data-name="Amsterdam" data-price="700">
+                                        <h3 class="product-name">Amsterdam Package</h3>
+                                        <p class="product-price">&euro; 700</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-3">Quantity</label>
+                                                <input type="text" name="qty-3" id="qty-3" class="qty" value="1" />
+                                            </div>
+                                            <p><input type="submit" value="Add to cart" class="btn" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-secondary button-text"><i class="fa fa-shopping-cart"
+                                                aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div id="products">
+                            <ul>
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-4.jpg" class="img-thumbnail" alt="finland" />
+                                    </div>
+                                    <div class="product-description" data-name="Finland" data-price="633">
+                                        <h3 class="product-name">Finland Package</h3>
+                                        <p class="product-price">&euro; 633</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-1">Quantity</label>
+                                                <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+                                            </div>
+                                            <p><input type="submit" value="Add to cart" class="btn" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-secondary button-text"><i class="fa fa-shopping-cart"
+                                                aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-5.jpg" class="img-thumbnail" alt="Berlin">
+                                    </div>
+                                    <div class="product-description" data-name="Berlin" data-price="379">
+                                        <h3 class="product-name">Berlin Package</h3>
+                                        <p class="product-price">&euro; 379</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-2">Quantity</label>
+                                                <input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
+                                            </div>
+                                            <p><input type="submit" value="Add to cart" class="btn" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-secondary button-text"><i class="fa fa-shopping-cart"
+                                                aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="product-image">
+                                        <img src="images/package-6.jpg" class="img-thumbnail" alt="New York">
+                                    </div>
+                                    <div class="product-description" data-name="New York" data-price="1825">
+                                        <h3 class="product-name">New York</h3>
+                                        <p class="product-price">&euro; 1825</p>
+                                        <form class="add-to-cart" action="cart.html" method="get">
+                                            <div>
+                                                <label for="qty-3">Quantity</label>
+                                                <input type="text" name="qty-3" id="qty-3" class="qty" value="1" />
+                                            </div>
+                                            <p><input type="submit" value="Add to cart" class="btn" /></p>
+                                        </form>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-secondary button-text"><i class="fa fa-shopping-cart"
+                                                aria-hidden="true"></i> Learn more</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <!-- About section in the footer -->
+                    <h6>About</h6>
+                    <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable
+                        journeys!
+                        At Roamie, we believe that travel is not just about reaching a destination; it's about embracing
+                        the
+                        unknown,
+                        discovering new cultures, and creating stories that last a lifetime.
+                        Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire,
+                        guide, and
+                        elevate
+                        your travel experience.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <!-- Quick Links section in the footer -->
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <!-- Copyright information in the footer -->
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Roamie</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Social media icons in the footer -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+
+    <script src="script.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>

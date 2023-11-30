@@ -1,0 +1,8 @@
+.container {
+  width: 80%;
+  margin: 50px auto;
+}
+
+.container h1 {
+  font-family: 'Playfair Display', cursive;
+}

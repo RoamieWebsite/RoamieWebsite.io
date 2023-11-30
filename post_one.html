@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+  <!-- Title of the webpage -->
+  <title>Roamie - Blogs</title>
+
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="post.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts for heading and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <nav>
+    <!-- Logo image -->
+    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li class="submenu-parent">
+        <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="itinerary.html">Itinerary</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="submenu-parent">
+        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+        <ul class="submenu">
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="login.php">
+          <span>Login</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="logout.php">
+          <span>Logout</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Post Content Column -->
+      <div class="col-lg-12">
+
+        <!-- Title -->
+        <h1 class="post-title">Sza in Dublin</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by Erica Odeje
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><span class="glyphicon glyphicon-time"></span> Posted on November 27, 2023</p>
+
+        <hr>
+      
+
+        <!-- Post Content -->
+        <p>Attending a SZA concert is an experience that transcends the ordinary and 
+          immerses you in the vibrant world of soulful music, powerful vocals, and an electric atmosphere. 
+          As you approach the venue, the buzz of excitement is palpable, with fans eagerly queuing up, 
+          their anticipation building with every passing moment.
+        </p>
+        <p>The venue itself is alive with energy, adorned with colorful lights and a backdrop 
+          that sets the stage for an unforgettable night. As you step inside, the air is filled with a mix of excitement 
+          and the sweet scent of various concessions. The crowd is diverse, a testament to SZA's universal appeal 
+          that brings together people from all walks of life.
+        </p>
+        <p>The opening acts set the tone for the night, warming up the audience and creating an atmosphere of camaraderie among concertgoers. 
+          The collective energy in the room intensifies with each passing minute, creating an electric ambiance that mirrors the artist's own dynamic stage presence.
+        </p>
+        <p>And then, the moment arrives. The lights dim, and the crowd erupts in cheers as SZA takes the stage. The air is charged with anticipation, and the first notes of her soulful melodies resonate through the venue. Her voice, rich and emotive, captivates everyone in attendance, creating a connection that goes beyond the mere performance.
+          SZA's stage presence is magnetic, drawing the audience into her world of introspective lyrics and powerful beats. 
+          The combination of her soul-stirring vocals and the live instrumentation creates a sensory experience that transcends the recordings you've listened to countless times. 
+          The crowd sways in unison, and you find yourself lost in the music, completely immersed in the moment.</p>
+        <p>Between songs, SZA shares anecdotes and engages with the audience, creating a sense of intimacy that makes the concert feel like a personal experience. The atmosphere is a blend of celebration and introspection, with each song carrying its own emotional weight.
+          As the concert progresses, you can't help but be in awe of the seamless transitions between tracks, the impressive light show, and the overall production that enhances the auditory and visual experience. The setlist, a carefully curated selection of SZA's hits and perhaps a surprise or two, keeps the audience on their toes and ensures that every moment is memorable.
+          </p>
+          <p>And then, as the final notes reverberate through the venue, there's a collective feeling of satisfaction and fulfillment. The concert has been more than just a musical performance; it's been a journey, an immersive experience that leaves you with a lasting appreciation for SZA's artistry.
+            Exiting the venue, the energy lingers in the air, and the melodies echo in your mind. Attending a SZA concert is not just about witnessing a live performance; it's about being part of a shared moment, a celebration of music and emotion that resonates long after the last encore fades away.</p>
+
+        <hr>
+  
+        <section id="wrapper">
+          <h1 class="post-title">Leave a comment</h1>
+          <div class="box">
+            <div class="row">
+              <div class="col-6">
+                <div class="comment">
+                  <p v-for="items in item" v-text="items"></p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <textarea type="text" class="input" placeholder="Your Comment Here" v-model="newItem"
+                  @keyup.enter="addItem()"></textarea>
+                <button v-on:click="addItem()" class='btn-box' type="submit">Your Comment</button>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <h1 class="post-title">Read More</h1>
+          <div class="card-group">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+    <!-- end of row -->
+
+  </div>
+  <!-- end of container -->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script>
+    $(document).ready(function () {
+
+      $(".btn-box").on('click', function () {
+        $(".comment").addClass("afterText");
+      });
+      $("textarea").on('keyup.enter', function () {
+        $(".comment").addClass("afterText");
+      });
+    });
+
+    new Vue({
+      el: "#wrapper",
+      data: {
+        newItem: '',
+        item: [],
+      },
+      methods: {
+        addItem() {
+          this.item.push(this.newItem);
+          this.newItem = "";
+        }
+      }
+
+    });
+  </script>
+  <br><br>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <!-- About section in the footer -->
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
+            discovering new cultures, and creating stories that last a lifetime.
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
+            your travel experience.</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <!-- Quick Links section in the footer -->
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <!-- Copyright information in the footer -->
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <!-- Social media icons in the footer -->
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+</body>
+
+</html>

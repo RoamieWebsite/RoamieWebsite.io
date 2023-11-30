@@ -1,0 +1,262 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+  <!-- Title of the webpage -->
+  <title>Roamie - Blogs</title>
+
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="post.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts for heading and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <nav>
+    <!-- Logo image -->
+    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li class="submenu-parent">
+        <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="itinerary.html">Itinerary</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="submenu-parent">
+        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+        <ul class="submenu">
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="login.php">
+          <span>Login</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="logout.php">
+          <span>Logout</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Post Content Column -->
+      <div class="col-lg-12">
+
+        <!-- Title -->
+        <h1 class="post-title">Trip to America</h1>
+
+        <!-- Author -->
+        <p class="lead">
+          Kemi Rachel
+        </p>
+
+        <hr>
+
+        <!-- Date/Time -->
+        <p><span class="glyphicon glyphicon-time"></span> Posted on August 27, 2023</p>
+
+        <hr>
+      
+
+        <!-- Post Content -->
+        <p>America: A Tapestry of Diversity, Opportunity, and Endless Wonder"
+        Welcome to the diverse and enchanting landscape of America, a nation that weaves a rich tapestry of cultures, landscapes, and histories. From the soaring skylines of vibrant cities to 
+       the serene beauty of natural wonders, America invites travelers on a journey of discovery unlike any other.
+        </p>
+        <p>The great American road trip is an iconic adventure that beckons explorers. From the legendary Route 66 winding through the heartland to the stunning Pacific Coast Highway 
+		hugging the cliffs of California, the open road offers a chance to witness the vastness and diversity of the American landscape.
+        </p>
+        <p>Embark on a culinary journey that reflects America's diverse heritage. Whether savoring a classic New York-style pizza, indulging in Southern comfort food, 
+		or exploring the farm-to-table delights of California, American cuisine is a testament to the country's varied roots and innovative culinary scene.
+        </p>
+        <p>mbark on the classic American road trip, winding through scenic routes that showcase the country's vast beauty. Drive along the Pacific Coast Highway for breathtaking 
+		views of the ocean and rugged cliffs. Cruise down Route 66, the historic "Main Street of America," for a nostalgic journey through small towns and iconic landmarks. 
+		Traverse the Blue Ridge Parkway, where the Appalachian Mountains unfold in a panorama of green hills and valleys.</p>
+        <p></p>
+
+        <hr>Nestled along the banks of the Potomac River, Washington, D.C., stands as a testament to the history, power, and cultural richness of the United States. 
+		The city, adorned with iconic landmarks and neoclassical architecture, is the beating heart of the nation. As you stroll along the National Mall, flanked by 
+		the towering Washington Monument and the majestic U.S. Capitol, the weight of American history resonates in every step. Museums, such as the Smithsonian Institution 
+		and the National Gallery of Art, offer a deep dive into the nation's artistic and scientific achievements.
+
+So, pack your bags, hit the open road, and let the spirit of America captivate you on a journey that promises adventure, culture, and the magic of the land of dreams.
+  
+        <section id="wrapper">
+          <h1 class="post-title">Leave a comment</h1>
+          <div class="box">
+            <div class="row">
+              <div class="col-6">
+                <div class="comment">
+                  <p v-for="items in item" v-text="items"></p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <textarea type="text" class="input" placeholder="Your Comment Here" v-model="newItem"
+                  @keyup.enter="addItem()"></textarea>
+                <button v-on:click="addItem()" class='btn-box' type="submit">Your Comment</button>
+              </div>
+            </div>
+         </div>
+          <hr>
+          <h1 class="post-title">Read More</h1>
+          <div class="card-group">
+            <div class="card">
+              <img class="card-img-top" src="images/photo14.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Music Theatre </h5>
+                <p class="card-text"> Nestled in the heart of Washington, D.C., the Warner Theatre stands as a venerable gem in America's entertainment landscape. 
+				With its grandiose architecture reminiscent of a bygone era, this historic venue has been a cultural cornerstone since its opening in 1924.  </p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="images/photo15.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">White House</h5>
+                <p class="card-text">Situated at 1600 Pennsylvania Avenue, the White House stands as the iconic residence and workplace of the President of the United States. 
+				With its neoclassical elegance and brilliant white façade, this historic structure has been the backdrop to pivotal moments in American history since its completion in 1800.
+				Visitors from around the world come to marvel at its iconic exterior, explore its meticulously curated rooms, and absorb the weight of history within its walls. </p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="images/photo16.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Museums </h5>
+                <p class="card-text">America is a treasure trove of museums that showcase the diverse tapestry of its history, art, science, and culture. 
+				Whether exploring the cultural heritage preserved in the National 
+				Museum of African American History and Culture or immersing oneself in the interactive wonders of the Exploratorium in San Francisco, America's museums offer a kaleidoscopic 
+				journey through time and disciplines, inviting visitors to be inspired, educated, and enriched.</p>
+                <a href="#" class="btn btn-success">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </div>
+    </div>
+    <!-- end of row -->
+
+  </div>
+  <!-- end of container -->
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+  <script>
+    $(document).ready(function () {
+
+      $(".btn-box").on('click', function () {
+        $(".comment").addClass("afterText");
+      });
+      $("textarea").on('keyup.enter', function () {
+        $(".comment").addClass("afterText");
+      });
+    });
+
+    new Vue({
+      el: "#wrapper",
+      data: {
+        newItem: '',
+        item: [],
+      },
+      methods: {
+        addItem() {
+          this.item.push(this.newItem);
+          this.newItem = "";
+        }
+      }
+
+    });
+  </script>
+  <br><br>
+  
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <!-- About section in the footer -->
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
+            discovering new cultures, and creating stories that last a lifetime.
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
+            your travel experience.</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <!-- Quick Links section in the footer -->
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <!-- Copyright information in the footer -->
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <!-- Social media icons in the footer -->
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+</body>
+
+</html>

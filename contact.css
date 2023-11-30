@@ -1,0 +1,42 @@
+
+section.contact-section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+	background-image:url('imgages/photo04.jpg');
+
+}
+
+section.contact-section h2 {
+    color: #0C7C59;
+	font-family: 'Playfair Display', cursive;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0C7C59;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #FFCC00;
+}

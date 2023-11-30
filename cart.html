@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Title page</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="cart.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="js/jquery.shop.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+
+    <nav>
+        <!-- Logo image -->
+        <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="itinerary.html">Itinerary</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="login.php">
+                    <span>Login</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="logout.php">
+                    <span>Logout</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        <h1>Your Shopping Cart</h1>
+        <form id="shopping-cart" action="cart.html" method="get">
+            <table class="shopping-cart">
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col" colspan="2">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <p id="sub-total">
+                <strong>Sub Total</strong>: <span id="stotal"></span>
+            </p>
+            <ul id="shopping-cart-actions">
+                <li>
+                    <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
+                </li>
+                <li>
+                    <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
+                </li>
+                <li>
+                    <a href="shop.html" class="btn">Continue Shopping</a>
+                <li>
+                    <a href="checkout.html" class="btn">Go To Checkout</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+
+
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <!-- About section in the footer -->
+                    <h6>About</h6>
+                    <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable
+                        journeys!
+                        At Roamie, we believe that travel is not just about reaching a destination; it's about embracing
+                        the unknown,
+                        discovering new cultures, and creating stories that last a lifetime.
+                        Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire,
+                        guide, and elevate
+                        your travel experience.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <!-- Quick Links section in the footer -->
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <!-- Copyright information in the footer -->
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Roamie</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Social media icons in the footer -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+</body>
+
+</html>
