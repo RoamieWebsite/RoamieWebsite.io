@@ -99,6 +99,16 @@ nav ul li a {
 }
 /*End Navigation styles */
 
+#logo {
+width: 200px;
+height: 200px;
+border: solid;
+border-color: white;
+display: block;
+margin-left: auto;
+margin-right: auto;
+
+
 /* Footer styles */
 
 .site-footer {
