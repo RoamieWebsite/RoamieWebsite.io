@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Roamie - Your Passport to Adventures</title>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy2OFs+iRT2hjzIj90StE3nRXYIstjntz1" crossorigin="anonymous">
+
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+    <!-- Internal CSS styles -->
+    <style>
+      /* Add your additional styles here if needed */
+      #paris-info {
+        margin-top: 50px;
+      }
+
+      #paris-info h2 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      #paris-info .row {
+        margin-top: 20px;
+      }
+
+      #paris-info .col-md-6 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      #paris-info img {
+        max-width: 150px;
+        border-radius: 8px;
+        margin-right: 20px;
+      }
+
+      #paris-info h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #paris-info p {
+        font-family: 'Eagle Lake', cursive;
+        font-size: 1rem;
+        color: #555;
+      }
+	  
+    .start-btn-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+.start-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .start-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+  <nav>
+    <!-- Logo image -->
+    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../aboutus.html">About Us</a></li>
+      <li class="submenu-parent">
+        <a href="../explore.html">Explore </a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="../itinerary.html">Itinerary</a></li>
+		    <li><a href="../packages.html">Packages</a></li>
+        </ul>
+      </li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li class="submenu-parent">
+        <a href="../contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+        <ul class="submenu">
+          <li><a href="../FAQ.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="../login.php">
+          <span>Login</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="../logout.php">
+          <span>Logout</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+
+    <!-- Main Content Section -->
+    <section class="container mt-4">
+        <!-- Your section content goes here -->	
+        <!-- Section about Paris activities and locations -->
+   
+                <!-- Paris activity 1 -->
+<section id="paris-info">
+    <h2>Discover Paris - Popular Activities and Locations</h2>
+ <h5>Paris beckons with an irresistible blend of history, culture, and charm. From the iconic Eiffel Tower to the artistic streets of Montmartre,
+		every corner tells a story. Indulge in exquisite cuisine, explore world-class museums, and embrace the romantic allure along the Seine. A journey
+		to Paris is an invitation to immerse yourself in a city that effortlessly captivates with its elegance and 
+		sophistication. Experience the magic – Paris awaits your exploration.</h5>	
+        <!-- Section about Paris activities and locations -->
+   
+    <div class="row">
+        <!-- Paris activity 1 -->
+        <div class="col-md-6">
+            <div>
+                <img src="../images/paris.jpg" alt="Eiffel Tower" class="img-fluid">
+            </div>
+            <div>
+                <h3>Eiffel Tower Experience</h3>
+                <p>Experience the breathtaking views of Paris from the iconic Eiffel Tower. Whether during the day or illuminated at night, the Eiffel Tower offers a mesmerizing panorama of the city.</p>
+            </div>
+        </div>
+
+        <!-- Paris activity 2 -->
+        <div class="col-md-6">
+            <div>
+                <img src="../images/louvre-museum.jpg" alt="Louvre Museum" class="img-fluid">
+            </div>
+            <div>
+                <h3>Louvre Museum</h3>
+                <p>Explore the world-renowned Louvre Museum, home to thousands of works of art, including the Mona Lisa. Immerse yourself in the rich history and culture of this remarkable institution.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Paris activity 3 -->
+        <div class="col-md-6">
+            <div>
+                <img src="../images/seine-river-cruise.jpg" alt="Seine River Cruise" class="img-fluid">
+            </div>
+            <div>
+                <h3>Seine River Cruise</h3>
+                <p>Indulge in a romantic Seine River cruise, offering stunning views of Paris landmarks. Glide along the river and enjoy the beauty of the city's architecture and landmarks.</p>
+            </div>
+        </div>
+
+        <!-- Paris activity 4 -->
+        <div class="col-md-6">
+            <div>
+                <img src="../images/montmartre-sacre-coeur.jpg" alt="Montmartre and Sacré-Cœur" class="img-fluid">
+            </div>
+            <div>
+                <h3>Montmartre and Sacré-Cœur</h3>
+                <p>Visit the charming Montmartre district and explore the Sacré-Cœur Basilica. Wander through narrow streets, discover local artists, and enjoy panoramic views of Paris.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<BR><BR>
+<a href="package.html" class="start-btn">Add Paris package to your cart </a>
+    </section>
+
+  <BR><BR>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <!-- About section in the footer -->
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
+            discovering new cultures, and creating stories that last a lifetime.
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
+            your travel experience.</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <!-- Quick Links section in the footer -->
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About Me</a></li>
+            <li><a href="../explore.html">Explore</a></li>
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <!-- Copyright information in the footer -->
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <!-- Social media icons in the footer -->
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-GLhlTQ8iK1+eaT8iK9Qem5OvbNEeRUlT9fN2F9XZ4lSSFiDQFq3Yq26gJ5dGJ8W5" crossorigin="anonymous"></script>
+</body>
+
+</html>
