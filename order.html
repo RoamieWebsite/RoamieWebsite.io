@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
 
     <!-- Title of the webpage -->
-    <title>Title page</title>
+    <title>Roamie - Order</title>
 
     <!-- Link to external CSS file -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -30,29 +30,39 @@
 </head>
 
 <body>
-    <!-- Header -->
-
     <nav>
-        <!-- Logo image -->
-        <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
-
-        <!-- Navigation links -->
-        <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="login.php">
-                    <span>Login</span>
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                </a></li>
-            <li><a href="logout.php">
-                    <span>Logout</span>
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                </a></li>
-        </ul>
-    </nav>
-
+    <!-- Logo image -->
+    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
+      
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+       <li class="submenu-parent">
+    <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+    <!-- Submenu for Explore -->
+   <ul class="submenu">
+      <li><a href="packages.html">Packages</a></li>
+    </ul>
+  </li>
+  <a href="contact.html">Contact Us</a>
+	<li class="submenu-parent">
+      <a href="blog.html">Blog</a><i class="fas fa-caret-down"></i>
+	  <ul class="submenu">
+      <li><a href="faq.html">FAQ</a></li>
+    </ul></li>
+      <li><a href="login.php">
+          <span>Login</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="logout.php">
+          <span>Logout</span>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+  
+  
     <div id="content">
         <h1>Your Order</h1>
         <table id="checkout-cart" class="shopping-cart">
@@ -121,6 +131,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Me</a></li>
                         <li><a href="explore.html">Explore</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="faq.html">FAQ</a></li>
                         <li><a href="contact.html">Contact Me</a></li>
                     </ul>
