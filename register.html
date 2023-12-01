@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Meta tags for character set and viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+
+	<!-- Title of the webpage -->
+	<title>Title page</title>
+
+	<!-- Link to external CSS file -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="register.css">
+
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<!-- Fonts for heading and body -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+	<!-- Font Awesome Kit -->
+	<script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+</head>
+<add key="webpages:Enabled" value="true" />
+<body>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import{getAuth,createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+        import {getDatabase} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";               
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+          authDomain: "roamie-29b26.firebaseapp.com",
+          projectId: "roamie-29b26",
+          storageBucket: "roamie-29b26.appspot.com",
+          messagingSenderId: "770720238385",
+          appId: "1:770720238385:web:f6b854d66aee30f735fe10"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth(app);               
+      </script>
+    
+      
+	<nav>
+
+
+		<!-- Navigation links -->
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="aboutus.html">About Us</a></li>
+			<li class="submenu-parent">
+				<a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+				<!-- Submenu for Explore -->
+				<ul class="submenu">
+					<li><a href="packages.html">Packages</a></li>
+				</ul>
+			</li>
+			<a href="contact.html">Contact Us</a>
+			<li class="submenu-parent">
+				<a href="blog.html">Blog</a><i class="fas fa-caret-down"></i>
+				<ul class="submenu">
+					<li><a href="faq.html">FAQ</a></li>
+				</ul>
+			</li>
+			<li><a href="login.php">
+					<span>Login</span>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</a></li>
+			<li><a href="logout.php">
+					<span>Logout</span>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</a></li>
+		</ul>
+	</nav>
+
+    <!-- Main content of the webpage -->
+    <div id="login-box">
+        <div class="left">
+          <h1>Sign up</h1>
+          
+          <input type="text" name="username" placeholder="Username" />
+          <input type="text" name="email" placeholder="E-mail" />
+          <input type="password" name="password" placeholder="Password" />
+          
+          <input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
+        </div>
+        
+        <div class="right">
+          <span class="loginwith">Sign in with<br />social network</span>
+          
+          <button class="social-signin facebook">Log in with facebook</button>
+          <button class="social-signin twitter">Log in with Twitter</button>
+          <button class="social-signin google">Log in with Google</button>
+        </div>
+        <div class="or">OR</div>
+      </div>
+</body>
+
+    
+
+</html>
