@@ -10,7 +10,16 @@
   transition: 0.4s;
 }
 
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+h1{
+	text-align: center;
+	margin-bottom: 5rem;
+	font-size: 4rem;
+  font-family: 'Eagle Lake', cursive;
+  color: black;
+}
+
+
+
 .active, .accordion:hover {
   background-color: #FFCC00;
   background-image:url('images/photo04.jpg');
