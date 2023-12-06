@@ -121,6 +121,7 @@
   
 	  createUserWithEmailAndPassword(auth, email, password)
 		.then((credentials) => {
+		window.location.href = "login.html";
 		  console.log(credentials);
 		})
 		.catch((error) => {
