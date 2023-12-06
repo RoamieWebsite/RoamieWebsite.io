@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
 
   <!-- Title of the webpage -->
-  <title>Title page</title>
+  <title>Roamie - Login</title>
 
   <!-- Link to external CSS file -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -71,7 +71,7 @@
         <input type="password" id="password" name="password" placeholder="Password" />
 
         <input type="submit" id='Login' name="login_submit" value="Login" />
-        <a href="register.html"><input type="submit" id='signUp' name="signup_submit" value="Sign me up" /></a>
+        <a href="register.html"><input type="button" id='signUp' name="signup_submit" value="Sign me up" /></a>
       </div>
 
       <div class="right">
@@ -93,12 +93,12 @@
     // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-    authDomain: "roamie-29b26.firebaseapp.com",
-    databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-    projectId: "roamie-29b26",
-    storageBucket: "roamie-29b26.appspot.com",
-    messagingSenderId: "770720238385",
-    appId: "1:770720238385:web:f6b854d66aee30f735fe10"
+      authDomain: "roamie-29b26.firebaseapp.com",
+      databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+      projectId: "roamie-29b26",
+      storageBucket: "roamie-29b26.appspot.com",
+      messagingSenderId: "770720238385",
+      appId: "1:770720238385:web:f6b854d66aee30f735fe10"
     };
 
     // Initialize Firebase
@@ -131,6 +131,7 @@
     document.getElementById('LoginForm').addEventListener('submit', SignInUser);
   </script>
 </body>
+
 </html>
 
 
