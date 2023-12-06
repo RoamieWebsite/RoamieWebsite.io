@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 
 	<!-- Title of the webpage -->
-	<title>Title page</title>
+	<title>Roamie - Register</title>
 
 	<!-- Link to external CSS file -->
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -69,12 +69,12 @@
 
 			<form id="signUpForm" onsubmit="RegisterUser(event)">
 				
-			<input type="text" id="username" name="username" placeholder="Username" />
+			<input type="text" name="username" placeholder="Username" />
 			<input type="text" id="email" name="email" placeholder="E-mail" />
 			<input type="password" id="password" name="password" placeholder="Password" />
 
 			<input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
-			<a href="login.html"><input type="submit" id='Login' name="login" value="Login" /></a>
+			<a href="login.html"><input type="button" id='Login' name="login" value="Login" /></a>
 		</div>
 
 		<div class="right">
@@ -118,7 +118,6 @@
 	  evt.preventDefault();
 	  let email = document.getElementById('email').value;
 	  let password = document.getElementById('password').value;
-	  let username = document.getElementById('username').value;
   
 	  createUserWithEmailAndPassword(auth, email, password)
 		.then((credentials) => {
