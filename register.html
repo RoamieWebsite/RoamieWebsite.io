@@ -216,27 +216,13 @@
 			});
 	});
 
-
-	// Check if user is logged in
-	auth.onAuthStateChanged((user) => {
-		if (user) {
-			// User is signed in, see docs for a list of available properties
-			// https://firebase.google.com/docs/reference/js/firebase.User
-			const uid = user.uid;
-			// ...
-			console.log(user);
-			document.getElementById('Login').style.display = 'none';
-			document.getElementById('signUp').style.display = 'none';
-			document.getElementById('logout').style.display = 'block';
-		} else {
-			// User is signed out
-			// ...
-			console.log('User is signed out');
-			document.getElementById('Login').style.display = 'block';
-			document.getElementById('signUp').style.display = 'block';
-			document.getElementById('logout').style.display = 'none';
-		}
-	});
+function isValidEmail(email){
+    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    if(!expression.test(email)){
+        window.alert("Please enter a valid email address");
+        return;
+    }
+}
 
 	// Logout
 	const logout = document.getElementById('logout');
