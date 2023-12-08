@@ -115,6 +115,8 @@
     const database = getDatabase(app);
     const databaseRef = ref(database);
 
+    const auth = getAuth();
+
     const SignInUser = (evt) => {
       evt.preventDefault();
       const email = document.getElementById('email').value;
