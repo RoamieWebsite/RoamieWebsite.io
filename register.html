@@ -56,6 +56,12 @@
 				</a></li>
 			<li>
 				<a href="login.html">
+					<span>Login</span>
+					<i class="fa fa-user" aria-hidden="true"></i>
+				</a>
+			</li>
+			<li>
+				<a href="#" id="logout">
 					<span>Logout</span>
 					<i class="fa fa-user" aria-hidden="true"></i>
 				</a>
@@ -134,9 +140,9 @@
 	// Add event listener for form submission
 	document.getElementById('signUpForm').addEventListener('submit', RegisterUser);
 
+	// Google Sign In
 	auth.languageCode = 'en';
 	const provider = new GoogleAuthProvider();
-
 	const googleLogin = document.getElementById('google-login-btn');
 	googleLogin.addEventListener('click', () => {
 		signInWithPopup(auth, provider)
@@ -155,7 +161,16 @@
 			});
 	});
 
-
+	// Logout
+	const logout = document.getElementById('logout');
+	logout.addEventListener('click', () => {
+		auth.signOut().then(() => {
+			// Sign-out successful.
+			window.location.href = "index.html";
+		}).catch((error) => {
+			// An error happened.
+		});
+	});
 
 </script>
 
