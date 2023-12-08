@@ -25,7 +25,6 @@
 
 	<!-- Font Awesome Kit -->
 	<script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -51,14 +50,16 @@
 					<li><a href="faq.html">FAQ</a></li>
 				</ul>
 			</li>
-			<li><a href="login.php">
-					<span>Login</span>
+			<li><a href="register.html">
+					<span>Register</span>
 					<i class="fa fa-user" aria-hidden="true"></i>
 				</a></li>
-			<li><a href="logout.php">
+			<li>
+				<a href="login.html">
 					<span>Logout</span>
 					<i class="fa fa-user" aria-hidden="true"></i>
-				</a></li>
+				</a>
+			</li>
 		</ul>
 	</nav>
 
@@ -68,13 +69,13 @@
 			<h1>Sign up</h1>
 
 			<form id="signUpForm" onsubmit="RegisterUser(event)">
-				
-			<input type="text" name="username" placeholder="Username" />
-			<input type="text" id="email" name="email" placeholder="E-mail" />
-			<input type="password" id="password" name="password" placeholder="Password" />
 
-			<input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
-			<a href="login.html"><input type="button" id='Login' name="login" value="Login" /></a>
+				<input type="text" name="username" placeholder="Username" />
+				<input type="text" id="email" name="email" placeholder="E-mail" />
+				<input type="password" id="password" name="password" placeholder="Password" />
+
+				<input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
+				<a href="login.html"><input type="button" id='Login' name="login" value="Login" /></a>
 		</div>
 
 		<div class="right">
@@ -82,59 +83,80 @@
 
 			<button class="social-signin facebook">Log in with facebook</button>
 			<button class="social-signin twitter">Log in with Twitter</button>
-			<button class="social-signin google">Log in with Google</button>
+			<button id="google-login-btn" class="social-signin google">Log in with Google</button>
 		</div>
 		<div class="or">OR</div>
-			  </form>
+		</form>
 	</div>
 </body>
 
 <script type="module">
 	// Import the functions you need from the SDKs you need
 	import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-	import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+	import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 	import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-  
 	// Your web app's Firebase configuration
 	const firebaseConfig = {
-	  apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-	  authDomain: "roamie-29b26.firebaseapp.com",
-	  databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-	  projectId: "roamie-29b26",
-	  storageBucket: "roamie-29b26.appspot.com",
-	  messagingSenderId: "770720238385",
-	  appId: "1:770720238385:web:f6b854d66aee30f735fe10"
+		apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+		authDomain: "roamie-29b26.firebaseapp.com",
+		databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+		projectId: "roamie-29b26",
+		storageBucket: "roamie-29b26.appspot.com",
+		messagingSenderId: "770720238385",
+		appId: "1:770720238385:web:f6b854d66aee30f735fe10"
 	};
-  
+
 	// Initialize Firebase
 	const app = initializeApp(firebaseConfig);
-  
+
 	// Initialize Realtime Database and get a reference to the service
 	const database = getDatabase(app);
-  
+
 	const auth = getAuth();
-  
+
 	let RegisterUser = (evt) => {
-	  evt.preventDefault();
-	  let email = document.getElementById('email').value;
-	  let password = document.getElementById('password').value;
-  
-	  createUserWithEmailAndPassword(auth, email, password)
-		.then((credentials) => {
-		window.location.href = "login.html";
-		  console.log(credentials);
-		})
-		.catch((error) => {
-		  alert(error.message);
-		  console.log(error.message);
-		  console.log(error.code);
-		});
+		evt.preventDefault();
+		let email = document.getElementById('email').value;
+		let password = document.getElementById('password').value;
+
+		createUserWithEmailAndPassword(auth, email, password)
+			.then((credentials) => {
+				window.location.href = "login.html";
+				console.log(credentials);
+			})
+			.catch((error) => {
+				alert(error.message);
+				console.log(error.message);
+				console.log(error.code);
+			});
 	};
-  
+
 	// Add event listener for form submission
 	document.getElementById('signUpForm').addEventListener('submit', RegisterUser);
-  
-  </script>
-  
-  </html>
-  
+
+	auth.languageCode = 'en';
+	const provider = new GoogleAuthProvider();
+
+	const googleLogin = document.getElementById('google-login-btn');
+	googleLogin.addEventListener('click', () => {
+		signInWithPopup(auth, provider)
+			.then((result) => {
+				// This gives you a Google Access Token. You can use it to access the Google API.
+				const credential = GoogleAuthProvider.credentialFromResult(result);
+				// The signed-in user info.
+				const user = result.user;
+				console.log(user);
+				window.location.href = "index.html";
+				// ...
+			}).catch((error) => {
+				// Handle Errors here.
+				const errorCode = error.code;
+				const errorMessage = error.message;
+			});
+	});
+
+
+
+</script>
+
+</html>
