@@ -183,59 +183,9 @@
 				const email = error.email;
 				// The AuthCredential type that was used.
 				const credential = FacebookAuthProvider.credentialFromError(error);
-				// ...
 			});
 	});
 
-	// Twitter Sign In
-	const twitterLogin = document.getElementById('twitter-login-btn');
-	const twitterProvider = new TwitterAuthProvider();
-	twitterLogin.addEventListener('click', () => {
-		signInWithPopup(auth, twitterProvider)
-			.then((result) => {
-				// For accessing the Twitter API.
-				const credential = TwitterAuthProvider.credentialFromResult(result);
-				const token = credential.accessToken;
-				const secret = credential.secret;
-				// The signed-in user info.
-				const user = result.user;
-				console.log(user);
-				window.location.href = "index.html";
-				// ...
-			})
-			.catch((error) => {
-				// Handle Errors here.
-				const errorCode = error.code;
-				const errorMessage = error.message;
-				// The email of the user's account used.
-				const email = error.email;
-				// The AuthCredential type that was used.
-				const credential = TwitterAuthProvider.credentialFromError(error);
-				// ...
-			});
-	});
-
-
-	// Check if user is logged in
-	auth.onAuthStateChanged((user) => {
-		if (user) {
-			// User is signed in, see docs for a list of available properties
-			// https://firebase.google.com/docs/reference/js/firebase.User
-			const uid = user.uid;
-			// ...
-			console.log(user);
-			document.getElementById('Login').style.display = 'none';
-			document.getElementById('signUp').style.display = 'none';
-			document.getElementById('logout').style.display = 'block';
-		} else {
-			// User is signed out
-			// ...
-			console.log('User is signed out');
-			document.getElementById('Login').style.display = 'block';
-			document.getElementById('signUp').style.display = 'block';
-			document.getElementById('logout').style.display = 'none';
-		}
-	});
 
 	// Logout
 	const logout = document.getElementById('logout');
