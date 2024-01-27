@@ -126,7 +126,6 @@ input[type="button"]:active {
   padding: 40px;
   width: 300px;
   height: 400px;
-  background: url('https://goo.gl/YbktSj');
   background-size: cover;
   background-position: center;
   border-radius: 0 2px 2px 0;
@@ -136,7 +135,8 @@ input[type="button"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #FFF;
+  font-family: 'Playfair Display', cursive;
+  color: black;
   text-align: center;
 }
 
@@ -147,7 +147,7 @@ button.social-signin {
   border: none;
   border-radius: 2px;
   color: #FFF;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Playfair Display', cursive;
   font-weight: 500;
   transition: 0.2s ease;
   cursor: pointer;
