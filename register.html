@@ -99,7 +99,6 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
   import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
-  import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "firebase/app-check";
 
   // Your web app's Firebase configuration
   const firebaseConfig = {
@@ -119,14 +118,6 @@
 	const database = getDatabase(app);
 
 	const auth = getAuth();
-
-	
-// Create a ReCaptchaEnterpriseProvider instance using your reCAPTCHA Enterprise
-// site key and pass it to initializeAppCheck().
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaEnterpriseProvider("6LcpzXcpAAAAAH4cxhU0DGRvbxI25lhDFyX-Ptvo"),
-  isTokenAutoRefreshEnabled: true 
-});
 
 	let RegisterUser = (evt) => {
 		evt.preventDefault();
