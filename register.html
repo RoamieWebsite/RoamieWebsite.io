@@ -70,29 +70,29 @@
 	</nav>
 
 	<!-- Main content of the webpage -->
-	<div id="login-box">
-		<div class="left">
-			<h1>Sign up</h1>
+<div id="login-box">
+    <div class="left">
+        <h1>Sign up</h1>
 
-			<form id="signUpForm" onsubmit="RegisterUser(evt)">
+        <form id="signUpForm" onsubmit="RegisterUser(event)">
+            <input type="text" name="username" placeholder="Username" />
+            <input type="text" id="email" name="email" placeholder="E-mail" />
+            <input type="password" id="password" name="password" placeholder="Password" />
 
-				<input type="text" name="username" placeholder="Username" />
-				<input type="text" id="email" name="email" placeholder="E-mail" />
-				<input type="password" id="password" name="password" placeholder="Password" />
+            <input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
+            <a href="login.html"><input type="button" id='Login' name="login" value="Login" /></a>
+        </form>
+    </div>
 
-				<input type="submit" id='signUp' name="signup_submit" value="Sign me up" />
-				<a href="login.html"><input type="button" id='Login' name="login" value="Login" /></a>
-		</div>
+    <div class="right">
+        <span class="loginwith">Sign in with<br />social network</span>
 
-		<div class="right">
-			<span class="loginwith">Sign in with<br />social network</span>
+        <button id="facebook-login-btn"  class="social-signin facebook">Log in with facebook</button>
+        <button id="google-login-btn" class="social-signin google">Log in with Google</button>
+    </div>
+    <div class="or">OR</div>
+</div>
 
-			<button id="facebook-login-btn"  class="social-signin facebook">Log in with facebook</button>
-			<button id="google-login-btn" class="social-signin google">Log in with Google</button>
-		</div>
-		<div class="or">OR</div>
-		</form>
-	</div>
 </body>
 <script type="module">
   // Import the functions you need from the SDKs you need
