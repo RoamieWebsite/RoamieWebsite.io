@@ -117,8 +117,8 @@
 
 	const auth = getAuth();
 
-	let RegisterUser = (evt) => {
-		evt.preventDefault();
+	function RegisterUser(evt) {
+   	 evt.preventDefault();
 		let email = document.getElementById('email').value;
 		let password = document.getElementById('password').value;
 
