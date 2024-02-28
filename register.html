@@ -74,7 +74,7 @@
     <div class="left">
         <h1>Sign up</h1>
 
-        <form id="signUpForm" onsubmit="RegisterUser(event)">
+        <form id="signUpForm" onsubmit="RegisterUser">
             <input type="text" name="username" placeholder="Username" />
             <input type="text" id="email" name="email" placeholder="E-mail" />
             <input type="password" id="password" name="password" placeholder="Password" />
@@ -117,7 +117,7 @@
 
 	const auth = getAuth();
 
-	function RegisterUser(evt) {
+	async function RegisterUser(evt) {
    	 evt.preventDefault();
 		let email = document.getElementById('email').value;
 		let password = document.getElementById('password').value;
