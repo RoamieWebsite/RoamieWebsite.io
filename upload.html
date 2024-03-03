@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Roamie - Upload </title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="upload.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+    <!-- Chat Bot -->
+    <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
+
+</head>
+
+<body>
+    <!-- Header -->
+
+    <nav>
+        <!-- Logo image -->
+        <div class="logo">
+            <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        </div>
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="submenu-parent">
+                <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="bookingform.html">Bookingform</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </li>
+            <li class="submenu-parent">
+                <a href="#">Info</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="cart.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a></li>
+        </ul>
+    </nav>
+
+    <br> <br> <br>
+
+    <div class="container">
+        <div class="card">
+          <h3>Upload Files</h3>
+          <div class="drop_box">
+            <header>
+              <h4>Select File here</h4>
+            </header>
+            <div class="icon">
+              <i class="fa fa-cloud-upload"></i> <label for="file">Drag and drop your files here</label>
+            <input type="file" id="file" accept="image/*" />
+          </div>
+      
+        </div>
+      </div>
+    </div>
+
+    <br> <br> <br>
+    <!-- End Header -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <!-- About section in the footer -->
+                    <h6>About</h6>
+                    <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable
+                        journeys!
+                        At Roamie, we believe that travel is not just about reaching a destination; it's about embracing
+                        the
+                        unknown,
+                        discovering new cultures, and creating stories that last a lifetime.
+                        Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire,
+                        guide, and
+                        elevate
+                        your travel experience.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <!-- Quick Links section in the footer -->
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <!-- Copyright information in the footer -->
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Roamie</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Social media icons in the footer -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-storage.js";
+        // My web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+            authDomain: "roamie-29b26.firebaseapp.com",
+            databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+            projectId: "roamie-29b26",
+            storageBucket: "roamie-29b26.appspot.com",
+            messagingSenderId: "770720238385",
+            appId: "1:770720238385:web:f6b854d66aee30f735fe10",
+            measurementId: "G-SZYY939KZZ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        //Storage  
+        const storage = getStorage();
+        function uploadFile(file) {
+            const storageRef = ref(storage, 'images/' + file.name);
+            const uploadTask = uploadBytes(storageRef, file);
+
+            uploadTask.then((snapshot) => {
+                console.log('Uploaded a blob or file!');
+                getDownloadURL(ref(storage, 'images/' + file.name)).then((url) => {
+                    console.log('File available at:', url);
+                }).catch((error) => {
+                    console.error('Error getting download URL', error);
+                });
+                const img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                document.body.appendChild(img);
+            });
+
+            uploadTask.catch((error) => {
+                console.error('Error in uploading file', error);
+            });
+        }
+
+        document.getElementById('file').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            uploadFile(file);
+        });
+    </script>
+</body>
+
+</html>
