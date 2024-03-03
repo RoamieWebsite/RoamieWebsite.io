@@ -5,15 +5,15 @@
   <!-- Meta tags for character set and viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  
+
   <!-- Title of the webpage -->
   <title>Roamie - Index</title>
-  
+
   <!-- Link to external CSS file -->
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  
+
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <!-- Fonts for heading and body -->
@@ -27,251 +27,201 @@
   <!-- Font Awesome Kit -->
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
-<script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+  <!-- Chat Bot -->
+  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
 </head>
 
+
 <body>
-  <div class="banner">
-    <video src="./video/banner.mp4" type="video/mp4" autoplay muted loop></video>
 
-<!-- Header -->
+  <!-- Header -->
 
-<div class="content" id="home"> 
-    <nav>
+  <nav>
     <!-- Logo image -->
-    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
-      
-  
-      <!-- Navigation links -->
+    <div class="logo">
+      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+    </div>
+    <!-- Navigation links -->
     <ul class="navbar">
       <li><a href="index.html">Home</a></li>
+      <li class="submenu-parent">
+        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="bookingform.html">Bookingform</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </li>
+      <li class="submenu-parent">
+        <a href="#">Info</a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="currency.html">Currency</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="aboutus.html">About Us</a></li>
-       <li class="submenu-parent">
-    <a href="explore.html">Explore</a><i class="fas fa-caret-down"></i>
-    <!-- Submenu for Explore -->
-    <ul class="submenu">
-      <li><a href="packages.html">Packages</a></li>
-	<li><a href="quiz.html">Quiz</a></li>
-    </ul>
-  </li>
-  <li><a href="blog.html">Blog</a></li>
-	<li class="submenu-parent">
-      <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-	  <ul class="submenu">
-      <li><a href="faq.html">FAQ</a></li>
-    </ul></li>
+      <li class="submenu-parent">
+        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+        <ul class="submenu">
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
       <li><a href="register.html">
-	<span>Register</span>
-	<i class="fa fa-user" aria-hidden="true"></i>
-	</a></li>
-	<li>
-	<a href="login.html">
-	<span>Login</span>
-	<i class="fa fa-user" aria-hidden="true"></i>
-	</a>
-	</li>
-	<li>
-	<a href="#" id="logout">
-	<span>Logout</span>
-	<i class="fa fa-user" aria-hidden="true"></i>
-	</a>
-	</li>
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="cart.html">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a></li>
     </ul>
   </nav>
-  
+
+  <section id="hero">
     <div class="title">
-        <h1>Raomie</h1>
-        <p>Plan your trip with us and travel around the world!</p>
-        <a href="register.html" class="button">Register Now!</a>
+      <h1>Roamie</h1>
+      <p>Life is short. The world is wide! Don't waste time.</p>
+      <a href="bookingform.html" class="button">Book Now!</a>
     </div>
+    <div class="text">
+      <h2>Search for the cheapest flights!</h2>
+      <!-- Skyscanner Widget -->
+      <div data-skyscanner-widget="FlightSearchWidget" data-locale="en-GB" data-market="IE" data-currency="EUR"
+        data-hide-powered-by="true" data-origin-name="Dublin" data-params=fontColour:#FFFFFF;></div>
+      <script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
     </div>
-</div>
-
-     
-  <section class="container">
-   <div class="text">
-      <h2>We have the best services available for you!</h2>
-  </div>
-  <div class="rowitems">
-      <div class="container-box">
-      <div class="container-image">
-         <img src="./images/flight.png" alt="Flight Services">
-      </div>
-          <h4>Flight Services</h4>
-          <p>We will have you finding the cheapest flights</p>
-      </div>
-  
-      <div class="container-box">
-      <div class="container-image">
-         <img src="./images/itinerary.png" alt="Itinerary">
-      </div>
-          <h4>Itinerary</h4>
-          <p>We offer itinerary for those who are confused.</p>
-      </div>
-
-      <div class="container-box">
-      <div class="container-image">
-          <img src="images/customer.png" alt="Customer Support">
-      </div>
-          <h4>Customer Support</h4>
-          <p>Contact us by entering your query in the contact us page.</p>
-      </div>
-
-      <div class="container-box">
-      <div class="container-image">
-          <img src="./images/price.png" alt="Best Price">
-      </div>
-          <h4>Best Price</h4>
-          <p>At Roamie, we gurantee to have the best price</p>
-      </div>
-
-  </div>
-
-  <br> <br>
-
-
-   <!-- Packages Start -->
-   <div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-        <div class="text-center mb-3 pb-3">
-            <h6 class="text-secondary text-uppercase" style="letter-spacing: 5px;">Packages</h6>
-            <h1>Pefect Itinerary Packages</h1>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="images/package-1.jpg" alt="Image by <a href="https://pixabay.com/users/lapping-3464230/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2460286"></a> <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2460286"></a>
-                    <div class="p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>Spain</small>
-                            <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>7 nights</small>
-                            <small class="m-0"><i class="fa fa-user text-secondary mr-2"></i></small>
-                        </div>
-                        <a class="h5 text-decoration-none" href="packages.html">Discover the Secrets Lanzarote Resort & SPA</a>
-                        <div class="border-top mt-4 pt-4">
-                            <div class="d-flex justify-content-between">
-                              <h6 class="m-0"><i class="fa fa-star text-warning mr-2"></i>4.5 <small>(250)</small></h6>
-                                <h5 class="m-0">€1,149pp</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="images/package-2.jpg" alt="">
-                    <div class="p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>Paris</small>
-                            <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>3 days</small>
-                            <small class="m-0"><i class="fa fa-user text-secondary mr-2"></i></small>
-                        </div>
-                        <a class="h5 text-decoration-none" href="explore.html">Discover the Effiel Tower and Paris.</a>
-                        <div class="border-top mt-4 pt-4">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="m-0"><i class="fa fa-star text-warning mr-2"></i>4.5 <small>(250)</small></h6>
-                                <h5 class="m-0">€50pp</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="images/package-3.jpg" alt="">
-                    <div class="p-4">
-                        <div class="d-flex justify-content-between mb-3">
-                            <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>Amsterdam</small>
-                            <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>3 days</small>
-                            <small class="m-0"><i class="fa fa-user text-secondary mr-2"></i></small>
-                        </div>
-                        <a class="h5 text-decoration-none" href="explore.html">Discover Amsterdam and the Wondr museum. </a>
-                        <div class="border-top mt-4 pt-4">
-                            <div class="d-flex justify-content-between">
-                                <h6 class="m-0"><i class="fa fa-star text-warning mr-2"></i>4.5 <small>(250)</small></h6>
-                                <h5 class="m-0">€500pp</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Packages End -->
-
-
-
- <!-- Testimonials-->
- <section class="bg-transparent">
-  <div class="container mb-5 mb-md-6">
-    <div class="row justify-content-md-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-        <h2>Testimonials </h2>
-        <p>Our Happy Client's reviews.</p>
-        <hr class="w-50 mx-auto mb-0 text-secondary">
-      </div>
-    </div>
-  </div>
-
-  <div class="container overflow-hidden">
-    <div class="row justify-content-lg-around gy-5 gy-md-6">
-      <div class="col-12 col-sm-6 col-lg-5">
-        <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-          <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p2.jpg" width="100"
-            height="100" alt="person">
-          <p class="mb-2">Roamie made it so easy to plan my trip - it was like having my own personal travel assistant!</p>
-          <p class="m-0 fw-bold">Luna Butler</p>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-5">
-        <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-          <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p1.jpg" width="100"
-            height="100" alt="person">
-          <p class="mb-2">We can't understand how we've been living without Roamie.</p>
-          <p class="m-0 fw-bold">Jack Burr</p>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-5">
-        <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-          <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p3.jpg" width="100"
-            height="100" alt="person">
-          <p class="mb-2">I recently used Roamie for my vacation planning and I was extremely impressed with the level of support I received.</p>
-          <p class="m-0 fw-bold">Ryana Wilson</p>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-lg-5">
-        <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-          <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p4.jpg" width="100"
-            height="100" alt="person">
-          <p class="mb-2">I would highly recommend Roamie to anyone looking for a reliable and stress-free travel planning experience.. </p>
-          <p class="m-0 fw-bold">Luke Reeves</p>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-          <i class="fa fa-star" style="color: #f1fd49;"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
   </section>
+
   <!-- End Header -->
+
+  <!-- Main Content -->
+
+   
+  <!--Services-->
+  <section class="container">
+    <div class="text">
+      <h2>We have the best services available for you!</h2>
+    </div>
+    <div class="rowitems">
+      <div class="container-box">
+        <div class="container-image">
+          <img src="./images/flight.png" alt="Flight Services">
+        </div>
+        <h4>Flight Services</h4>
+        <p>We will have you finding the cheapest flights</p>
+      </div>
+
+      <div class="container-box">
+        <div class="container-image">
+          <img src="./images/itinerary.png" alt="Itinerary">
+        </div>
+        <h4>Itinerary</h4>
+        <p>We offer itinerary for those who are confused.</p>
+      </div>
+
+      <div class="container-box">
+        <div class="container-image">
+          <img src="images/customer.png" alt="Customer Support">
+        </div>
+        <h4>Customer Support</h4>
+        <p>Contact us by entering your query in the contact us page.</p>
+      </div>
+
+      <div class="container-box">
+        <div class="container-image">
+          <img src="./images/price.png" alt="Best Price">
+        </div>
+        <h4>Best Price</h4>
+        <p>At Roamie, we gurantee to have the best price</p>
+      </div>
+
+    </div>
+
+    <br> <br>
+  </section>
+
+  <!-- Packages -->
+
+  <section class="packages" id="packages">
+    <div class="container">
+
+      <div class="main-txt">
+        <h1><span>P</span>ackages</h1>
+      </div>
+
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="images/a.2.jpg" alt="">
+            <div class="card-body">
+              <h3>Amsterdam</h3>
+              <p>Experience the vibrant culture, stunning architecture, and beautiful landscapes of Amsterdam. Book your
+                trip now.</p>
+              <div class="star">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <h6>Price: <strong>€700.00</strong></h6>
+              <a href="bookingform.html">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="images/package-2.jpg" alt="">
+            <div class="card-body">
+              <h3>France</h3>
+              <p>Discover the charm and elegance of France. Book your trip now.</p>
+              <div class="star">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star "></i>
+                <i class="fa fa-star "></i>
+              </div>
+              <h6>Price: <strong>€500.00</strong></h6>
+              <a href="bookingform.html">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4 py-3 py-md-0">
+
+          <div class="card">
+            <img src="images/package-1.jpg" alt="">
+            <div class="card-body">
+              <h3>Spain</h3>
+              <p>Discover the charm and elegance of Spain. Book your trip now.!</p>
+              <div class="star">
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star "></i>
+                <i class="fa fa-star "></i>
+              </div>
+              <h6>Price: <strong>$500</strong></h6>
+              <a href="bookingform.html">Book Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-round back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
   <!-- Footer -->
@@ -282,9 +232,11 @@
           <!-- About section in the footer -->
           <h6>About</h6>
           <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
-            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the unknown,
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
             discovering new cultures, and creating stories that last a lifetime.
-            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and elevate
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
             your travel experience.</p>
         </div>
         <div class="col-xs-6 col-md-3">
@@ -292,9 +244,9 @@
           <h6>Quick Links</h6>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Me</a></li>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="faq.html">FAQ</a></li>
+            <li><a href="aboutus.html">About Me</a></li>
             <li><a href="contact.html">Contact Me</a></li>
           </ul>
         </div>
@@ -322,7 +274,7 @@
   </footer>
   <!-- End Footer -->
 
-  
+
 </body>
 
 </html>
