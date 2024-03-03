@@ -189,18 +189,6 @@
 				});
 		});
 
-
-		// Logout
-		const logout = document.getElementById('logout');
-		logout.addEventListener('click', () => {
-			auth.signOut().then(() => {
-				// Sign-out successful.
-				window.location.href = "index.html";
-			}).catch((error) => {
-				// An error happened.
-			});
-		});
-
 	</script>
 
 </body>
