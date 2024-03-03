@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Roamie - Currency </title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="currency.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+    <!-- Chat Bot -->
+    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
+
+</head>
+
+<body>
+    <nav>
+        <!-- Logo image -->
+        <div class="logo">
+          <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        </div>
+        <!-- Navigation links -->
+        <ul class="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li class="submenu-parent">
+            <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+              <li><a href="bookingform.html">Bookingform</a></li>
+              <li><a href="packages.html">Packages</a></li>
+            </ul>
+          </li>
+          <li class="submenu-parent">
+            <a href="#">Info</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="quiz.html">Quiz</a></li>
+              <li><a href="weather.html">Weather</a></li>
+              <li><a href="currency.html">Currency</a></li>
+            </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li class="submenu-parent">
+            <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+            <ul class="submenu">
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </li>
+          <li><a href="register.html">
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a></li>
+          <li><a href="cart.html">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a></li>
+        </ul>
+      </nav>
+      <!-- End Header -->
+    <!--Currency converter start-->
+
+
+    <div class="container">
+        <img src="images/money.png" alt="" class="money-img" />
+        <h1>Currency Converter</h1>
+        <p>Choose the currency and the amounts to get the exchange rate.</p>
+        <div class="currency">
+            <select name="converter" id="currency-one">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="SGD">SGD</option>
+                <option value="JPY">JPY</option>
+                <option value="CNY">CNY</option>
+                <option value="NZD">NZD</option>
+                <option value="CHF">CHF</option>
+                <option value="HKD">HKD</option>
+                <option value="SEK">SEK</option>
+                <option value="MXN">MXN</option>
+                <option value="ZAR">ZAR</option>
+                <option value="TRY">TRY</option>
+                <option value="NOK">NOK</option>
+                <option value="BRL">BRL</option>
+                <option value="INR">INR</option>
+                <option value="RUB">RUB</option>
+                <option value="DZD">DZD</option>
+                <option value="ARS">ARS</option>
+                <option value="BHD">BHD</option>
+                <option value="BAM">BAM</option>
+                <option value="BBD">BBD</option>
+                <option value="BDT">BDT</option>
+                <option value="BGN">BGN</option>
+                <option value="BND">BND</option>
+                <option value="BOB">BOB</option>
+                <option value="BWP">BWP</option>
+                <option value="BZD">BZD</option>
+                <option value="CLP">CLP</option>
+                <option value="COP">COP</option>
+                <option value="CRC">CRC</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="DOP">DOP</option>
+            </select>
+            <input type="number" id="amount-one" placeholder="0" value="1" />
+        </div>
+
+        <div class="swap-rate-container">
+            <button class="btn" id="swap">
+                Swap
+            </button>
+            <div class="rate" id="rate"></div>
+        </div>
+
+
+        <div class="currency">
+            <select name="converter" id="currency-two">
+                <option value="USD">USD</option>
+                <option value="INR">INR</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="SGD">SGD</option>
+                <option value="JPY">JPY</option>
+                <option value="CNY">CNY</option>
+                <option value="NZD">NZD</option>
+                <option value="CHF">CHF</option>
+                <option value="HKD">HKD</option>
+                <option value="SEK">SEK</option>
+                <option value="MXN">MXN</option>
+                <option value="ZAR">ZAR</option>
+                <option value="TRY">TRY</option>
+                <option value="NOK">NOK</option>
+                <option value="BRL">BRL</option>
+                <option value="INR">INR</option>
+                <option value="RUB">RUB</option>
+                <option value="DZD">DZD</option>
+                <option value="ARS">ARS</option>
+                <option value="BHD">BHD</option>
+                <option value="BAM">BAM</option>
+                <option value="BBD">BBD</option>
+                <option value="BDT">BDT</option>
+                <option value="BGN">BGN</option>
+                <option value="BND">BND</option>
+                <option value="BOB">BOB</option>
+                <option value="BWP">BWP</option>
+                <option value="BZD">BZD</option>
+                <option value="CLP">CLP</option>
+                <option value="COP">COP</option>
+                <option value="CRC">CRC</option>
+                <option value="CZK">CZK</option>
+                <option value="DKK">DKK</option>
+                <option value="DOP">DOP</option>
+            </select>
+            <input type="number" id="amount-two" placeholder="0" />
+        </div>
+    </div>
+    <!--Currency converter end-->
+
+    <!-- End Header -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <!-- About section in the footer -->
+                    <h6>About</h6>
+                    <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and
+                        unforgettable
+                        journeys!
+                        At Roamie, we believe that travel is not just about reaching a destination; it's about
+                        embracing
+                        the
+                        unknown,
+                        discovering new cultures, and creating stories that last a lifetime.
+                        Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire,
+                        guide, and
+                        elevate
+                        your travel experience.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <!-- Quick Links section in the footer -->
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <!-- Copyright information in the footer -->
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Roamie</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Social media icons in the footer -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <script src="currency.js"></script>
+
+</body>
+
+</html>
