@@ -27,50 +27,52 @@
   <!-- Font Awesome Kit -->
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
-    <!-- Chat Bot -->
-    <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+  <!-- Chat Bot -->
+  <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
 
 </head>
 
 <body>
   <nav>
     <!-- Logo image -->
-    <img src="logo.gif" class="logo" alt="Logo" title="Roamie">
-
+    <div class="logo">
+      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+    </div>
     <!-- Navigation links -->
     <ul class="navbar">
       <li><a href="index.html">Home</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
       <li class="submenu-parent">
-        <a href="explore.html">Explore </a><i class="fas fa-caret-down"></i>
+        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
         <!-- Submenu for Explore -->
         <ul class="submenu">
+          <li><a href="bookingform.html">Bookingform</a></li>
           <li><a href="packages.html">Packages</a></li>
         </ul>
       </li>
+      <li class="submenu-parent">
+        <a href="#">Info</a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="currency.html">Currency</a></li>
+        </ul>
+      </li>
       <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
       <li class="submenu-parent">
         <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
         <ul class="submenu">
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </li>
-     <li><a href="register.html">
-					<span>Register</span>
-					<i class="fa fa-user" aria-hidden="true"></i>
-				</a></li>
-			<li>
-				<a href="login.html">
-					<span>Login</span>
-					<i class="fa fa-user" aria-hidden="true"></i>
-				</a>
-			</li>
-			<li>
-				<a href="#" id="logout">
-					<span>Logout</span>
-					<i class="fa fa-user" aria-hidden="true"></i>
-				</a>
-			</li>
+      <li><a href="register.html">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="cart.html">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a></li>
     </ul>
   </nav>
 
@@ -97,19 +99,23 @@
         <p><span class="glyphicon glyphicon-time"></span> Posted on November 27, 2023</p>
 
         <hr>
-      
+
 
         <!-- Post Content -->
-       <p>Jardin Majorelle: A Chill Spot. If you need a break from the chaos, Jardin Majorelle is the place. It's a garden with cool blue buildings and some exotic plants. A nice change of view
+        <p>Jardin Majorelle: A Chill Spot. If you need a break from the chaos, Jardin Majorelle is the place. It's a
+          garden with cool blue buildings and some exotic plants. A nice change of view
         </p>
-        <p>Bahia Palace: We checked out Bahia Palace. It's grand, no doubt. The intricate woodwork and colorful tiles and great for pictures. 	Souks: Shopping Galore. The souks are a shopping paradise. Leather goods, spices, everything. I got better at my bargaining skills.
+        <p>Bahia Palace: We checked out Bahia Palace. It's grand, no doubt. The intricate woodwork and colorful tiles
+          and great for pictures. Souks: Shopping Galore. The souks are a shopping paradise. Leather goods, spices,
+          everything. I got better at my bargaining skills.
         </p>
         <p>
-	Djemaa el Fna: Nightlife Marrakesh Style. Djemaa el Fna is the main square that turns into a carnival at night.Street performers, food stalls, the whole deal. It's a bit tourist-centric, but hey, it's a spectacle.	
+          Djemaa el Fna: Nightlife Marrakesh Style. Djemaa el Fna is the main square that turns into a carnival at
+          night.Street performers, food stalls, the whole deal. It's a bit tourist-centric, but hey, it's a spectacle.
         </p>
-          <p>Marrakesh is something else. Is a beautiful city that'll leave an impression, a real adventure</p>
+        <p>Marrakesh is something else. Is a beautiful city that'll leave an impression, a real adventure</p>
         <hr>
-  
+
         <section id="wrapper">
           <h1 class="post-title">Leave a comment</h1>
           <div class="box">
@@ -129,13 +135,14 @@
             </div>
           </div>
           <hr>
- <h1 class="post-title">Read More</h1>
+          <h1 class="post-title">Read More</h1>
           <div class="card-group">
             <div class="card">
               <img class="card-img-top" src="images/blog-1.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Sza in Dublin </h5>
-                <p class="card-text"> Attending a SZA concert is an experience that transcends the ordinary and immerses you in the vibrant world of soulful music, powerful vocals, and an electric atmosphere. </p>
+                <p class="card-text"> Attending a SZA concert is an experience that transcends the ordinary and immerses
+                  you in the vibrant world of soulful music, powerful vocals, and an electric atmosphere. </p>
                 <a href="post_one.html" class="btn btn-success">Read More</a>
               </div>
             </div>
@@ -143,9 +150,12 @@
               <img class="card-img-top" src="images/package-2.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">Summer time in Marbella</h5>
-                <p class="card-text"> Welcome to Marbella, a jewel nestled on the picturesque Costa del Sol in southern Spain. With its sun-kissed beaches, 
-		glamorous nightlife, and rich cultural heritage, Marbella offers a perfect blend of relaxation and excitement for every traveler. 
-		Join us as we take a virtual journey through the vibrant streets, sandy shores, and historic landmarks of this Mediterranean paradise.</p>
+                <p class="card-text"> Welcome to Marbella, a jewel nestled on the picturesque Costa del Sol in southern
+                  Spain. With its sun-kissed beaches,
+                  glamorous nightlife, and rich cultural heritage, Marbella offers a perfect blend of relaxation and
+                  excitement for every traveler.
+                  Join us as we take a virtual journey through the vibrant streets, sandy shores, and historic landmarks
+                  of this Mediterranean paradise.</p>
                 <a href="post_two.html" class="btn btn-success">Read More</a>
               </div>
             </div>
@@ -153,8 +163,10 @@
               <img class="card-img-top" src="images/photo11.jpg" alt="Card image cap">
               <div class="card-body">
                 <h5 class="card-title">What a wonderful time in Menorca </h5>
-                <p class="card-text">From the moment you set foot on this Balearic gem, it was as if time slowed down to let you savor every moment. 
-			The historical charm of Ciutadella must have whisked you away to another era, with its narrow cobbled streets, charming architecture, and bustling markets.</p>
+                <p class="card-text">From the moment you set foot on this Balearic gem, it was as if time slowed down to
+                  let you savor every moment.
+                  The historical charm of Ciutadella must have whisked you away to another era, with its narrow cobbled
+                  streets, charming architecture, and bustling markets.</p>
                 <a href="post_three.html" class="btn btn-success">Read More</a>
               </div>
             </div>
@@ -247,8 +259,5 @@
     </div>
   </footer>
   <!-- End Footer -->
-
-
 </body>
-
 </html>
