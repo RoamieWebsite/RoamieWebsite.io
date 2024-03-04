@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta tags for character set and viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+
+  <!-- Title of the webpage -->
+  <title>Roamie - Bookingform</title>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="bookingform.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Fonts for heading and body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+  <!-- Chat Bot -->
+  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
+</head>
+
+
+<body>
+
+  <!-- Header -->
+
+  <nav>
+    <!-- Logo image -->
+    <div class="logo">
+      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+    </div>
+    <!-- Navigation links -->
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li class="submenu-parent">
+        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="bookingform.html">Bookingform</a></li>
+          <li><a href="packages.html">Packages</a></li>
+        </ul>
+      </li>
+      <li class="submenu-parent">
+        <a href="#">Info</a><i class="fas fa-caret-down"></i>
+        <!-- Submenu for Explore -->
+        <ul class="submenu">
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="weather.html">Weather</a></li>
+          <li><a href="currency.html">Currency</a></li>
+        </ul>
+      </li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li class="submenu-parent">
+        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+        <ul class="submenu">
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </li>
+      <li><a href="register.html">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a></li>
+      <li><a href="cart.html">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Main Content -->
+  <section class="book" id="book">
+
+    <h1 class="heading">
+      <span>B</span>
+      <span>O</span>
+      <span>O</span>
+      <span>K</span>
+      <span>-</span>
+      <span>N</span>
+      <span>O</span>
+      <span>W</span>
+    </h1>
+
+
+    <div class="row">
+
+      <div class="image">
+        <img src="images/booking.jpg" a
+          href="https://www.freepik.com/free-vector/flight-booking-concept-illustration_9793267.htm#query=travel%20storyset&position=17&from_view=search&track=ais&uuid=b295d116-2715-488c-90eb-e6ae3e16898b">
+      </div>
+
+      <form action="bookingform.php" method="post">
+        <div class="inputBox">
+          <h3>where to</h3>
+          <input type="text" id="where" placeholder="place name">
+        </div>
+        <div class="inputBox">
+          <h3>how many</h3>
+          <input type="number" id="number" placeholder="number of guests">
+        </div>
+        <div class="inputBox">
+          <h3>arrivals</h3>
+          <input type="date" id="arrivals">
+        </div>
+        <div class="inputBox">
+          <h3>leaving</h3>
+          <input type="date" id="leaving">
+        </div>
+        <input type="submit" class="btn" id="submit" onclick="alert('BOOKING SUCCESSFULL')" value="book now">
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- book section ends -->
+
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <!-- About section in the footer -->
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
+            discovering new cultures, and creating stories that last a lifetime.
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
+            your travel experience.</p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <!-- Quick Links section in the footer -->
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="aboutus.html">About Me</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <!-- Copyright information in the footer -->
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <!-- Social media icons in the footer -->
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+
+</body>
+
+</html>

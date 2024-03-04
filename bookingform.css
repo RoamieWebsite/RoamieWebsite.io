@@ -1,0 +1,92 @@
+
+/* Booking form */
+
+.heading {
+    text-align: center;
+    padding: 2.5rem 0;
+  }
+  
+  .heading span {
+    font-size: 3.5rem;
+    background: rgba(167, 152, 123, 0.2);
+    color: var(--blue);
+    border-radius: 0.5rem;
+    padding: 0.2rem 1rem;
+    box-shadow: 0 0 5px #12bed9;
+  }
+  
+  .heading span.space {
+    background: none;
+  }
+
+  
+
+.book .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .book .row .image {
+    flex: 1 1 40rem;
+  }
+  
+  .book .row .image img {
+    width: 100%;
+  }
+  
+  .book .row .image img:hover {
+    animation: shake 3s;
+    animation-iteration-count: infinite;
+    transition: all 10s ease;
+  }
+  
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+  
+  .book .row form {
+    flex: 1 1 40rem;
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    background: #fff;
+  }
+  
+  .book .row form .inputBox {
+    padding: 0.5rem 0;
+  }
+  
+  .book .row form .inputBox input {
+    width: 100%;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    font-size: 1.7rem;
+    color: #333;
+    text-transform: none;
+  }
+  
+  .book .row form .inputBox h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: #666;
+  }
+
+    .book .row form .inputBox input[type="submit"] {
+        background: #3FA7D6;
+        border: none;
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 1.7rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    
+    /* End of Booking form */
