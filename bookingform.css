@@ -1,92 +1,139 @@
 
 /* Booking form */
+.section {
+  position: relative;
+  height: 100vh
+}
 
-.heading {
-    text-align: center;
-    padding: 2.5rem 0;
-  }
-  
-  .heading span {
-    font-size: 3.5rem;
-    background: rgba(167, 152, 123, 0.2);
-    color: var(--blue);
-    border-radius: 0.5rem;
-    padding: 0.2rem 1rem;
-    box-shadow: 0 0 5px #12bed9;
-  }
-  
-  .heading span.space {
-    background: none;
-  }
+.section .section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
 
-  
+#booking {
+  font-family: montserrat,sans-serif;
+  background-image: url(images/header.png);
+  background-size: cover;
+  background-position: center
+}
 
-.book .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  
-  .book .row .image {
-    flex: 1 1 40rem;
-  }
-  
-  .book .row .image img {
-    width: 100%;
-  }
-  
-  .book .row .image img:hover {
-    animation: shake 3s;
-    animation-iteration-count: infinite;
-    transition: all 10s ease;
-  }
-  
-  @keyframes shake {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-50px);
-    }
-  }
-  
-  .book .row form {
-    flex: 1 1 40rem;
-    padding: 2rem;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    background: #fff;
-  }
-  
-  .book .row form .inputBox {
-    padding: 0.5rem 0;
-  }
-  
-  .book .row form .inputBox input {
-    width: 100%;
-    padding: 1rem;
-    border: 0.1rem solid rgba(0, 0, 0, 0.1);
-    font-size: 1.7rem;
-    color: #333;
-    text-transform: none;
-  }
-  
-  .book .row form .inputBox h3 {
-    font-size: 2rem;
-    padding: 1rem 0;
-    color: #666;
-  }
+#booking::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(47,103,177,.6)
+}
 
-    .book .row form .inputBox input[type="submit"] {
-        background: #3FA7D6;
-        border: none;
-        color: white;
-        padding: 1rem 2rem;
-        font-size: 1.7rem;
-        cursor: pointer;
-        transition: all 0.3s;
-    }
-    
-    /* End of Booking form */
+.booking-form {
+  background-color: #fff;
+  padding: 50px 20px;
+  -webkit-box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);
+  box-shadow: 0 5px 20px -5px rgba(0,0,0,.3);
+  border-radius: 4px
+}
+
+.booking-form .form-group {
+  position: relative;
+  margin-bottom: 30px
+}
+
+.booking-form .form-control {
+  background-color: #ebecee;
+  border-radius: 4px;
+  border: none;
+  height: 40px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #3e485c;
+  font-size: 14px
+}
+
+.booking-form .form-control::-webkit-input-placeholder {
+  color: rgba(62,72,92,.3)
+}
+
+.booking-form .form-control:-ms-input-placeholder {
+  color: rgba(62,72,92,.3)
+}
+
+.booking-form .form-control::placeholder {
+  color: rgba(62,72,92,.3)
+}
+
+.booking-form input[type=date].form-control:invalid {
+  color: rgba(62,72,92,.3)
+}
+
+.booking-form select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none
+}
+
+.booking-form select.form-control+.select-arrow {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: rgba(62,72,92,.3);
+  font-size: 14px
+}
+
+.booking-form select.form-control+.select-arrow:after {
+  content: '\279C';
+  display: block;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
+
+.booking-form .form-label {
+  display: inline-block;
+  color: #3e485c;
+  font-weight: 700;
+  margin-bottom: 6px;
+  margin-left: 7px
+}
+
+.booking-form .submit-btn {
+  display: inline-block;
+  color: #fff;
+  background-color: #1e62d8;
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: 4px;
+  border: none;
+  -webkit-transition: .2s all;
+  transition: .2s all
+}
+
+.booking-form .submit-btn:hover,.booking-form .submit-btn:focus {
+  opacity: .9
+}
+
+.booking-cta {
+  margin-top: 80px;
+  margin-bottom: 30px
+}
+
+.booking-cta h1 {
+  font-size: 52px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700
+}
+
+.booking-cta p {
+  font-size: 16px;
+  color: rgba(255,255,255,.8)
+}
