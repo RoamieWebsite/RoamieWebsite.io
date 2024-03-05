@@ -15,7 +15,7 @@
 }
 
 #booking {
-  font-family: montserrat,sans-serif;
+  font-family: 'Eagle Lake', cursive;
   background-image: url(images/header.png);
   background-size: cover;
   background-position: center
@@ -131,6 +131,7 @@
   text-transform: uppercase;
   color: #fff;
   font-weight: 700
+  font-family: 'Playfair Display', cursive;
 }
 
 .booking-cta p {
