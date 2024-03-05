@@ -78,7 +78,7 @@
     </nav>
 
     <br> <br> <br>
-    <div class="imageUpload">
+  <div class="imageUpload">
         <input type="file" class="inp" onchange="getImageData(event)" multiple />
         <button onclick="selectImage()" class="selectImage">Select Images</button>
         <div class="metaData"></div>
@@ -90,6 +90,7 @@
         <span class="loading">Loading...</span>
         <div class="images"></div>
     </div>
+
 
     <!-- End Header -->
 
@@ -164,28 +165,24 @@
             measurementId: "G-VQBEZ429JG"
         };
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-
-        const storage = getStorage(app);
+       // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const storage = firebase.storage();
 
         const inp = document.querySelector(".inp");
         const progressbar = document.querySelector(".progress");
-        const img = document.querySelector(".img");
-        const body = document.querySelector("body");
-        const metaData = document.querySelector(".metaData");
         const images = document.querySelector(".images");
+        const metaData = document.querySelector(".metaData");
         const loading = document.querySelector(".loading");
-        const imageUpload = document.querySelector(".imageUpload");
         const completeMsg = document.querySelector(".completeMsg");
-        let file;
         let files;
-        let fileName;
         let progress;
         let uploadedFileName;
+
         const selectImage = () => {
             inp.click();
         };
+
         const getImageData = (e) => {
             files = e.target.files;
             for (let i = 0; i < files.length; i++) {
@@ -247,7 +244,6 @@
             });
         };
     </script>
-
 
 </body>
 
