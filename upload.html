@@ -166,8 +166,9 @@
         };
 
        // Initialize Firebase
-        const app = firebase.initializeApp(firebaseConfig);
-        const storage = firebase.storage();
+       const app = initializeApp(firebaseConfig);
+
+        const storage = getStorage(app);
 
         const inp = document.querySelector(".inp");
         const progressbar = document.querySelector(".progress");
