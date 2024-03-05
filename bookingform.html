@@ -82,53 +82,89 @@
 
 
   <!-- Main Content -->
-  <section class="book" id="book">
 
-    <h1 class="heading">
-      <span>B</span>
-      <span>O</span>
-      <span>O</span>
-      <span>K</span>
-      <span>-</span>
-      <span>N</span>
-      <span>O</span>
-      <span>W</span>
-    </h1>
+  <div id="booking" class="section">
+    <div class="section-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 col-md-push-5">
+            <div class="booking-cta">
+              <h1>Make your reservation</h1>
+              <p>Book your next trip with Roamie and enjoy the best deals on your favorite destinations.</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-md-pull-7">
+            <div class="booking-form">
+              <form class="row g-3" action="https://formsubmit.co/odeje75@gmail.com" method="POST"></form>
 
+              <!-- Disable Captcha -->
+              <input type="hidden" name="_captcha" value="false">
 
-    <div class="row">
-
-      <div class="image">
-        <img src="images/booking.jpg" a
-          href="https://www.freepik.com/free-vector/flight-booking-concept-illustration_9793267.htm#query=travel%20storyset&position=17&from_view=search&track=ais&uuid=b295d116-2715-488c-90eb-e6ae3e16898b">
+              <input type="hidden" name="_next" value="https://roamie.tech/success.html">
+              <div class="form-group">
+                <span class="form-label">Your Destination</span>
+                <input class="form-control" type="text" placeholder="Enter a destination or hotel name">
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <span class="form-label">Check In</span>
+                    <input class="form-control" type="date" required="">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <span class="form-label">Check out</span>
+                    <input class="form-control" type="date" required="">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <span class="form-label">Rooms</span>
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <span class="form-label">Adults</span>
+                    <select class="form-control">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <span class="form-label">Children</span>
+                    <select class="form-control">
+                      <option>0</option>
+                      <option>1</option>
+                      <option>2</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="form-btn">
+                <button class="submit-btn">Check availability</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <form action="bookingform.php" method="post">
-        <div class="inputBox">
-          <h3>where to</h3>
-          <input type="text" id="where" placeholder="place name">
-        </div>
-        <div class="inputBox">
-          <h3>how many</h3>
-          <input type="number" id="number" placeholder="number of guests">
-        </div>
-        <div class="inputBox">
-          <h3>arrivals</h3>
-          <input type="date" id="arrivals">
-        </div>
-        <div class="inputBox">
-          <h3>leaving</h3>
-          <input type="date" id="leaving">
-        </div>
-        <input type="submit" class="btn" id="submit" onclick="alert('BOOKING SUCCESSFULL')" value="book now">
-      </form>
-
     </div>
+  </div>
 
-  </section>
-
-  
-  <!-- book section ends -->
 
 
   <!-- Footer -->
@@ -180,8 +216,6 @@
     </div>
   </footer>
   <!-- End Footer -->
-
-
 </body>
 
 </html>
