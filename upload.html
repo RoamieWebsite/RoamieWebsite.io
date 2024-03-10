@@ -78,14 +78,14 @@
     </nav>
 
     <br> <br> <br>
-  <div class="imageUpload">
+    <div class="imageUpload">
         <input type="file" class="inp" onchange="getImageData(event)" multiple />
-        <button class="selectImage">Select Images</button>
+        <button class="selectImage" onclick="selectImage()">Select Images</button>
         <div class="metaData"></div>
         <div class="progressBar">
             <div class="progress"></div>
         </div>
-        <button class="upload">Upload</button>
+        <button class="upload" onclick="uploadImage()">Upload</button>
         <span class="completeMsg"></span>
         <span class="loading">Loading...</span>
         <div class="images"></div>
@@ -165,8 +165,9 @@
             measurementId: "G-VQBEZ429JG"
         };
 
-       // Initialize Firebase
-       const app = initializeApp(firebaseConfig);
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
 
         const storage = getStorage(app);
 
