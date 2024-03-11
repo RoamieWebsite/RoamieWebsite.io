@@ -1,0 +1,65 @@
+main .container {
+    padding-bottom: 5rem;
+  }
+  main h1 {
+    margin-bottom: 1rem;
+    font-family: 'Eagle Lake', cursive;
+    align-items: center;
+  }
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+  }
+  .prices__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+  .card {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: 250px;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    object-position: center;
+  }
+
+  .card h2 {
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', cursive;
+  }
+
+  .card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  .card ul li {
+    margin-bottom: 5px;
+  }
+  @media screen and (max-width: 768px) {
+    .prices__container {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1rem;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .prices__container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .card img {
+      height: 150px;
+    }
+  }
