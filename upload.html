@@ -76,12 +76,12 @@
     <br> <br> <br>
     <div class="imageUpload">
         <input type="file" class="inp" onchange="getImageData(event)" multiple />
-        <button class="selectImage" onclick="selectImage()">Select Images</button>
+        <button class="selectImage">Select Images</button>
         <div class="metaData"></div>
         <div class="progressBar">
             <div class="progress"></div>
         </div>
-        <button class="upload" onclick="uploadImage()">Upload</button>
+      <button class="upload">Upload</button>
         <span class="completeMsg"></span>
         <span class="loading">Loading...</span>
         <div class="images"></div>
@@ -181,6 +181,10 @@
             inp.click();
         };
 
+        
+    const buttonElement = document.querySelector('.selectImage');
+    buttonElement.onclick = selectImage;
+
         const getImageData = (e) => {
             files = e.target.files;
             for (let i = 0; i < files.length; i++) {
@@ -193,6 +197,11 @@
         };
 
         const uploadImage = async () => {
+            
+
+        const uploadButton = document.querySelector('.upload');
+
+        uploadButton.onclick = uploadImage;
             for (let i = 0; i < files.length; i++) {
                 let url = await uploadProcess(files[i], Math.round(Math.random() * 9999) + files[i].name);
                 if (url) {
