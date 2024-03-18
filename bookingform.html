@@ -97,11 +97,6 @@
                     <div class="booking-form">
                         <form id="bookingForm" class="row g-3" action="https://formsubmit.co/odeje75@gmail.com"
                             method="POST">
-
-                            <!-- Disable Captcha -->
-                            <input type="hidden" name="_captcha" value="false">
-
-                            <input type="hidden" name="_next" value="https://roamie.tech/success.html">
                             <div class="form-group">
                                 <span class="form-label">Your Destination</span>
                                 <select id="destinationSelect" class="form-control">
@@ -256,6 +251,10 @@
         alert("Booking successful!\n\nDestination: " + destination +
             "\nCheck-in: " + checkin + "\nCheck-out: " + checkout +
             "\nRooms: " + rooms + "\nAdults: " + adults + "\nChildren: " + children);
+
+        // Redirect to success page
+        window.location.href = "success.html";
+
 
         // Reset the form
         bookingForm.reset();
