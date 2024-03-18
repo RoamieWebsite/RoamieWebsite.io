@@ -82,87 +82,101 @@
 
 
   <!-- Main Content -->
+
   <div id="booking" class="section">
     <div class="section-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-7 col-md-push-5">
-            <div class="booking-cta">
-              <h1>Make your reservation</h1>
-              <p>Book your next trip with Roamie and enjoy the best deals on your favorite destinations.</p>
-            </div>
-          </div>
-          <div class="col-md-4 col-md-pull-7">
-            <div class="booking-form">
-              <form class="row g-3" action="https://formsubmit.co/odeje75@gmail.com" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 col-md-push-5">
+                    <div class="booking-cta">
+                        <h1>Make your reservation</h1>
+                        <p>Book your next trip with Roamie and enjoy the best deals on your favorite destinations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-md-pull-7">
+                    <div class="booking-form">
+                        <form id="bookingForm" class="row g-3" action="https://formsubmit.co/odeje75@gmail.com"
+                            method="POST">
 
-                <!-- Disable Captcha -->
-                <input type="hidden" name="_captcha" value="false">
+                            <!-- Disable Captcha -->
+                            <input type="hidden" name="_captcha" value="false">
 
-                <input type="hidden" name="_next" value="https://roamie.tech/success.html">
-                <div class="form-group">
-                  <span class="form-label">Your Destination</span>
-                  <input class="form-control" type="text" placeholder="Enter a destination or hotel name">
+                            <input type="hidden" name="_next" value="https://roamie.tech/success.html">
+                            <div class="form-group">
+                                <span class="form-label">Your Destination</span>
+                                <select id="destinationSelect" class="form-control">
+                                    <option value="">Select a destination</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Paris">Paris</option>
+                                    <option value="Amsterdam">Amsterdam</option>
+                                    <option value="Finland">Finland</option>
+                                    <option value="Berlin">Berlin</option>
+                                    <option value="New York">New York</option>
+                                    
+                                </select>
+                                <input id="destinationInput" class="form-control mt-2" type="text"
+                                    placeholder="Or enter a custom destination">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Check In</span>
+                                        <input id="checkin" class="form-control" type="date" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <span class="form-label">Check out</span>
+                                        <input id="checkout" class="form-control" type="date" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Rooms</span>
+                                        <select id="rooms" class="form-control" required>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Adults</span>
+                                        <select id="adults" class="form-control" required>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Children</span>
+                                        <select id="children" class="form-control" required>
+                                            <option>0</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                        </select>
+                                        <span class="select-arrow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-btn">
+                                <button id="submitBtn" class="submit-btn">Check availability</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <span class="form-label">Check In</span>
-                      <input class="form-control" type="date" required="">
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                      <span class="form-label">Check out</span>
-                      <input class="form-control" type="date" required="">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <span class="form-label">Rooms</span>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
-                      <span class="select-arrow"></span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <span class="form-label">Adults</span>
-                      <select class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
-                      <span class="select-arrow"></span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="form-group">
-                      <span class="form-label">Children</span>
-                      <select class="form-control">
-                        <option>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                      </select>
-                      <span class="select-arrow"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-btn">
-                  <button type="submit" class="submit-btn">Check availability</button>
-                </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
+
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -213,6 +227,55 @@
     </div>
   </footer>
   <!-- End Footer -->
+
+
+  <script>
+  var bookingForm = document.getElementById("bookingForm");
+    var submitBtn = document.getElementById("submitBtn");
+
+    bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get form values
+        var destinationSelect = document.getElementById("destinationSelect");
+        var destinationInput = document.getElementById("destinationInput").value;
+        var destination = destinationSelect.value !== "" ? destinationSelect.value : destinationInput;
+        var checkin = document.getElementById("checkin").value;
+        var checkout = document.getElementById("checkout").value;
+        var rooms = document.getElementById("rooms").value;
+        var adults = document.getElementById("adults").value;
+        var children = document.getElementById("children").value;
+
+        // Perform validation
+        if (!destination || !checkin || !checkout || !rooms || !adults) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        // Simulate booking process
+        alert("Booking successful!\n\nDestination: " + destination +
+            "\nCheck-in: " + checkin + "\nCheck-out: " + checkout +
+            "\nRooms: " + rooms + "\nAdults: " + adults + "\nChildren: " + children);
+
+        // Reset the form
+        bookingForm.reset();
+    });
+
+    // Show/hide destination input based on selection
+    var destinationSelect = document.getElementById("destinationSelect");
+    var destinationInput = document.getElementById("destinationInput");
+
+    destinationSelect.addEventListener("change", function () {
+        if (destinationSelect.value === "") {
+            destinationInput.style.display = "block";
+            destinationInput.setAttribute("required", "required");
+        } else {
+            destinationInput.style.display = "none";
+            destinationInput.removeAttribute("required");
+        }
+    });
+</script>
+
 </body>
 
 </html>
