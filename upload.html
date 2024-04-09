@@ -78,8 +78,6 @@
     </nav>
 
     <!-- End of Header -->
-
-
     <!-- Main -->
     <div class="image-upload-container">
         <div class="card">
@@ -92,11 +90,16 @@
                 <input type="file" class="file-input" multiple />
                 <button class="selectbutton">Select Images</button>
                 <button class="uploadbutton">Upload</button>
+
+                <br> <br>
+                <div class="loading" style="display: none;">Loading...</div>
+                <div class="progress-bar"></div>
+                <div class="complete-msg"></div>
+                <div class="images"></div>
             </div>
         </div>
     </div>
-    <!-- End of  main -->
-
+    <!-- End of main -->
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -174,79 +177,89 @@
 
         const storage = getStorage(app);
 
-        //Upload the selected images to Firebase Storage
-        const inp = document.querySelector('.file-input');
-        const metaData = document.querySelector('.drop-box');
+        // DOM references
+        const loading = document.querySelector(".loading");
+        const progressbar = document.querySelector(".progress-bar");
+        const completeMsg = document.querySelector(".complete-msg");
+        const imagesContainer = document.querySelector('.images');
+    
+        //Function to display uploaded images
+        let files; 
+
+        // Function to handle file selection
         const selectbutton = () => {
+            const inp = document.querySelector('.file-input');
             inp.click();
         };
         const buttonElement = document.querySelector('.selectbutton');
         buttonElement.onclick = selectbutton;
 
+        // Function to get selected file data
         const getImageData = (e) => {
-            inp.addEventListener('change', getImageData);
             files = e.target.files;
-            for (let i = 0; i < files.length; i++) {
-                let imageData = document.createElement("span");
-                imageData.className = 'filedata';
-                imageData.style.display = 'block';
-                imageData.innerHTML = files[i].name;
-                metaData.appendChild(imageData);
-            }
         };
+        const fileInput = document.querySelector('.file-input');
+        fileInput.addEventListener('change', getImageData);
 
-        const uploadImage = async () => {
-            const uploadButton = document.querySelector('.uploadbutton');
-
-            uploadButton.onclick = uploadImage;
-            for (let i = 0; i < files.length; i++) {
-                let url = await uploadProcess(files[i], Math.round(Math.random() * 9999) + files[i].name);
-                if (url) {
-                    loading.style.display = 'none';
-                    let image = document.createElement("img");
-                    image.style.display = 'block';
-                    image.setAttribute('src', url);
-                    image.className = 'img';
-                    images.appendChild(image);
-                }
-                if (i === files.length - 1) {
-                    completeMsg.innerHTML = `${files.length} files uploaded successfully`;
-                }
-            }
-        };
-
+        // Function to upload each selected image
         const uploadProcess = (file, fileName) => {
             return new Promise((resolve, reject) => {
-                const storageRef = storage.ref().child("myimages");
-                const folderRef = storageRef.child(fileName);
-                const uploadtask = folderRef.put(file);
-                uploadtask.on(
+                const storageRef = ref(storage, "myimages/" + fileName);
+                const uploadTask = uploadBytesResumable(storageRef, file);
+
+                uploadTask.on(
                     "state_changed",
                     (snapshot) => {
                         loading.style.display = 'block';
-                        progress =
-                            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                        progress = Math.round(progress);
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                         progressbar.style.width = progress + "%";
-                        progressbar.innerHTML = progress + "%";
-                        uploadedFileName = snapshot.ref.name;
                     },
                     (error) => {
                         reject(error);
                     },
                     () => {
-                        storage
-                            .ref("myimages")
-                            .child(uploadedFileName)
-                            .getDownloadURL()
-                            .then((url) => {
-                                console.log("URL", url);
-                                resolve(url);
+                        // Upload completed successfully, get download URL
+                        getDownloadURL(uploadTask.snapshot.ref)
+                            .then((downloadURL) => {
+                                resolve(downloadURL);
+                            })
+                            .catch((error) => {
+                                reject(error);
                             });
                     }
                 );
             });
         };
+
+        // Function to upload images
+        const uploadImages = async () => {
+            const uploadButton = document.querySelector('.uploadbutton');
+            uploadButton.onclick = uploadImages;
+
+            for (let i = 0; i < files.length; i++) {
+                const fileName = Math.round(Math.random() * 9999) + files[i].name;
+                try {
+                    const url = await uploadProcess(files[i], fileName);
+                    if (url) {
+                        loading.style.display = 'none';
+                        const image = document.createElement("img");
+                        image.style.display = 'block';
+                        image.setAttribute('src', url);
+                        image.className = 'img';
+                        imagesContainer.appendChild(image);
+                    }
+                } catch (error) {
+                    console.error("Error uploading file:", error);
+                }
+            }
+
+            completeMsg.innerHTML = `${files.length} files uploaded successfully`;
+        };
+
+        // Calling the uploadImages function when upload button is clicked
+        const uploadButton = document.querySelector('.uploadbutton');
+        uploadButton.onclick = uploadImages;
+
     </script>
 
 </body>
