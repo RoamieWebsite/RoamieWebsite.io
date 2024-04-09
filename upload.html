@@ -175,16 +175,16 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
 
-        const storage = getStorage(app);
+        const storage = getStorage();
 
         // DOM references
         const loading = document.querySelector(".loading");
         const progressbar = document.querySelector(".progress-bar");
         const completeMsg = document.querySelector(".complete-msg");
         const imagesContainer = document.querySelector('.images');
-    
+
         //Function to display uploaded images
-        let files; 
+        let files;
 
         // Function to handle file selection
         const selectbutton = () => {
@@ -204,7 +204,7 @@
         // Function to upload each selected image
         const uploadProcess = (file, fileName) => {
             return new Promise((resolve, reject) => {
-                const storageRef = ref(storage, "myimages/" + fileName);
+                const storageRef = ref(storage, "images/" + fileName);
                 const uploadTask = uploadBytesResumable(storageRef, file);
 
                 uploadTask.on(
@@ -218,7 +218,6 @@
                         reject(error);
                     },
                     () => {
-                        // Upload completed successfully, get download URL
                         getDownloadURL(uploadTask.snapshot.ref)
                             .then((downloadURL) => {
                                 resolve(downloadURL);
@@ -233,9 +232,6 @@
 
         // Function to upload images
         const uploadImages = async () => {
-            const uploadButton = document.querySelector('.uploadbutton');
-            uploadButton.onclick = uploadImages;
-
             for (let i = 0; i < files.length; i++) {
                 const fileName = Math.round(Math.random() * 9999) + files[i].name;
                 try {
@@ -252,7 +248,6 @@
                     console.error("Error uploading file:", error);
                 }
             }
-
             completeMsg.innerHTML = `${files.length} files uploaded successfully`;
         };
 
