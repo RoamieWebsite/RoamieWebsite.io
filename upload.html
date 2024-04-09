@@ -24,8 +24,10 @@
 
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
     <!-- Chat Bot -->
-    <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
 </head>
 
 <body>
@@ -75,24 +77,27 @@
         </ul>
     </nav>
 
-    <br> <br> <br>
-    <div class="imageUpload">
-        <input type="file" class="inp" onchange="getImageData(event)" multiple />
-        <button class="selectImage">Select Images</button>
-        <div class="metaData"></div>
-        <div class="progressBar">
-            <div class="progress"></div>
+    <!-- End of Header -->
+
+
+    <!-- Main -->
+    <div class="image-upload-container">
+        <div class="card">
+            <h3 class="upload-header">Upload Files</h3>
+            <div class="drop-box">
+                <header class="drop-header">
+                    <h4 class="select-file">Select File here</h4>
+                </header>
+                <p class="file-support">Supported Formats: JPG, PNG</p>
+                <input type="file" class="file-input" multiple />
+                <button class="selectbutton">Select Images</button>
+                <button class="uploadbutton">Upload</button>
+            </div>
         </div>
-      <button class="upload">Upload</button>
-        <span class="completeMsg"></span>
-        <span class="loading">Loading...</span>
-        <div class="images"></div>
     </div>
+    <!-- End of  main -->
 
 
-    <!-- End Header -->
-
-    <br> <br> <br>
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -169,25 +174,17 @@
 
         const storage = getStorage(app);
 
-        const inp = document.querySelector(".inp");
-        const progressbar = document.querySelector(".progress");
-        const images = document.querySelector(".images");
-        const metaData = document.querySelector(".metaData");
-        const loading = document.querySelector(".loading");
-        const completeMsg = document.querySelector(".completeMsg");
-        let files;
-        let progress;
-        let uploadedFileName;
-
-        const selectImage = () => {
+        //Upload the selected images to Firebase Storage
+        const inp = document.querySelector('.file-input');
+        const metaData = document.querySelector('.drop-box');
+        const selectbutton = () => {
             inp.click();
         };
-
-        
-    const buttonElement = document.querySelector('.selectImage');
-    buttonElement.onclick = selectImage;
+        const buttonElement = document.querySelector('.selectbutton');
+        buttonElement.onclick = selectbutton;
 
         const getImageData = (e) => {
+            inp.addEventListener('change', getImageData);
             files = e.target.files;
             for (let i = 0; i < files.length; i++) {
                 let imageData = document.createElement("span");
@@ -199,11 +196,9 @@
         };
 
         const uploadImage = async () => {
-            
+            const uploadButton = document.querySelector('.uploadbutton');
 
-        const uploadButton = document.querySelector('.upload');
-
-        uploadButton.onclick = uploadImage;
+            uploadButton.onclick = uploadImage;
             for (let i = 0; i < files.length; i++) {
                 let url = await uploadProcess(files[i], Math.round(Math.random() * 9999) + files[i].name);
                 if (url) {
