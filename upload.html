@@ -156,10 +156,10 @@
     <!-- End Footer -->
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-storage.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+        import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 
 
         // My web app's Firebase configuration
@@ -182,6 +182,25 @@
 
         // Initialize Realtime Database and get a reference to the service
         const database = getDatabase(app);
+        
+        // Function to display pictures for logged-in users
+        const displayUserPictures = (userId) => {
+            const userPicturesContainer = document.querySelector('.images');
+            userPicturesContainer.innerHTML = ''; // Clear previous pictures
+
+            database.ref("userPictures/" + userId).once("value")
+                .then((snapshot) => {
+                    snapshot.forEach((childSnapshot) => {
+                        const data = childSnapshot.val();
+                        const image = document.createElement("img");
+                        image.src = data.url;
+                        userPicturesContainer.appendChild(image);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error getting pictures:", error);
+                });
+        };
 
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
@@ -274,24 +293,6 @@
             completeMsg.innerHTML = `${files.length} files uploaded successfully`;
         };
 
-        // Function to display pictures for logged-in users
-        const displayUserPictures = (userId) => {
-            const userPicturesContainer = document.querySelector('.images');
-            userPicturesContainer.innerHTML = ''; 
-
-            database.ref("userPictures/" + userId).once("value")
-                .then((snapshot) => {
-                    snapshot.forEach((childSnapshot) => {
-                        const data = childSnapshot.val();
-                        const image = document.createElement("img");
-                        image.src = data.url;
-                        userPicturesContainer.appendChild(image);
-                    });
-                })
-                .catch((error) => {
-                    console.error("Error getting pictures:", error);
-                });
-        };
 
 
         // Calling the uploadImages function when upload button is clicked
