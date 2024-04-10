@@ -157,7 +157,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-        import { getStorage, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
         import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
 
@@ -181,8 +181,8 @@
         const storage = getStorage();
 
         // Initialize Realtime Database and get a reference to the service
-        const database = getDatabase(app);
-        
+        const database = getDatabase();
+
         // Function to display pictures for logged-in users
         const displayUserPictures = (userId) => {
             const userPicturesContainer = document.querySelector('.images');
@@ -292,7 +292,6 @@
             }
             completeMsg.innerHTML = `${files.length} files uploaded successfully`;
         };
-
 
 
         // Calling the uploadImages function when upload button is clicked
