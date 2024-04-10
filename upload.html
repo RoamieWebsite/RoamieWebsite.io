@@ -159,6 +159,8 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
         import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-storage.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
 
         // My web app's Firebase configuration
         const firebaseConfig = {
@@ -171,18 +173,23 @@
             appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
             measurementId: "G-VQBEZ429JG"
         };
- 
-    
+
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
 
         const storage = getStorage();
+
+        // Initialize Realtime Database and get a reference to the service
+        const database = getDatabase(app);
 
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, allow upload functionality
                 uploadButton.style.display = 'block';
+                // Display pictures for logged-in user
+                displayUserPictures(user.uid);
             } else {
                 // No user is signed in, hide upload functionality and display alert
                 uploadButton.style.display = 'none';
@@ -196,6 +203,7 @@
         const progressbar = document.querySelector(".progress-bar");
         const completeMsg = document.querySelector(".complete-msg");
         const imagesContainer = document.querySelector('.images');
+        const uploadButton = document.querySelector('.uploadbutton');
 
         //Function to display uploaded images
         let files;
@@ -244,6 +252,7 @@
             });
         };
 
+
         // Function to upload images
         const uploadImages = async () => {
             for (let i = 0; i < files.length; i++) {
@@ -265,8 +274,27 @@
             completeMsg.innerHTML = `${files.length} files uploaded successfully`;
         };
 
+        // Function to display pictures for logged-in users
+        const displayUserPictures = (userId) => {
+            const userPicturesContainer = document.querySelector('.images');
+            userPicturesContainer.innerHTML = ''; 
+
+            database.ref("userPictures/" + userId).once("value")
+                .then((snapshot) => {
+                    snapshot.forEach((childSnapshot) => {
+                        const data = childSnapshot.val();
+                        const image = document.createElement("img");
+                        image.src = data.url;
+                        userPicturesContainer.appendChild(image);
+                    });
+                })
+                .catch((error) => {
+                    console.error("Error getting pictures:", error);
+                });
+        };
+
+
         // Calling the uploadImages function when upload button is clicked
-        const uploadButton = document.querySelector('.uploadbutton');
         uploadButton.onclick = uploadImages;
 
     </script>
