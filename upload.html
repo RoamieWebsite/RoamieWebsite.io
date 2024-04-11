@@ -184,22 +184,21 @@
         const database = getDatabase();
 
         // Function to display pictures for logged-in users
-        function displayUserPictures(userId) {
-        // Get reference to storage bucket location
-          const storageRef = ref(storage, 'images/' + userId);
 
-          // List all the items in the storage bucket
-          getStorage().listAll().then((res) => {
-            res.items.forEach((itemRef) => {
-              // ItemRef.name contains the name of the image file
-              getDownloadURL(itemRef).then((url) => {
-                // Display image
-                const img = document.createElement('img');
-                img.src = url;
-                document.querySelector('.images').appendChild(img);
-              });
+        async function displayUserPictures(userId) {
+            // Reference to storage bucket location
+            const storageRef = ref(storage, 'images/' + userId);
+
+            // Get metadata about files in the bucket
+            const listRef = ref(storage, 'images/' + userId);
+            const list = await
+                listAll(listRef);
+            let html = "";
+            list.items.forEach(itemRef => {
+                html += `<img src="${getDownloadURL(itemRef
+                )}" class="img-fluid">`;
             });
-          });
+            document.querySelector('.images').innerHTML = html;
         }
 
 
