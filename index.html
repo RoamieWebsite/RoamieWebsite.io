@@ -389,6 +389,10 @@
     measurementId: "G-VQBEZ429JG"
   };
 
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+
   //Authenticate user 
   const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
