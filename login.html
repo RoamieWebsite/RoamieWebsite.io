@@ -40,16 +40,15 @@
       <li><a href="index.html">Home</a></li>
       <li class="submenu-parent">
         <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Discover -->
+        <!-- Submenu for Explore -->
         <ul class="submenu">
-           <li><a href="upload.html">Upload</a></li>
           <li><a href="bookingform.html">Bookingform</a></li>
           <li><a href="packages.html">Packages</a></li>
         </ul>
       </li>
       <li class="submenu-parent">
         <a href="#">Info</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Info -->
+        <!-- Submenu for Explore -->
         <ul class="submenu">
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="quiz.html">Quiz</a></li>
@@ -98,10 +97,10 @@
   	<!-- End of main content of the webpage -->
 
   <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-    import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+    // Import the functions
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 
     // Your web app's Firebase configuration
     const firebaseConfig = {
