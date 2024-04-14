@@ -25,9 +25,9 @@
 
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
-   
+
     <!-- Chat Bot -->
-  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
 
 
 </head>
@@ -81,153 +81,188 @@
         <div class="chat-container">
             <div class="chat-header">
             </div>
-                <h2>Roamie Tour Guide Chat</h2>
-                <div id="messages" class="chat-messages"></div>
-                <div class="chat-input">
-                    <input type="text" id="messageInput" class="message-input" placeholder="Type your message...">
-                    <button onclick="sendMessage()" class="send-button">Send</button>
+            <h2>Roamie Tour Guide Chat</h2>
+            <div id="messages" class="chat-messages"></div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" class="message-input" placeholder="Type your message...">
+                <button onclick="sendMessage()" class="send-button">Send</button>
+            </div>
+        </div>
+        <span class="availability"></span>
+
+
+        <br> <br> <br> <br> <br> <br>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <!-- About section in the footer -->
+                        <h6>About</h6>
+                        <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and
+                            unforgettable
+                            journeys!
+                            At Roamie, we believe that travel is not just about reaching a destination; it's about
+                            embracing
+                            the
+                            unknown,
+                            discovering new cultures, and creating stories that last a lifetime.
+                            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to
+                            inspire,
+                            guide, and
+                            elevate
+                            your travel experience.</p>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <!-- Quick Links section in the footer -->
+                        <h6>Quick Links</h6>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Me</a></li>
+                            <li><a href="explore.html">Explore</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contact.html">Contact Me</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <!-- Copyright information in the footer -->
+                        <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                            <a href="#">Roamie</a>.
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <!-- Social media icons in the footer -->
+                        <ul class="social-icons">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-
-            <!-- Footer -->
-            <footer class="site-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <!-- About section in the footer -->
-                            <h6>About</h6>
-                            <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and
-                                unforgettable
-                                journeys!
-                                At Roamie, we believe that travel is not just about reaching a destination; it's about
-                                embracing
-                                the
-                                unknown,
-                                discovering new cultures, and creating stories that last a lifetime.
-                                Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to
-                                inspire,
-                                guide, and
-                                elevate
-                                your travel experience.</p>
-                        </div>
-                        <div class="col-xs-6 col-md-3">
-                            <!-- Quick Links section in the footer -->
-                            <h6>Quick Links</h6>
-                            <ul class="footer-links">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About Me</a></li>
-                                <li><a href="explore.html">Explore</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="contact.html">Contact Me</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-sm-6 col-xs-12">
-                            <!-- Copyright information in the footer -->
-                            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
-                                <a href="#">Roamie</a>.
-                            </p>
-                        </div>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <!-- Social media icons in the footer -->
-                            <ul class="social-icons">
-                                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-            <!-- End Footer -->
+        </footer>
+        <!-- End Footer -->
 
     </body>
 
-</html>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+        import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-messaging.js";
 
 
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
-    import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
-    import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-messaging.js";
-
-
-    // My web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-        authDomain: "roamie-29b26.firebaseapp.com",
-        databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-        projectId: "roamie-29b26",
-        storageBucket: "roamie-29b26.appspot.com",
-        messagingSenderId: "770720238385",
-        appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
-        measurementId: "G-VQBEZ429JG"
-    };
-
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    // Initialize Firebase Cloud Messaging
-    const messaging = getMessaging(app);
-
-    // Subscribe to the "messages" topic to receive notifications
-    getToken(messaging, { vapidKey: 'BGUYQ4jKknt6Xmt5h187PZ98yUFEq68z-CDsXk8vjMS4FfoQRU9nb4nEEyqPQZVGGH2x_bp-PryAVYKXQbjn5cI' }).then((currentToken) => {
-        if (currentToken) {
-            console.log('current token for client: ', currentToken);
-        } else {
-            console.log('No registration token available. Request permission to generate one.');
-        }
-    }).catch((err) => {
-        console.log('An error occurred while retrieving token. ', err);
-    });
-
-    // Receive incoming messages from Firebase Cloud Messaging
-    onMessage(messaging, (payload) => {
-        console.log('Message received. ', payload);
-        // Display notification to user (optional)
-        const notificationTitle = 'You have a new message';
-        const notificationOptions = {
-            body: payload.data.message,
-            icon: '/firebase-logo.png'
+        // My web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+            authDomain: "roamie-29b26.firebaseapp.com",
+            databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+            projectId: "roamie-29b26",
+            storageBucket: "roamie-29b26.appspot.com",
+            messagingSenderId: "770720238385",
+            appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
+            measurementId: "G-VQBEZ429JG"
         };
 
-        self.registration.showNotification(notificationTitle,
-            notificationOptions);
-    });
 
-    // Function to send a message
-    function sendMessage() {
-        const messageInput = document.getElementById('messageInput');
-        const message = messageInput.value;
-        messageInput.value = '';
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
 
+        // Initialize Firebase Cloud Messaging
+        const messaging = getMessaging(app);
+
+
+        // Get a reference to the Firebase Realtime Database
+        const database = getDatabase(app);
+
+        // Listen for new messages added to the Firebase Realtime Database
+        const reference = ref(database, 'messages');
+        database.ref('messages').on('child_added', snapshot => {
+            const message = snapshot.val();
+            const messagesContainer = document.getElementById('messages');
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.innerHTML = `
+        <span class="message-sender">${message.user}</span>
+        <span class="message-content">${message.message}</span>
+    `;
+            // Append message element to the messages container
+            messagesContainer.appendChild(messageElement);
+            // Scroll to the bottom of the messages container
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+
+
+        //Authenitcate user and send message to database
         const auth = getAuth();
 
         onAuthStateChanged(auth, (user) => {
-    if (user) {
-        database.ref('messages').push({
-            user: user.uid,
-            message: message,
-            timestamp: firebase.database.ServerValue.TIMESTAMP
+            if (user) {
+                // Push message data to Firebase Realtime Database
+                database.ref('messages').push({
+                    user: user.uid,
+                    message: message,
+                    timestamp: firebase.database.ServerValue.TIMESTAMP
+                });
+            } else {
+                console.log('User not logged in.');
+            }
         });
-    } else {
-        console.log('User not logged in.');
-    }
-});
-    }
 
-    ref('tour_guides').on('value', (snapshot) => {
-        const tourGuides = snapshot.val();
-    // <span class="availability">${tourGuide.status}</span>
-    });
+        // Subscribe to the "messages" topic to receive notifications
+        getToken(messaging, { vapidKey: 'BGUYQ4jKknt6Xmt5h187PZ98yUFEq68z-CDsXk8vjMS4FfoQRU9nb4nEEyqPQZVGGH2x_bp-PryAVYKXQbjn5cI' }).then((currentToken) => {
+            if (currentToken) {
+                console.log('current token for client: ', currentToken);
+            } else {
+                console.log('No registration token available. Request permission to generate one.');
+            }
+        }).catch((err) => {
+            console.log('An error occurred while retrieving token. ', err);
+        });
 
+        // Receive incoming messages from Firebase Cloud Messaging
+        onMessage(messaging, (payload) => {
+            console.log('Message received. ', payload);
+            // Display notification to user using Notification API
+            const notificationTitle = 'You have a new message';
+            const notificationOptions = {
+                body: payload.data.message,
+                icon: '/firebase-logo.png'
+            };
 
-</script>
+            self.registration.showNotification(notificationTitle,
+                notificationOptions);
+        });
 
+        // Function to send a message
+        function sendMessage() {
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value;
+            messageInput.value = '';
+        }
+        // Update UI to display tour guide availability status
+        const tourGuideStatuses = document.querySelectorAll('.availability');
 
-</script>
+        // Listen for changes in the tour guides data in the Firebase Realtime Database
+        const tourGuidesRef = ref(database, 'tour_guides');
+        database.ref('tour_guides').on('value', (snapshot) => {
+            const tourGuides = snapshot.val();
+            tourGuideStatuses.forEach((element, index) => {
+                const tourGuide = tourGuides[index];
+                if (tourGuide) {
+                    element.textContent = tourGuide.status;
+                } else {
+                    element.textContent = 'Unavailable';
+                }
+            });
+        });
+
+    </script>
+
+</html>
