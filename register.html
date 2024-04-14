@@ -41,16 +41,15 @@
 			<li><a href="index.html">Home</a></li>
 			<li class="submenu-parent">
 				<a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-				<!-- Submenu for Discover -->
+				<!-- Submenu for Explore -->
 				<ul class="submenu">
-					<li><a href="upload.html">Upload</a></li>
 					<li><a href="bookingform.html">Bookingform</a></li>
 					<li><a href="packages.html">Packages</a></li>
 				</ul>
 			</li>
 			<li class="submenu-parent">
 				<a href="#">Info</a><i class="fas fa-caret-down"></i>
-				<!-- Submenu for Info -->
+				<!-- Submenu for Explore -->
 				<ul class="submenu">
 					<li><a href="pricing.html">Pricing</a></li>
 					<li><a href="quiz.html">Quiz</a></li>
@@ -80,7 +79,7 @@
 		<div class="left">
 			<h1>Sign up</h1>
 
-			<form id="signUpForm" onsubmit="RegisterUser(event)">
+			<form id="signUpForm">
 				<input type="text" name="username" placeholder="Username" />
 				<input type="text" id="email" name="email" placeholder="E-mail" />
 				<input type="password" id="password" name="password" placeholder="Password" />
@@ -101,20 +100,20 @@
 
 
 	<script type="module">
-		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-		import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-		import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+		import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+		import { getDatabase } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 		// My web app's Firebase configuration
 		const firebaseConfig = {
-    		apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+    	apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
    		authDomain: "roamie-29b26.firebaseapp.com",
-    		databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-   		projectId: "roamie-29b26",
-    		storageBucket: "roamie-29b26.appspot.com",
-    		messagingSenderId: "770720238385",
-    		appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
-    		measurementId: "G-VQBEZ429JG"
-  	};
+    	databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+    	projectId: "roamie-29b26",
+    	storageBucket: "roamie-29b26.appspot.com",
+   		messagingSenderId: "770720238385",
+    	appId: "1:770720238385:web:f6b854d66aee30f735fe10",
+    	measurementId: "G-SZYY939KZZ"
+		};
 
 		// Initialize Firebase
 		const app = initializeApp(firebaseConfig);
