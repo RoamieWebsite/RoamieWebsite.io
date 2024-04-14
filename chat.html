@@ -181,9 +181,13 @@
         // Get a reference to the Firebase Realtime Database
         const database = getDatabase(app);
 
-        // Listen for new messages added to the Firebase Realtime Database
-        const reference = ref(database, 'messages');
-        database.ref('messages').on('child_added', snapshot => {
+
+
+        // Getting a reference to the 'messages' node in the Firebase Realtime Database
+        const messagesRef = ref(database, 'messages');
+
+        // Listen for 'child_added' events on the 'messages' node
+        (messagesRef, (snapshot) => {
             const message = snapshot.val();
             const messagesContainer = document.getElementById('messages');
             const messageElement = document.createElement('div');
@@ -199,13 +203,14 @@
         });
 
 
+
         //Authenitcate user and send message to database
         const auth = getAuth();
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // Push message data to Firebase Realtime Database
-                database.ref('messages').push({
+                ('messages').push({
                     user: user.uid,
                     message: message,
                     timestamp: firebase.database.ServerValue.TIMESTAMP
@@ -251,7 +256,8 @@
 
         // Listen for changes in the tour guides data in the Firebase Realtime Database
         const tourGuidesRef = ref(database, 'tour_guides');
-        database.ref('tour_guides').on('value', (snapshot) => {
+        // Listen for 'value' events on the 'tour_guides' node
+        (tourGuidesRef, (snapshot) => {
             const tourGuides = snapshot.val();
             tourGuideStatuses.forEach((element, index) => {
                 const tourGuide = tourGuides[index];
