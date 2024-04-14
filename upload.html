@@ -183,22 +183,22 @@
         // Initialize Realtime Database and get a reference to the service
         const database = getDatabase();
 
-        // Function to display pictures for logged-in users
-
         async function displayUserPictures(userId) {
-            // Reference to storage bucket location
+            // Reference to storage bucket location for the specific user
             const storageRef = ref(storage, 'images/' + userId);
 
-            // Get metadata about files in the bucket
-            const listRef = ref(storage, 'images/' + userId);
-            const list = await
-                listAll(listRef);
-            let html = "";
-            list.items.forEach(itemRef => {
-                html += `<img src="${getDownloadURL(itemRef
-                )}" class="img-fluid">`;
-            });
-            document.querySelector('.images').innerHTML = html;
+            try {
+                // Get metadata about files in the bucket
+                const list = await listAll(storageRef);
+                let html = "";
+                for (const itemRef of list.items) {
+                    const url = await getDownloadURL(itemRef); // Wait for the download URL
+                    html += `<img src="${url}" class="img-fluid">`;
+                }
+                document.querySelector('.images').innerHTML = html;
+            } catch (error) {
+                console.error("Error displaying user pictures:", error);
+            }
         }
 
 
