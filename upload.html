@@ -156,9 +156,10 @@
     <!-- End Footer -->
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getStorage, ref, listAll, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs10.11.0/firebase-storage.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
 
 
         // My web app's Firebase configuration
@@ -179,11 +180,36 @@
 
         const storage = getStorage();
 
+        // Initialize Realtime Database and get a reference to the service
+        const database = getDatabase();
+
+        // Function to display pictures for logged-in users
+
+        async function displayUserPictures(userId) {
+            // Reference to storage bucket location
+            const storageRef = ref(storage, 'images/' + userId);
+
+            // Get metadata about files in the bucket
+            const listRef = ref(storage, 'images/' + userId);
+            const list = await
+                listAll(listRef);
+            let html = "";
+            list.items.forEach(itemRef => {
+                html += `<img src="${getDownloadURL(itemRef
+                )}" class="img-fluid">`;
+            });
+            document.querySelector('.images').innerHTML = html;
+        }
+
+
+
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, allow upload functionality
                 uploadButton.style.display = 'block';
+                // Display pictures for logged-in user
+                displayUserPictures(user.uid);
             } else {
                 // No user is signed in, hide upload functionality and display alert
                 uploadButton.style.display = 'none';
