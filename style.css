@@ -98,6 +98,21 @@ nav ul li a {
     color: rgb(255, 255, 255);
     font-size: 17px;
 }
+
+#logoutButton {
+    background: #eee;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  
+  #logoutButton a {
+    color: #666;
+  }
+  
+
+  #logoutButton:hover {
+    background: #ddd;
+  }
 /*End Navigation styles */
 
 #login-box {
