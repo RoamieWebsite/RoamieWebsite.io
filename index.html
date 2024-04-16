@@ -409,10 +409,11 @@
 
   // Add event listener to the logout link
   document.getElementById('logoutLink').addEventListener('click', function (event) {
-    event.preventDefault();
-    logout();
+    event.preventDefault(); // Prevent default action of link
+    if (confirm("You are about to logout. Click OK to continue.")) {
+      logout(); // Call the logout function if user confirms
+    }
   });
-
   function logout() {
     signOut(auth).then(() => {
       // Sign-out successful.
