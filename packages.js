@@ -1,27 +1,44 @@
-let box = document.createElement("div");
+const container = document.getElementById('container');
+const filter = document.getElementById('filter');
+const priceSelect = document.getElementById('priceSelect');
+const ratingSelect = document.getElementById('ratingSelect');
+const boxes = document.querySelectorAll('.box');
+const data = [
+   { name: 'Spain Package', price: 1149, rating: 5 },
+   { name: 'Paris Package', price: 500, rating: 4 },
+   { name: 'Amsterdam Package', price: 700, rating: 3 },
+   { name: 'Lapland Package', price: 633, rating: 4 },
+   { name: 'Berlin Package', price: 379, rating: 3 },
+   { name: 'New York Package', price: 1825, rating: 4 },
+];
 
-let rating = document.createElement("h6");
-rating.innerText = `⭐ ${Number(data[i].rating) / 20}`;
-
-let price = document.createElement("h6");
-price.innerText = `€ ${Number(data[i].price) * 10} / Person`;
-
-box.append(rating, price);
-card.append(image, location, box);
-anchor.append(card);
-cont.append(anchor);
-document.getElementById("packages").append(cont);
-
-let searchBar = document.getElementById("searchBar");
-
-searchBar.addEventListener("input", function() {
-    let searched = data.filter(function(item) {
-        if (item.name.toUpperCase().includes(searchBar.value.toUpperCase())) {
-            return true;
-        } else {
-            return false;
-        }
-    });
-    display(searched);
+// Store original display style
+boxes.forEach(box => {
+   box.originalDisplay = box.style.display;
 });
 
+// Function to filter and render data
+const filterAndRender = () => {
+   const priceValue = parseInt(priceSelect.value);
+   const ratingValue = parseInt(ratingSelect.value);
+   const filteredData = data.filter(item => {
+      return (!priceValue || item.price <= priceValue) && (!ratingValue || item.rating <= ratingValue);
+   });
+   render(filteredData);
+};
+
+// Function to render filtered data
+const render = (filteredData) => {
+   boxes.forEach(box => {
+      if (filteredData.some(item => item.name === box.querySelector('.name').textContent)) {
+         box.style.display = box.originalDisplay;
+      } else {
+         box.style.display = 'none';
+      }
+   });
+};
+
+// Event listeners for filtering
+priceSelect.addEventListener('change', filterAndRender);
+ratingSelect.addEventListener('change', filterAndRender);
+filter.addEventListener('click', filterAndRender);
