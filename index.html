@@ -47,7 +47,7 @@
         <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
         <!-- Submenu for Discover -->
         <ul class="submenu">
-          <li><a href="upload.html">Upload</a></li>
+            <li><a href="upload.html">Upload</a></li>
           <li><a href="bookingform.html">Bookingform</a></li>
           <li><a href="packages.html">Packages</a></li>
         </ul>
@@ -71,8 +71,8 @@
         </ul>
       </li>
       <li id="logoutButton" style="display: none;"><a href="#" id="logoutLink">
-          <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-        </a></li>
+        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+      </a></li>      
       <li><a href="register.html">
           <i class="fa fa-user" aria-hidden="true"></i>
         </a></li>
@@ -128,7 +128,7 @@
                 <i class="fa fa-star"></i>
               </div>
               <h6>Price: <strong>€700.00</strong></h6>
-              <a href="bookingform.html">Book Now</a>
+              <a href="packages.html">Book Now</a>
             </div>
           </div>
 
@@ -148,7 +148,7 @@
                 <i class="fa fa-star "></i>
               </div>
               <h6>Price: <strong>€500.00</strong></h6>
-              <a href="bookingform.html">Book Now</a>
+              <a href="packages.html">Book Now</a>
             </div>
           </div>
 
@@ -167,8 +167,8 @@
                 <i class="fa fa-star "></i>
                 <i class="fa fa-star "></i>
               </div>
-              <h6>Price: <strong>$500</strong></h6>
-              <a href="bookingform.html">Book Now</a>
+              <h6>Price: <strong>€1149.00</strong></h6>
+              <a href="packages.html">Book Now</a>
             </div>
           </div>
 
@@ -293,24 +293,6 @@
 
   <br> <br>
 
-  <!--Use our budget app-->
-
-  <section class="budget-app">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h2>Roamie Expense App</h2>
-          <p>Use our app to help you plan your trip and keep track of your expenses.</p>
-          <a href="" class="btn btn-success">Expense App</a>
-        </div>
-        <div class="col-md-6">
-          <img src="images/budget.jpg" alt="Budget App" class="img-fluid">
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--End of budget app-->
-
 
   <!-- Back to Top -->
   <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-round back-to-top"><i class="fa fa-arrow-up"></i></a>
@@ -408,12 +390,11 @@
   });
 
   // Add event listener to the logout link
-  document.getElementById('logoutLink').addEventListener('click', function (event) {
+  document.getElementById('logoutLink').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default action of link
-    if (confirm("You are about to logout. Click OK to continue.")) {
-      logout(); // Call the logout function if user confirms
-    }
+    logout(); // Call the logout function
   });
+
   function logout() {
     signOut(auth).then(() => {
       // Sign-out successful.
