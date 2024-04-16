@@ -1,0 +1,122 @@
+.container {
+  padding-top: 10rem;
+}
+
+
+#box {
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+#filter {
+  margin-bottom: 20px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  color: #333;
+}
+
+.tours .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 35rem);
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.right-content {
+  float: right;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+}
+
+.btn:active {
+  background-color: #3e8e41;
+}
+
+.tours .grid .box {
+  background-color: var(--light-bg);
+  padding: 2rem;
+  backdrop-filter: blur(.4rem);
+  border-radius: .5rem;
+  position: relative;
+}
+
+.tours .grid .box .price {
+  position: absolute;
+  top: 2.9rem;
+  left: 3rem;
+  border-radius: .5rem;
+  background: var(--light-black);
+  font-size: 1.8rem;
+  padding: .8rem 1rem;
+}
+
+.tours .grid .box .price i {
+  color: var(--main-color);
+  margin-right: .5rem;
+}
+
+.tours .grid .box .price span {
+  color: var(--white);
+}
+
+.tours .grid .box .image {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: .5rem;
+  margin-bottom: 2rem;
+}
+
+.tours .grid .box .name {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.tours .grid .box .address {
+  font-size: 1.7rem;
+  color: var(--light-white);
+  line-height: 1.5;
+  padding: .5rem 0;
+}
+
+.tours .grid .box:hover {
+  background-color: var(--light-black);
+}
+
+.tours .grid .box:hover .price {
+  background-color: var(--black);
+}
