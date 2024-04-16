@@ -47,7 +47,7 @@
         <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
         <!-- Submenu for Discover -->
         <ul class="submenu">
-            <li><a href="upload.html">Upload</a></li>
+          <li><a href="upload.html">Upload</a></li>
           <li><a href="bookingform.html">Bookingform</a></li>
           <li><a href="packages.html">Packages</a></li>
         </ul>
@@ -70,9 +70,9 @@
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </li>
-      <li id="logoutButton" style="display: none;"><a href="#" onclick="logout()">
-        <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
-      </a></li>
+      <li id="logoutButton" style="display: none;"><a href="#" id="logoutLink">
+          <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
+        </a></li>
       <li><a href="register.html">
           <i class="fa fa-user" aria-hidden="true"></i>
         </a></li>
@@ -391,8 +391,9 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-// Authenticate user
-const auth = getAuth();
+
+  // Authenticate user
+  const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     const logoutButton = document.getElementById('logoutButton');
     if (user) {
@@ -404,6 +405,12 @@ const auth = getAuth();
       // Hide the log out button
       logoutButton.style.display = 'none';
     }
+  });
+
+  // Add event listener to the logout link
+  document.getElementById('logoutLink').addEventListener('click', function (event) {
+    event.preventDefault();
+    logout();
   });
 
   function logout() {
