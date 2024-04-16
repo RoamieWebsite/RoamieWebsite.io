@@ -70,7 +70,7 @@
           <li><a href="faq.html">FAQ</a></li>
         </ul>
       </li>
-      <li id="logoutButton"><a href="#" onclick="logout()">
+      <li id="logoutButton" style="display: none;"><a href="#" onclick="logout()">
         <i class="fa fa-sign-out-alt" aria-hidden="true"></i>
       </a></li>
       <li><a href="register.html">
@@ -391,25 +391,26 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-
-
-  //Authenticate user 
-  const auth = getAuth();
+// Authenticate user
+const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
+    const logoutButton = document.getElementById('logoutButton');
     if (user) {
       // User is signed in.
       // Show the log out button
-      document.getElementById('logoutButton').style.display = 'block';
+      logoutButton.style.display = 'block';
     } else {
       // User is signed out.
       // Hide the log out button
-      document.getElementById('logoutButton').style.display = 'none';
+      logoutButton.style.display = 'none';
     }
   });
-  signOut(auth).then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
 
+  function logout() {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  }
 </script>
