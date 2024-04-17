@@ -77,6 +77,8 @@
         </ul>
     </nav>
 
+    <br> <br> <br>
+
     <body>
         <div class="chat-container">
             <div class="chat-header">
@@ -85,7 +87,7 @@
             <div id="messages" class="chat-messages"></div>
             <div class="chat-input">
                 <input type="text" id="messageInput" class="message-input" placeholder="Type your message...">
-                <button onclick="sendMessage()" class="send-button">Send</button>
+                <button id="sendButton" class="send-button">Send</button>
             </div>
         </div>
         <span class="availability"></span>
@@ -177,11 +179,33 @@
         // Initialize Firebase Cloud Messaging
         const messaging = getMessaging(app);
 
-
         // Get a reference to the Firebase Realtime Database
         const database = getDatabase(app);
 
+        // Add event listener to the send button
+        document.getElementById('sendButton').addEventListener('click', sendMessage);
 
+
+        // Function to send a message
+        function sendMessage(e) {
+            e.preventDefault();
+            const timestamp = Date.now();
+            const messageInput = document.getElementById('messageInput');
+            const message = messageInput.value.trim();
+            if (message !== "") {
+                const userRef = ('messages').push();
+                userRef.set({
+                    user: username,
+                    message: message,
+                    timestamp: timestamp
+                });
+                messageInput.value = '';
+            } else {
+                alert("Please enter a message before sending.");
+            }
+        }
+
+        const username = prompt("Please Tell Us Your Name");
 
         // Getting a reference to the 'messages' node in the Firebase Realtime Database
         const messagesRef = ref(database, 'messages');
@@ -201,8 +225,6 @@
             // Scroll to the bottom of the messages container
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         });
-
-
 
         //Authenitcate user and send message to database
         const auth = getAuth();
@@ -245,12 +267,6 @@
                 notificationOptions);
         });
 
-        // Function to send a message
-        function sendMessage() {
-            const messageInput = document.getElementById('messageInput');
-            const message = messageInput.value;
-            messageInput.value = '';
-        }
         // Update UI to display tour guide availability status
         const tourGuideStatuses = document.querySelectorAll('.availability');
 
