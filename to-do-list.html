@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <!-- Title of the webpage -->
+    <title>Roamie - To do list </title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="to-do-list.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fonts for heading and body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+
+    <!-- Chat Bot -->
+    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
+
+</head>
+
+<body>
+    <!-- Header -->
+
+    <nav>
+        <!-- Logo image -->
+        <div class="logo">
+            <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        </div>
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="submenu-parent">
+                <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="bookingform.html">Bookingform</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                </ul>
+            </li>
+            <li class="submenu-parent">
+                <a href="#">Info</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
+            <li><a href="cart.html">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a></li>
+        </ul>
+    </nav>
+
+    <br> <br> <br>
+    <!-- Start of Todo List Section -->
+    <div id="todo-container">
+        <!-- Header Section -->
+        <div id="header">
+            <h1>Welcome to Your To-Do List</h1>
+        </div>
+
+        <!-- Input Box Section -->
+        <div id="todo-form">
+            <input type="text" class="input-item" name="input_box" id="input-box" placeholder="Enter Task Here" />
+            <button id="input-button" onclick="addTask()">Add Task</button>
+        </div>
+
+        <!-- Task List Section -->
+        <h2>Your Tasks</h2>
+        <ul id="list-container"></ul>
+
+        <!-- Divider -->
+        <hr>
+
+        <!-- Task Counter Section -->
+        <div class="counter-container">
+            <div id="task-counters">
+                <span id="completed-counter">Completed Tasks: 0</span> |
+                <span id="uncompleted-counter">Uncompleted Tasks: 0</span>
+            </div>
+        </div>
+    </div>
+    <!-- End of Todo List Section -->
+
+    <br> <br> <br>
+
+    <!-- End Header -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <!-- About section in the footer -->
+                    <h6>About</h6>
+                    <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable
+                        journeys!
+                        At Roamie, we believe that travel is not just about reaching a destination; it's about embracing
+                        the
+                        unknown,
+                        discovering new cultures, and creating stories that last a lifetime.
+                        Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire,
+                        guide, and
+                        elevate
+                        your travel experience.</p>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <!-- Quick Links section in the footer -->
+                    <h6>Quick Links</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <!-- Copyright information in the footer -->
+                    <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+                        <a href="#">Roamie</a>.
+                    </p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <!-- Social media icons in the footer -->
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+</body>
+<script src="to-do-list.js"></script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+
+    // My web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+        authDomain: "roamie-29b26.firebaseapp.com",
+        databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+        projectId: "roamie-29b26",
+        storageBucket: "roamie-29b26.appspot.com",
+        messagingSenderId: "770720238385",
+        appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
+        measurementId: "G-VQBEZ429JG"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    //Authenticate user and get UID
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // User is signed in, allow upload functionality
+            inputbutton.style.display = 'block';
+            // No user is signed in, hide upload functionality and display alert
+            inputbutton.style.display = 'none';
+            alert("Only logged-in users can add task to the to-do list. Please login first.");
+        }
+    });
+
+</script>
+</html>

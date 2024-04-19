@@ -1,0 +1,89 @@
+/*Styling the container */
+#todo-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #40E0D0;
+  border-radius: 5px;
+  font-family: 'Eagle Lake';
+}
+
+/* Styling the header */
+#header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling the input form */
+#todo-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+/* Styling the input item */
+.input-item {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Styling the input button */
+#input-button {
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Styling the task list */
+#list-container {
+  list-style: none;
+  padding: 0;
+}
+
+/* Styling the counter */
+.counter-container {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+}
+
+.task-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item:hover {
+  background-color: #f2f2f2;
+}
+
+
+/* Styling the divider */
+h1 {
+  margin-bottom: 20px;
+}
+
+#input-button:hover {
+  background-color: #9eb7fd;
+}
+
+.edit-btn,
+.delete-btn,
+.complete-btn {
+  float: right;
+  color: crimson;
+  cursor: pointer;
+  margin: 3px 5px;
+  border: none;
+  padding: 3px 5px;
+  background: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: red;
+}
