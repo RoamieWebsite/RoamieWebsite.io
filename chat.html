@@ -80,18 +80,21 @@
     <br> <br> <br>
 
     <body>
-        <div class="chat-container">
-            <div class="chat-header">
+        <div class="chat">
+            <div class="chat-title">
+                <h1>Roamie Chat Room</h1>
+                <figure class="avatar">
+                    <img src="images/chat.png" alt="Avatar" />
+                </figure>
             </div>
-            <h2>Roamie Tour Guide Chat</h2>
-            <div id="messages" class="chat-messages"></div>
-            <div class="chat-input">
-                <input type="text" id="messageInput" class="message-input" placeholder="Type your message...">
-                <button id="sendButton" class="send-button">Send</button>
+            <div class="messages">
+                <div class="messages-content"></div>
+            </div>
+            <div class="message-box">
+                <textarea class="message-input" id="message" placeholder="Type message..."></textarea>
+                <button class="message-submit">Send</button>
             </div>
         </div>
-        <span class="availability"></span>
-
 
         <br> <br> <br> <br> <br> <br>
         <!-- Footer -->
@@ -156,8 +159,8 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
-        import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-messaging.js";
+        import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+        import { getMessaging, onMessage } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-messaging.js";
 
 
         // My web app's Firebase configuration
@@ -171,8 +174,6 @@
             appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
             measurementId: "G-VQBEZ429JG"
         };
-
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
 
@@ -182,107 +183,62 @@
         // Get a reference to the Firebase Realtime Database
         const database = getDatabase(app);
 
-        // Add event listener to the send button
-        document.getElementById('sendButton').addEventListener('click', sendMessage);
+        //DOM elements
+        const messagesContent = document.querySelector('.messages-content');
+        const messageSubmit = document.querySelector('.message-submit');
+        const messageInput = document.querySelector('.message-input');
 
+        // Attach sendMessage function to message submit button
+        messageSubmit.addEventListener('click', sendMessage);
 
         // Function to send a message
         function sendMessage(e) {
             e.preventDefault();
+
+            // Trimming and validating message
             const timestamp = Date.now();
-            const messageInput = document.getElementById('messageInput');
             const message = messageInput.value.trim();
-            if (message !== "") {
-                const userRef = ('messages').push();
-                userRef.set({
-                    user: username,
-                    message: message,
-                    timestamp: timestamp
-                });
-                messageInput.value = '';
-            } else {
-                alert("Please enter a message before sending.");
-            }
-        }
 
-        const username = prompt("Please Tell Us Your Name");
+            // Prompt the user to tell us their name
+            const username = prompt("Please Tell Us Your Name");
 
-        // Getting a reference to the 'messages' node in the Firebase Realtime Database
-        const messagesRef = ref(database, 'messages');
-
-        // Listen for 'child_added' events on the 'messages' node
-        (messagesRef, (snapshot) => {
-            const message = snapshot.val();
-            const messagesContainer = document.getElementById('messages');
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message');
-            messageElement.innerHTML = `
-        <span class="message-sender">${message.user}</span>
-        <span class="message-content">${message.message}</span>
-    `;
-            // Append message element to the messages container
-            messagesContainer.appendChild(messageElement);
-            // Scroll to the bottom of the messages container
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        });
-
-        //Authenitcate user and send message to database
-        const auth = getAuth();
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // Push message data to Firebase Realtime Database
-                ('messages').push({
-                    user: user.uid,
-                    message: message,
-                    timestamp: firebase.database.ServerValue.TIMESTAMP
-                });
-            } else {
-                console.log('User not logged in.');
-            }
-        });
-
-        // Subscribe to the "messages" topic to receive notifications
-        getToken(messaging, { vapidKey: 'BGUYQ4jKknt6Xmt5h187PZ98yUFEq68z-CDsXk8vjMS4FfoQRU9nb4nEEyqPQZVGGH2x_bp-PryAVYKXQbjn5cI' }).then((currentToken) => {
-            if (currentToken) {
-                console.log('current token for client: ', currentToken);
-            } else {
-                console.log('No registration token available. Request permission to generate one.');
-            }
-        }).catch((err) => {
-            console.log('An error occurred while retrieving token. ', err);
-        });
-
-        // Receive incoming messages from Firebase Cloud Messaging
-        onMessage(messaging, (payload) => {
-            console.log('Message received. ', payload);
-            // Display notification to user using Notification API
-            const notificationTitle = 'You have a new message';
-            const notificationOptions = {
-                body: payload.data.message,
-                icon: '/firebase-logo.png'
-            };
-
-            self.registration.showNotification(notificationTitle,
-                notificationOptions);
-        });
-
-        // Update UI to display tour guide availability status
-        const tourGuideStatuses = document.querySelectorAll('.availability');
-
-        // Listen for changes in the tour guides data in the Firebase Realtime Database
-        const tourGuidesRef = ref(database, 'tour_guides');
-        // Listen for 'value' events on the 'tour_guides' node
-        (tourGuidesRef, (snapshot) => {
-            const tourGuides = snapshot.val();
-            tourGuideStatuses.forEach((element, index) => {
-                const tourGuide = tourGuides[index];
-                if (tourGuide) {
-                    element.textContent = tourGuide.status;
+            // Authenticating user and sending message to database
+            const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+                if (user && message !== '') {
+                    // Pushing message data to Firebase Realtime Database for authenticated user
+                    const messageRef = ref(database, 'messages').push();
+                    messageRef.set({
+                        user: username,
+                        message: message,
+                        timestamp: firebase.database.ServerValue.TIMESTAMP
+                    });
                 } else {
-                    element.textContent = 'Unavailable';
+                    console.log('User not logged in or message is empty.');
                 }
             });
+
+            // Clear message input
+            messageInput.value = '';
+        }
+
+        // Listening for new messages
+        onValue(ref(database, 'messages'), (snapshot) => {
+            messagesContent.innerHTML = ''; // Clear previous messages
+            const messages = snapshot.val();
+            for (let messageId in messages) {
+                const message = messages[messageId];
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.innerHTML = `
+            <span class="message-sender">${message.user}</span>
+            <span class="message-content">${message.message}</span>
+        `;
+                // Appending message element to the messages container
+                messagesContent.appendChild(messageElement);
+            }
+            // Scrolling to the bottom of the messages container
+            messagesContent.scrollTop = messagesContent.scrollHeight;
         });
 
     </script>
