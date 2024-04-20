@@ -1,52 +1,65 @@
-.chat-container {
-  max-width: 400px;
+.chat {
+  width: 400px;
   margin: 0 auto;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.chat-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.chat-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.chat-messages {
-  max-height: 300px;
-  overflow-y: auto;
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 20px;
-}
-
-.chat-input {
+.chat-title {
+  background-color: #f0f0f0;
+  padding: 10px;
   display: flex;
   align-items: center;
 }
 
-.message-input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.chat-title h1 {
+  margin: 0;
+  font-size: 1.2em;
 }
 
-.send-button {
+.avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.messages {
+  padding: 10px;
+  background-color: #fff;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.messages-content {
+  overflow: hidden;
+}
+
+.message-box {
+  padding: 10px;
+  background-color: #f9f9f9;
+  display: flex;
+}
+
+.message-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+
+.message-submit {
+  padding: 8px 15px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 10px 20px;
-  margin-left: 10px;
   cursor: pointer;
+  margin-left: 10px;
 }
 
-.send-button:hover {
+.message-submit:hover {
   background-color: #0056b3;
 }
