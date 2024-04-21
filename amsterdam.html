@@ -123,14 +123,14 @@
                                 city skyline.
                             </p>
                         </div>
-                        <h3>€700.00</h3>
+                        <h3 class="price">€700.00</h3>
                         <select class="package-type">
                             <option value="Basic">Basic</option>
                             <option value="Elite">Elite</option>
                             <option value="Premium">Premium</option>
                         </select>
-                        <br>
-                        <a href="#" class="btn btn-add-to-cart" action="cart.html">Add to cart</a>
+                        <a href="#" class="btn btn-add-to-cart">Add to cart</a>
+                        <div class="msg"></div> 
                     </div>
                 </div>
             </div>
@@ -147,7 +147,6 @@
                         <th>Image</th>
                         <th>Item</th>
                         <th>Price</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
             </table>
@@ -157,48 +156,17 @@
             <span class="cart-total-price" style="text-align: right;">€0.00</span>
         </div>
         <div class="btn btn-checkout" style="margin-top: 10%;">
-            <button type="button" class="btn btn-dark btn-checkout"><i class="fa-solid fa-cart-shopping"
-                    style="margin-right: 6%;"></i>Checkout</button>
+            <a href="payment.html" class="btn btn-dark btn-checkout" ><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>Checkout</button></a>
         </div>
         <div class="btn-clear-cart" style="margin-top: 10%;">
-            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark"
-                    style="margin-right: 6%;"></i>CLEAR CART</button>
+            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark" style="margin-right: 6%;"></i>CLEAR CART</button>
         </div>
     </section>
 
 
-    <div class="container">
-        <h2>Checkout</h2>
-        <div class="cart-container">
-            <div class="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong>Total:</strong> <span class="cart-total-price">€0.00</span>
-            </div>
-            <button class="btn btn-checkout" id="checkoutButton">Checkout</button>
-            <button class="btn btn-clear-cart" id="clearCartButton">Clear Cart</button>
-        </div>
 
-        <div id="checkoutForm" style="display: none;">
-            <h3>Payment Information</h3>
-            <form id="paymentForm">
-                <label for="cardNumber">Card Number:</label>
-                <input type="text" id="cardNumber" name="cardNumber" required><br><br>
 
-                <label for="expiryDate">Expiry Date:</label>
-                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
-
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" required><br><br>
-
-                <label for="name">Name on Card:</label>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <button type="submit" class="btn btn-primary">Pay Now</button>
-            </form>
-        </div>
-    </div>
-
+    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -251,155 +219,159 @@
         </div>
     </footer>
     <!-- End Footer -->
+</body>
 
-    <script type="module">
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+<script type="module">
 
-        // My web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-            authDomain: "roamie-29b26.firebaseapp.com",
-            databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-            projectId: "roamie-29b26",
-            storageBucket: "roamie-29b26.appspot.com",
-            messagingSenderId: "770720238385",
-            appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
-            measurementId: "G-VQBEZ429JG"
-        };
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        document.addEventListener('DOMContentLoaded', function () {
-            const checkoutButton = document.querySelector('.btn-checkout');
-            const clearCartButton = document.querySelector('.btn-clear-cart');
-            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+    // My web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+        authDomain: "roamie-29b26.firebaseapp.com",
+        databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+        projectId: "roamie-29b26",
+        storageBucket: "roamie-29b26.appspot.com",
+        messagingSenderId: "770720238385",
+        appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
+        measurementId: "G-VQBEZ429JG"
+    };
 
-            // Authenticate user and get UID
-            const auth = getAuth();
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    // User is signed in, allow upload functionality
-                    addToCartButtons.forEach(function (button) {
-                        button.style.display = 'block';
-                    });
-                    checkoutButton.style.display = 'block';
-                    clearCartButton.style.display = 'block';
-                } else {
-                    // No user is signed in, hide upload functionality and display alert
-                    addToCartButtons.forEach(function (button) {
-                        button.style.display = 'none';
-                    });
-                    checkoutButton.style.display = 'none';
-                    clearCartButton.style.display = 'none';
-                    alert("Only logged-in users can add packages to cart.");
-                }
-            });
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkoutButton = document.querySelector('.btn-checkout');
+        const clearCartButton = document.querySelector('.btn-clear-cart');
+        const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
 
-            addToCartButtons.forEach(function (button) {
-                button.addEventListener('click', addToCartClicked);
-            });
-            checkoutButton.addEventListener('click', checkoutClicked);
-            clearCartButton.addEventListener('click', clearCartClicked);
+        // Authenticate user and get UID
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, allow upload functionality
+                addToCartButtons.forEach(function (button) {
+                    button.style.display = 'block';
+                });
+                checkoutButton.style.display = 'block';
+                clearCartButton.style.display = 'block';
+            } else {
+                // No user is signed in, hide upload functionality and display alert
+                addToCartButtons.forEach(function (button) {
+                    button.style.display = 'none';
+                });
+                checkoutButton.style.display = 'none';
+                clearCartButton.style.display = 'none';
+                alert("Only logged-in users can add packages to cart.");
+            }
         });
 
-        function addToCartClicked(event) {
-            const card = event.target.closest('.card');
-            const title = card.querySelector('.name').textContent;
-            const imageSrc = card.querySelector('.main_image img').src;
-            const priceString = card.querySelector('.price').textContent;
-            const price = parseFloat(priceString.replace('€', '').trim());
-            const packageType = card.querySelector('.package-type').value;
-            const updatedPrice = getPackagePrice(price, packageType);
+        addToCartButtons.forEach(function (button) {
+            button.addEventListener('click', addToCartClicked);
+        });
+        checkoutButton.addEventListener('click', checkoutClicked);
+        clearCartButton.addEventListener('click', clearCartClicked);
+    });
 
-            addItemToCart(title, updatedPrice, imageSrc);
-            updateCartTotal();
-        }
+function addToCartClicked(event) {
+    const card = event.target.closest('.card');
+    const title = card.querySelector('.name').textContent;
+    const imageSrc = card.querySelector('.main_image img').src;
+    const priceString = card.querySelector('.price').textContent;
+    const price = parseFloat(priceString.replace('€', '').trim());
+    const packageType = card.querySelector('.package-type').value;
+    const updatedPrice = getPackagePrice(price, packageType);
 
-        function getPackagePrice(price, packageType) {
-            const multipliers = {
-                'Basic': 1,
-                'Premium': 2,
-                'Elite': 3
-            };
-            return price * multipliers[packageType];
-        }
+    addItemToCart(title, updatedPrice, imageSrc);
+    updateCartTotal();
+}
 
-        function addItemToCart(title, price, imageSrc) {
-            const cartItems = document.querySelector('.cart-items');
 
-            // Check if the item is already in the cart
-            const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
-            if (existingItem) {
-                alert('This item is already added to the cart!');
-                return;
-            }
+function getPackagePrice(price, packageType) {
+    const multipliers = {
+        'Basic': 1,
+        'Premium': 2,
+        'Elite': 3
+    };
+    return price * multipliers[packageType];
+}
 
-            const cartRow = document.createElement('div');
-            cartRow.classList.add('cart-row');
-            cartRow.innerHTML = `
-    <div class="cart-item cart-column">
-        <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
-        <span class="cart-item-title" data-title="${title}">${title}</span>                  
-    </div>
-    <span class="cart-price cart-column">${price.toFixed(2)}</span>
-    <div class="cart-item cart-column">
-        <input class="cart-quantity-input" type="number" value="1" min="1" style="width: 50px">
-        <button class="btn btn-danger" type="button">Remove</button>
-    </div>
+function addItemToCart(title, price, imageSrc) {
+    const cartItems = document.querySelector('.cart-items');
+
+    // Check if the item is already in the cart
+    const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
+    if (existingItem) {
+        alert('This item is already added to the cart!');
+        return;
+    }
+
+    const cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+    cartRow.innerHTML = `
+        <div class="cart-item cart-column">
+            <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
+            <span class="cart-item-title" data-title="${title}">${title}</span>                  
+        </div>
+        <span class="cart-price cart-column">${price.toFixed(2)}</span>
+        <div class="cart-item cart-column">
+            <input class="cart-quantity-input" type="number" value="1" min="1" style="width: 50px">
+            <button class="btn btn-danger" type="button">Remove</button>
+        </div>
     `;
-            cartItems.appendChild(cartRow);
+    cartItems.appendChild(cartRow);
 
-            // Add event listener for remove button
-            const removeButton = cartRow.querySelector('.btn-danger');
-            removeButton.addEventListener('click', removeCartItem);
+    // Add event listener for remove button
+    const removeButton = cartRow.querySelector('.btn-danger');
+    removeButton.addEventListener('click', removeCartItem);
 
-            // Add event listener for quantity input
-            const quantityInput = cartRow.querySelector('.cart-quantity-input');
-            quantityInput.addEventListener('change', quantityChanged);
-        }
+    // Add event listener for quantity input
+    const quantityInput = cartRow.querySelector('.cart-quantity-input');
+    quantityInput.addEventListener('change', quantityChanged);
+}
 
-        function removeCartItem(event) {
-            const buttonClicked = event.target;
-            buttonClicked.closest('.cart-row').remove();
-            updateCartTotal();
-        }
+function removeCartItem(event) {
+    const buttonClicked = event.target;
+    buttonClicked.closest('.cart-row').remove();
+    updateCartTotal();
+}
 
-        function quantityChanged(event) {
-            const input = event.target;
-            if (input.value <= 0) {
-                input.value = 1;
-            }
-            updateCartTotal();
-        }
+function quantityChanged(event) {
+    const input = event.target;
+    if (input.value <= 0) {
+        input.value = 1;
+    }
+    updateCartTotal();
+}
 
-        function updateCartTotal() {
-            let total = 0;
-            const cartRows = document.querySelectorAll('.cart-row');
-            cartRows.forEach(function (cartRow) {
-                const priceElement = cartRow.querySelector('.cart-price');
-                const quantityElement = cartRow.querySelector('.cart-quantity-input');
-                const price = parseFloat(priceElement.textContent);
-                const quantity = parseInt(quantityElement.value);
-                total += price * quantity;
-            });
-            document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
-        }
+function updateCartTotal() {
+    let total = 0;
+    const cartRows = document.querySelectorAll('.cart-row');
+    cartRows.forEach(function (cartRow) {
+        const priceElement = cartRow.querySelector('.cart-price');
+        const quantityElement = cartRow.querySelector('.cart-quantity-input');
+        const price = parseFloat(priceElement.textContent);
+        const quantity = parseInt(quantityElement.value);
+        total += price * quantity;
+    });
+    document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
+}
 
-        function checkoutClicked() {
-            alert('Thank you for your purchase!!!');
-            clearCart();
-        }
+function checkoutClicked() {
+    alert('You will be redirected to a payment area to complete your purchase.');
+    clearCart();
+}
 
-        function clearCartClicked() {
-            clearCart();
-        }
+function clearCartClicked() {
+    clearCart();
+}
 
-        function clearCart() {
-            const cartItems = document.querySelector('.cart-items');
-            cartItems.innerHTML = '';
-            updateCartTotal();
-        }
-    </script>
-</html> 
+function clearCart() {
+    const cartItems = document.querySelector('.cart-items');
+    cartItems.innerHTML = '';
+    updateCartTotal();
+}
+
+</script>
+</html>
