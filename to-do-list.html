@@ -167,6 +167,7 @@
 
 </body>
 <script src="to-do-list.js"></script>
+
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
@@ -186,17 +187,21 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
 
+    // Get elements
+    const inputButton = document.getElementById('input-button');
+
     //Authenticate user and get UID
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
         if (user) {
             // User is signed in, allow upload functionality
-            inputbutton.style.display = 'block';
+            inputButton.style.display = 'block';
             // No user is signed in, hide upload functionality and display alert
-            inputbutton.style.display = 'none';
+            inputButton.style.display = 'none';
             alert("Only logged-in users can add task to the to-do list. Please login first.");
         }
     });
 
 </script>
+
 </html>
