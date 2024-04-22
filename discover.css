@@ -1,71 +1,24 @@
-.heading{
-   font-family: Verdana, Geneva, Tahoma, sans-serif;
-   font-size: 7rem;
-   color: var(--white);
-   text-transform: uppercase;
+.game-container,
+.budgeting-app {
    text-align: center;
-   margin-bottom: 4rem;
+   margin-top: 50px;
 }
 
-.container{
-   padding-top: 10rem;
-}
-
-.tours .grid{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 35rem);
-   align-items: flex-start;
-   justify-content: center;
-   gap: 1.5rem;
-}
-
-.tours .grid .box{
-   background-color: var(--light-bg);
-   padding: 2rem;
-   backdrop-filter: blur(.4rem);
-   border-radius: .5rem;
-   position: relative;
-}
-
-.tours .grid .box .price{
-   position: absolute;
-   top: 2.9rem; left: 3rem;
-   border-radius: .5rem;
-   background: var(--light-black);
-   font-size: 1.8rem;
-   padding:.8rem 1rem;
-}
-
-.tours .grid .box .price i{
-   color: var(--main-color);
-   margin-right: .5rem;
-}
-
-.tours .grid .box .price span{
-   color: var(--white);
-}
-
-.tours .grid .box .image{
-   height: 20rem;
+.game-container img,
+.budgeting-app img {
    width: 100%;
-   object-fit: cover;
-   border-radius: .5rem;
-   margin-bottom: 2rem;
+   max-width: 500px;
 }
 
-.tours .grid .box .name{
-   font-size: 2rem;
-   color: var(--white);
+.game-container h2,
+.budgeting-app h2 {
+   font-size: 30px;
+   font-family: 'Playfair Display', serif;
 }
-.tours .grid .box .address{
-   font-size: 1.7rem;
-   color: var(--light-white);
-   line-height: 1.5;
-   padding: .5rem 0;
-}
-.tours .grid .box:hover{
-   background-color: var(--light-black);
-}
-.tours .grid .box:hover .price{
-   background-color: var(--black);
+
+.game-container p,
+.budgeting-app p {
+   font-family: 'Eagle Lake', cursive;
+   font-size: 18px;
+   margin-bottom: 30px;
 }
