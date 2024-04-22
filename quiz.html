@@ -38,102 +38,49 @@
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 </head>
 
-  
-  <!-- Internal CSS styles -->
-  <style>
-    #quiz-container {
-        max-width: 600px;
-        margin: 0 auto;
-        font-family: 'Eagle Lake', cursive;
-    }
-
-    #question-container {
-        background-color: #f8f8f8;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 20px;
-        font-family: 'Playfair Display', cursive;
-    }
-
-    #question-text {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-
-    button {
-        background-color: #4caf50;
-        color: white;
-        padding: 10px 20px;
-        margin: 5px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    button:hover {
-        background-color: #45a049;
-    }
-
-    #result-container {
-        display: none;
-        background-color: #f8f8f8;
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    #result-text {
-        font-size: 18px;
-        margin-bottom: 15px;
-    }
-  </style>
-  
 <body>
-  <!-- Header -->
-  <nav>
-    <!-- Logo image -->
-    <div class="logo">
-      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
-    </div>
-    <!-- Navigation links -->
-    <ul class="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li class="submenu-parent">
-        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Discover -->
-        <ul class="submenu">
-          <li><a href="upload.html">Upload</a></li>
-          <li><a href="bookingform.html">Bookingform</a></li>
-          <li><a href="packages.html">Packages</a></li>
+       <!-- Header -->
+       <nav>
+        <!-- Logo image -->
+        <div class="logo">
+            <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        </div>
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="submenu-parent">
+                <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="bookingform.html">Bookingform</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="to-do-list.html">To do list</a></li>
+                </ul>
+            </li>
+            <li class="submenu-parent">
+                <a href="#">Info</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
         </ul>
-      </li>
-      <li class="submenu-parent">
-        <a href="#">Info</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Info -->
-        <ul class="submenu">
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="weather.html">Weather</a></li>
-          <li><a href="currency.html">Currency</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-      <li class="submenu-parent">
-        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-        <ul class="submenu">
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li><a href="register.html">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a></li>
-      <li><a href="cart.html">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a></li>
-    </ul>
-  </nav>
-  <br>
+    </nav>
 
   <div id="quiz-container">
     <h1>Personality Quiz</h1>
@@ -207,6 +154,8 @@
     </div>
   </footer>
   <!-- End Footer -->
+
+
 </body>
 
 </html>
