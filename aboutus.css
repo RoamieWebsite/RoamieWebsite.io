@@ -1,3 +1,22 @@
-#about-us {
-  padding: 40px 0;
+ /* About Us Section */
+ #about-us {
+  margin-top: 5rem;
+}
+
+#about-us h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Eagle Lake', cursive; 
+  margin-bottom: 1rem;
+}
+
+#about-us p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+#about-us .img-fluid {
+  max-width: 100%;
+  height: auto;
 }
