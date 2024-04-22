@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roamie - Payment</title>
+
+  <!--Link to external stylesheet-->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="payment.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Fonts for heading and body -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
+  <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav>
+      <!-- Logo image -->
+      <div class="logo">
+          <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+      </div>
+      <!-- Navigation links -->
+      <ul class="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li class="submenu-parent">
+              <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+              <!-- Submenu for Explore -->
+              <ul class="submenu">
+                  <li><a href="upload.html">Upload</a></li>
+                  <li><a href="bookingform.html">Bookingform</a></li>
+                  <li><a href="packages.html">Packages</a></li>
+                  <li><a href="to-do-list.html">To do list</a></li>
+              </ul>
+          </li>
+          <li class="submenu-parent">
+              <a href="#">Info</a><i class="fas fa-caret-down"></i>
+              <!-- Submenu for Explore -->
+              <ul class="submenu">
+                  <li><a href="pricing.html">Pricing</a></li>
+                  <li><a href="quiz.html">Quiz</a></li>
+                  <li><a href="weather.html">Weather</a></li>
+                  <li><a href="currency.html">Currency</a></li>
+              </ul>
+          </li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li class="submenu-parent">
+              <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+              <ul class="submenu">
+                  <li><a href="faq.html">FAQ</a></li>
+              </ul>
+          </li>
+          <li><a href="register.html">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+              </a></li>
+      </ul>
+  </nav>
+  
+  <!-- Payment Details -->
+
+  <br> <br> <br>
+
+      <!-- Shopping Cart -->
+      <section class="container content-section" id="shopping-cart">
+        <h3 style="text-decoration: underline; text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
+        <div class="cart-items">
+            <table class="table table-hover table-cart">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="cart-total" style="margin-top: 20px;">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price" style="text-align: right;">€0.00</span>
+        </div>
+        <div class="btn btn-checkout" style="margin-top: 10%;">
+            <button type="button" class="btn btn-dark btn-checkout"><i class="fa-solid fa-cart-shopping"
+                    style="margin-right: 6%;"></i>Checkout</button>
+        </div>
+        <div class="btn-clear-cart" style="margin-top: 10%;">
+            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark"
+                    style="margin-right: 6%;"></i>CLEAR CART</button>
+        </div>
+    </section>
+
+  <div id="checkoutForm">
+    <h3>Payment Information</h3>
+    <form id="paymentForm">
+      <label for="cardNumber">Card Number:</label>
+      <input type="text" id="cardNumber" name="cardNumber" required><br><br>
+
+      <label for="expiryDate">Expiry Date:</label>
+      <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required><br><br>
+
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required><br><br>
+
+      <label for="name">Name on Card:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <button type="submit" class="btn btn-primary">Pay Now</button>
+    </form>
+  </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown, discovering new cultures, and creating stories that last a lifetime. Whether you're a seasoned
+            globetrotter or a first-time explorer, Roamie is here to inspire, guide, and elevate your travel experience.
+          </p>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">Roamie</a>.
+          </p>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
