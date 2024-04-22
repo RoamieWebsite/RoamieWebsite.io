@@ -47,8 +47,10 @@
                 <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
                 <!-- Submenu for Explore -->
                 <ul class="submenu">
+                    <li><a href="upload.html">Upload</a></li>
                     <li><a href="bookingform.html">Bookingform</a></li>
                     <li><a href="packages.html">Packages</a></li>
+                    <li><a href="to-do-list.html">To do list</a></li>
                 </ul>
             </li>
             <li class="submenu-parent">
@@ -72,12 +74,8 @@
             <li><a href="register.html">
                     <i class="fa fa-user" aria-hidden="true"></i>
                 </a></li>
-            <li><a href="cart.html">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </a></li>
         </ul>
     </nav>
-
 
     <div class="container mt-5 mb-5">
         <div class="card">
@@ -130,7 +128,6 @@
                             <option value="Premium">Premium</option>
                         </select>
                         <a href="#" class="btn btn-add-to-cart">Add to cart</a>
-                        <div class="msg"></div> 
                     </div>
                 </div>
             </div>
@@ -156,17 +153,16 @@
             <span class="cart-total-price" style="text-align: right;">€0.00</span>
         </div>
         <div class="btn btn-checkout" style="margin-top: 10%;">
-            <a href="payment.html" class="btn btn-dark btn-checkout" ><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>Checkout</button></a>
+            <a href="payment.html" class="btn btn-dark btn-checkout"><i class="fa-solid fa-cart-shopping"
+                    style="margin-right: 6%;"></i>Checkout</button></a>
         </div>
         <div class="btn-clear-cart" style="margin-top: 10%;">
-            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark" style="margin-right: 6%;"></i>CLEAR CART</button>
+            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark"
+                    style="margin-right: 6%;"></i>CLEAR CART</button>
         </div>
     </section>
 
 
-
-
-    
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
@@ -274,42 +270,42 @@
         clearCartButton.addEventListener('click', clearCartClicked);
     });
 
-function addToCartClicked(event) {
-    const card = event.target.closest('.card');
-    const title = card.querySelector('.name').textContent;
-    const imageSrc = card.querySelector('.main_image img').src;
-    const priceString = card.querySelector('.price').textContent;
-    const price = parseFloat(priceString.replace('€', '').trim());
-    const packageType = card.querySelector('.package-type').value;
-    const updatedPrice = getPackagePrice(price, packageType);
+    function addToCartClicked(event) {
+        const card = event.target.closest('.card');
+        const title = card.querySelector('.name').textContent;
+        const imageSrc = card.querySelector('.main_image img').src;
+        const priceString = card.querySelector('.price').textContent;
+        const price = parseFloat(priceString.replace('€', '').trim());
+        const packageType = card.querySelector('.package-type').value;
+        const updatedPrice = getPackagePrice(price, packageType);
 
-    addItemToCart(title, updatedPrice, imageSrc);
-    updateCartTotal();
-}
-
-
-function getPackagePrice(price, packageType) {
-    const multipliers = {
-        'Basic': 1,
-        'Premium': 2,
-        'Elite': 3
-    };
-    return price * multipliers[packageType];
-}
-
-function addItemToCart(title, price, imageSrc) {
-    const cartItems = document.querySelector('.cart-items');
-
-    // Check if the item is already in the cart
-    const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
-    if (existingItem) {
-        alert('This item is already added to the cart!');
-        return;
+        addItemToCart(title, updatedPrice, imageSrc);
+        updateCartTotal();
     }
 
-    const cartRow = document.createElement('div');
-    cartRow.classList.add('cart-row');
-    cartRow.innerHTML = `
+
+    function getPackagePrice(price, packageType) {
+        const multipliers = {
+            'Basic': 1,
+            'Premium': 2,
+            'Elite': 3
+        };
+        return price * multipliers[packageType];
+    }
+
+    function addItemToCart(title, price, imageSrc) {
+        const cartItems = document.querySelector('.cart-items');
+
+        // Check if the item is already in the cart
+        const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
+        if (existingItem) {
+            alert('This item is already added to the cart!');
+            return;
+        }
+
+        const cartRow = document.createElement('div');
+        cartRow.classList.add('cart-row');
+        cartRow.innerHTML = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
             <span class="cart-item-title" data-title="${title}">${title}</span>                  
@@ -320,58 +316,61 @@ function addItemToCart(title, price, imageSrc) {
             <button class="btn btn-danger" type="button">Remove</button>
         </div>
     `;
-    cartItems.appendChild(cartRow);
+        cartItems.appendChild(cartRow);
 
-    // Add event listener for remove button
-    const removeButton = cartRow.querySelector('.btn-danger');
-    removeButton.addEventListener('click', removeCartItem);
+        // Add event listener for remove button
+        const removeButton = cartRow.querySelector('.btn-danger');
+        removeButton.addEventListener('click', removeCartItem);
 
-    // Add event listener for quantity input
-    const quantityInput = cartRow.querySelector('.cart-quantity-input');
-    quantityInput.addEventListener('change', quantityChanged);
-}
-
-function removeCartItem(event) {
-    const buttonClicked = event.target;
-    buttonClicked.closest('.cart-row').remove();
-    updateCartTotal();
-}
-
-function quantityChanged(event) {
-    const input = event.target;
-    if (input.value <= 0) {
-        input.value = 1;
+        // Add event listener for quantity input
+        const quantityInput = cartRow.querySelector('.cart-quantity-input');
+        quantityInput.addEventListener('change', quantityChanged);
     }
-    updateCartTotal();
-}
 
-function updateCartTotal() {
-    let total = 0;
-    const cartRows = document.querySelectorAll('.cart-row');
-    cartRows.forEach(function (cartRow) {
-        const priceElement = cartRow.querySelector('.cart-price');
-        const quantityElement = cartRow.querySelector('.cart-quantity-input');
-        const price = parseFloat(priceElement.textContent);
-        const quantity = parseInt(quantityElement.value);
-        total += price * quantity;
-    });
-    document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
-}
+    function removeCartItem(event) {
+        const buttonClicked = event.target;
+        buttonClicked.closest('.cart-row').remove();
+        updateCartTotal();
+    }
 
-function checkoutClicked() {
-    alert('You will be redirected to a payment area to complete your purchase.');
-    clearCart();
-}
+    function quantityChanged(event) {
+        const input = event.target;
+        if (input.value <= 0) {
+            input.value = 1;
+        }
+        updateCartTotal();
+    }
 
-function clearCartClicked() {
-    clearCart();
-}
+    function updateCartTotal() {
+        let total = 0;
+        const cartRows = document.querySelectorAll('.cart-row');
+        cartRows.forEach(function (cartRow) {
+            const priceElement = cartRow.querySelector('.cart-price');
+            const quantityElement = cartRow.querySelector('.cart-quantity-input');
+            const price = parseFloat(priceElement.textContent);
+            const quantity = parseInt(quantityElement.value);
+            total += price * quantity;
+        });
+        document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
+    }
 
-function clearCart() {
-    const cartItems = document.querySelector('.cart-items');
-    cartItems.innerHTML = '';
-    updateCartTotal();
-}
+    function checkoutClicked() {
+        alert('You will be redirected to a payment area to complete your purchase.');
+        clearCart();
+    }
+
+    function clearCartClicked() {
+        clearCart();
+    }
+
+    function clearCart() {
+        const cartItems = document.querySelector('.cart-items');
+        cartItems.innerHTML = '';
+        updateCartTotal();
+    }
+
+
 
 </script>
+
 </html>
