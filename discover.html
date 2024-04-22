@@ -9,6 +9,7 @@
   <!--Link to external CSS file -->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="discover.css">
+  <link rel="stylesheet" type="text/css" href="package.css">
   <link href="css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Fonts for heading and body -->
@@ -22,8 +23,8 @@
   <!-- Font Awesome Kit -->
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
-  <!--ChatBot-->
-  <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+  <!-- Chat Bot -->
+  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
 
   <!-- AOS Library -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -33,185 +34,107 @@
   <nav>
     <!-- Logo image -->
     <div class="logo">
-      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
     </div>
     <!-- Navigation links -->
     <ul class="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li class="submenu-parent">
-        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Explore -->
-        <ul class="submenu">
-          <li><a href="bookingform.html">Bookingform</a></li>
-          <li><a href="packages.html">Packages</a></li>
-        </ul>
-      </li>
-      <li class="submenu-parent">
-        <a href="#">Info</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Explore -->
-        <ul class="submenu">
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="weather.html">Weather</a></li>
-          <li><a href="currency.html">Currency</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-      <li class="submenu-parent">
-        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-        <ul class="submenu">
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li><a href="register.html">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a></li>
-      <li><a href="cart.html">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="submenu-parent">
+            <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="bookingform.html">Bookingform</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="to-do-list.html">To do list</a></li>
+            </ul>
+        </li>
+        <li class="submenu-parent">
+            <a href="#">Info</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="submenu-parent">
+            <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+            <ul class="submenu">
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </li>
+        <li><a href="register.html">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a></li>
     </ul>
-  </nav>
+</nav>
 
-  <!-- Blog Start -->
-  <div class="container-fluid py-5">
-    <div class="container pt-5 pb-3">
-      <div class="text-center mb-3 pb-3">
-        <h6 class="text-secondary text-uppercase" style="letter-spacing: 5px;">Blogs</h6>
-        <h1>From our latest Blog</h1>
+<!--Check out our packages-->
+
+  <div id="packages" class="container tours">
+    <section class="grid">
+      <div class="box" data-aos="fade-up">
+        <div class="price"><i class='fas fa-euro-sign'><span>1149.00</span></i></div>
+        <div class="right-content">
+          <div class="rating">
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+          </div>
+        </div>
+        <img src="images/package-1.jpg" class="image" alt="">
+        <h3 class="name">Spain Package</h3>
+        <a href="bookingform.html" class="btn btn-enquiry">Send Enquiry</a>
+        <a href="spain.html" class="btn btn-details">Details</a>
       </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="package-item bg-white mb-2">
-            <img class="img-fluid" src="images/blog-1.jpg" alt=""></a>
-            <div class="p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>Dublin</small>
-                <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>21st June</small>
-                <small class="m-0"><i class="fa fa-user text-secondary mr-2"></i></small>
-              </div>
-              <a class="h5 text-decoration-none" href="post_one.html">Sza in Dublin</a>
-              <div class="border-top mt-4 pt-4">
-                <div class="d-flex justify-content-between">
-                  <h6 class="m-0">by Erica <small></small></h6>
-                </div>
-              </div>
-            </div>
+
+      <!--Package 2-->
+      <div class="box" data-aos="fade-up">
+        <div class="price"><i class='fas fa-euro-sign'><span>500.00</span></i></div>
+        <div class="right-content">
+          <div class="rating">
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
+            <i class="fa fa-star" style="color: #f1fd49;"></i>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="package-item bg-white mb-2">
-            <img class="img-fluid" src="images/package-6.jpg" alt="">
-            <div class="p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>America</small>
-                <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>3 days</small>
-              </div>
-              <a class="h5 text-decoration-none" href="post_two.html">Trip to America</a>
-              <div class="border-top mt-4 pt-4">
-                <div class="d-flex justify-content-between">
-                  <h6 class="m-0">by Kemi <small></small></h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="package-item bg-white mb-2">
-            <img class="img-fluid" src="images/photo02.jpg" alt="">
-            <div class="p-4">
-              <div class="d-flex justify-content-between mb-3">
-                <small class="m-0"><i class="fa fa-map-marker-alt text-secondary mr-2"></i>Spain</small>
-                <small class="m-0"><i class="fa fa-calendar-alt text-secondary mr-2"></i>3 days</small>
-              </div>
-              <a class="h5 text-decoration-none" href="post_three.html">Menocra </a>
-              <div class="border-top mt-4 pt-4">
-                <div class="d-flex justify-content-between">
-                  <h6 class="m-0">by Timmy</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="images/package-2.jpg" class="image" alt="">
+        <h3 class="name">Paris Package</h3>
+        <a href="bookingform.html" class="btn btn-enquiry">Send Enquiry</a>
+        <a href="paris.html" class="btn btn-details">Details</a>
       </div>
-    </div>
+    </section>
   </div>
-  <!-- Blog End -->
+
+  <!--- Game --->
+  <div class="game-container" data-aos="fade-up">
+    <h2>Play our Game and get a discount</h2>
+    <p>Try your luck and get a special discount on your package</p>
+   <img src="images/game.png">
+   <a href="https://itch.io/embed/2661378" class="btn btn-play-game">Play game</a>
+</div>
+
+<!--Game end-->
 
 
-  <!-- Testimonials-->
-  <section class="bg-transparent">
-    <div class="container mb-5 mb-md-6">
-      <div class="row justify-content-md-center">
-        <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
-          <h2>Testimonials </h2>
-          <p>Our Happy Client's reviews.</p>
-          <hr class="w-50 mx-auto mb-0 text-secondary">
-        </div>
-      </div>
-    </div>
+<!---Budgeting app-->
 
-    <div class="container overflow-hidden">
-      <div class="row justify-content-lg-around gy-5 gy-md-6">
-        <div class="col-12 col-sm-6 col-lg-5">
-          <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-            <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p2.jpg" width="100"
-              height="100" alt="person">
-            <p class="mb-2">Roamie made it so easy to plan my trip - it was like having my own personal travel
-              assistant!</p>
-            <p class="m-0 fw-bold">Luna Butler</p>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-          </div>
-        </div>
+<div class="budgeting-app" data-aos="fade-up">
+  <h2>Budget Your Travels</h2>
+  <p>Use our budgeting app to plan and manage your travel expenses.</p>
+  <img src="images/budget.png">
+  <a href="https://roamie-app.netlify.app/sign-in" class="btn btn-budgeting-app">Budgeting App</a>
+</div>
+<!--Budgeting app end-->
 
-        <div class="col-12 col-sm-6 col-lg-5">
-          <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-            <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p1.jpg" width="100"
-              height="100" alt="person">
-            <p class="mb-2">We can't understand how we've been living without Roamie.</p>
-            <p class="m-0 fw-bold">Jack Burr</p>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-5">
-          <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-            <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p3.jpg" width="100"
-              height="100" alt="person">
-            <p class="mb-2">I recently used Roamie for my vacation planning and I was extremely impressed with the
-              level of support I received.</p>
-            <p class="m-0 fw-bold">Ryana Wilson</p>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-          </div>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-5">
-          <div class="col-xl-11 col-xxl-10 mx-auto text-center">
-            <img class="img-fluid rounded rounded-circle mb-4" loading="lazy" src="images/p4.jpg" width="100"
-              height="100" alt="person">
-            <p class="mb-2">I would highly recommend Roamie to anyone looking for a reliable and stress-free travel
-              planning experience.. </p>
-            <p class="m-0 fw-bold">Luke Reeves</p>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-            <i class="fa fa-star" style="color: #f1fd49;"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
+<br> <br>
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -261,10 +184,9 @@
     </div>
   </footer>
 </body>
-<!-- destinations section ends -->
+
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <!-- custom js file link  -->
 <script src="discover.js"></script>
-
 
 </html>
