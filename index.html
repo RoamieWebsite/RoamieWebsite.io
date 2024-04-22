@@ -403,17 +403,16 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
   import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
 
-
   // My web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-    authDomain: "roamie-29b26.firebaseapp.com",
-    databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-    projectId: "roamie-29b26",
-    storageBucket: "roamie-29b26.appspot.com",
-    messagingSenderId: "770720238385",
-    appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
-    measurementId: "G-VQBEZ429JG"
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    databaseURL: "YOUR_DATABASE_URL",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    measurementId: "YOUR_MEASUREMENT_ID"
   };
 
   // Initialize Firebase
@@ -436,9 +435,15 @@
 
   // Add event listener to the logout link
   document.getElementById('logoutLink').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent default action of link
-    logout(); // Call the logout function
+    event.preventDefault();
+    confirmLogout();
   });
+
+  function confirmLogout() {
+    if (confirm("Are you sure you want to log out?")) {
+      logout();
+    }
+  }
 
   function logout() {
     signOut(auth).then(() => {
