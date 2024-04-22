@@ -5,10 +5,10 @@
   <!-- Meta tags for character set and viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
-  
+
   <!-- Title of the webpage -->
   <title>Roamie - Contact Us</title>
-  
+
   <!-- Link to external CSS file -->
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="contact.css">
@@ -26,85 +26,81 @@
   <!-- Font Awesome Kit -->
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
-      <!-- Chat Bot -->
-    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+  <!-- Chat Bot -->
+  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
 
 </head>
 
 <body>
-	  <!-- Header -->
+  <!-- Header -->
+  <nav>
+    <!-- Logo image -->
+    <div class="logo">
+        <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+    </div>
+    <!-- Navigation links -->
+    <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li class="submenu-parent">
+            <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="bookingform.html">Bookingform</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="to-do-list.html">To do list</a></li>
+            </ul>
+        </li>
+        <li class="submenu-parent">
+            <a href="#">Info</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="submenu-parent">
+            <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+            <ul class="submenu">
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </li>
+        <li><a href="register.html">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a></li>
+    </ul>
+</nav>
 
-	  <nav>
-		<!-- Logo image -->
-		<div class="logo">
-		  <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
-		</div>
-		<!-- Navigation links -->
-		<ul class="navbar">
-		  <li><a href="index.html">Home</a></li>
-		  <li class="submenu-parent">
-			<a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-			<!-- Submenu for Discover -->
-			<ul class="submenu">
-			 <li><a href="upload.html">Upload</a></li>
-			  <li><a href="bookingform.html">Bookingform</a></li>
-			  <li><a href="packages.html">Packages</a></li>
-			</ul>
-		  </li>
-		  <li class="submenu-parent">
-			<a href="#">Info</a><i class="fas fa-caret-down"></i>
-			<!-- Submenu for Info -->
-			<ul class="submenu">
-			  <li><a href="pricing.html">Pricing</a></li>
-			  <li><a href="quiz.html">Quiz</a></li>
-			  <li><a href="weather.html">Weather</a></li>
-			  <li><a href="currency.html">Currency</a></li>
-			</ul>
-		  </li>
-		  <li><a href="blog.html">Blog</a></li>
-		  <li><a href="aboutus.html">About Us</a></li>
-		  <li class="submenu-parent">
-			<a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-			<ul class="submenu">
-			  <li><a href="faq.html">FAQ</a></li>
-			</ul>
-		  </li>
-		  <li><a href="register.html">
-			  <i class="fa fa-user" aria-hidden="true"></i>
-			</a></li>
-		  <li><a href="cart.html">
-			  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-			</a></li>
-		</ul>
-	  </nav>
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="row g-3" action="https://formsubmit.co/odeje75@gmail.com" method="POST">
 
-    <section class="contact-section">
-        <h2>Contact Us</h2>
-<form class="row g-3" action="https://formsubmit.co/odeje75@gmail.com" method="POST">
+      <!-- Honeypot -->
+      <input type="text" name="_honey" style="display: none;">
 
-	<!-- Honeypot -->
-            <input type="text" name="_honey" style="display: none;">
-  
-            <!-- Disable Captcha -->
-            <input type="hidden" name="_captcha" value="false">
-  
-            <input type="hidden" name="_next" value="https://roamie.tech/success.html" >
-  
-         <p style="background-image: url('images/photo04.jpg');">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
+      <!-- Disable Captcha -->
+      <input type="hidden" name="_captcha" value="false">
 
-            <label for="email">Your Email:</label>
-            <input type="email" id="email" name="email" required>
+      <input type="hidden" name="_next" value="https://roamie.tech/success.html">
 
-            <label for="message">Your Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
 
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
 
-	<br> <br> <br>
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <br> <br> <br>
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
@@ -113,9 +109,11 @@
           <!-- About section in the footer -->
           <h6>About</h6>
           <p class="text-justify">Welcome to Roamie, your passport to boundless adventures and unforgettable journeys!
-            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the unknown,
+            At Roamie, we believe that travel is not just about reaching a destination; it's about embracing the
+            unknown,
             discovering new cultures, and creating stories that last a lifetime.
-            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and elevate
+            Whether you're a seasoned globetrotter or a first-time explorer, Roamie is here to inspire, guide, and
+            elevate
             your travel experience.</p>
         </div>
         <div class="col-xs-6 col-md-3">
@@ -125,7 +123,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="aboutus.html">About </a></li>
             <li><a href="explore.html">Explore</a></li>
-	    <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact Me</a></li>
           </ul>
@@ -153,4 +151,5 @@
     </div>
   </footer>
 </body>
+
 </html>
