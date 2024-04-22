@@ -28,7 +28,8 @@
   <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
   <!-- Chat Bot -->
-  <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+  <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+
 
 
 </head>
@@ -37,46 +38,44 @@
   <nav>
     <!-- Logo image -->
     <div class="logo">
-      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
     </div>
     <!-- Navigation links -->
     <ul class="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li class="submenu-parent">
-        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Discover -->
-        <ul class="submenu">
-          <li><a href="upload.html">Upload</a></li>
-          <li><a href="bookingform.html">Bookingform</a></li>
-          <li><a href="packages.html">Packages</a></li>
-        </ul>
-      </li>
-      <li class="submenu-parent">
-        <a href="#">Info</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Info -->
-        <ul class="submenu">
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="weather.html">Weather</a></li>
-          <li><a href="currency.html">Currency</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-      <li class="submenu-parent">
-        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-        <ul class="submenu">
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li><a href="register.html">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a></li>
-      <li><a href="cart.html">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="submenu-parent">
+            <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="upload.html">Upload</a></li>
+                <li><a href="bookingform.html">Bookingform</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="to-do-list.html">To do list</a></li>
+            </ul>
+        </li>
+        <li class="submenu-parent">
+            <a href="#">Info</a><i class="fas fa-caret-down"></i>
+            <!-- Submenu for Explore -->
+            <ul class="submenu">
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="currency.html">Currency</a></li>
+            </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li class="submenu-parent">
+            <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+            <ul class="submenu">
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </li>
+        <li><a href="register.html">
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a></li>
     </ul>
-  </nav>
+</nav>
 
 
   <div id="box">
@@ -88,7 +87,7 @@
         <option value="500">below 500</option>
         <option value="700">below 700</option>
         <option value="1000">below 1000</option>
-        <option value="1000">below 2000</option>
+        <option value="2000">below 2000</option>
       </select>
 
       <label for="Rating">filter by Rating range</label>
@@ -97,10 +96,12 @@
         <option value="">Select Rating</option>
         <option value="2">below 2</option>
         <option value="4">below 4</option>
+        <option value="4">below 5</option>
       </select>
     </div>
     <div id="container"></div>
   </div>
+
 
 
   <!--Packages section start-->
@@ -119,10 +120,8 @@
         </div>
         <img src="images/package-1.jpg" class="image" alt="">
         <h3 class="name">Spain Package</h3>
-        <p class="address">Tenerife, Spain</p>
-        <a href="bookingform.html" class="btn">Send Enquiry</a>
-        <a href="spain.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
+        <a href="bookingform.html" class="btn btn-enquiry">Send Enquiry</a>
+        <a href="spain.html" class="btn btn-details">Details</a>
       </div>
 
       <!--Package 2-->
@@ -138,10 +137,8 @@
         </div>
         <img src="images/package-2.jpg" class="image" alt="">
         <h3 class="name">Paris Package</h3>
-        <p class="address">Paris, France</p>
-        <a href="bookingform.html" class="btn">Send Enquiry</a>
-        <a href="paris.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
+        <a href="bookingform.html" class="btn btn-enquiry">Send Enquiry</a>
+        <a href="paris.html" class="btn btn-details">Details</a>
       </div>
 
       <!--Package 3-->
@@ -156,10 +153,8 @@
         </div>
         <img src="images/package-3.jpg" class="image" alt="">
         <h3 class="name">Amsterdam Package</h3>
-        <p class="address">Amsterdam, Holland</p>
-        <a href="bookingform.html" class="btn">Send Enquiry</a>
-        <a href="amsterdam.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
+        <a href="bookingform.html" class="btn btn-enquiry">Send Enquiry</a>
+        <a href="amsterdam.html" class="btn btn-details">Details</a>
       </div>
 
       <!--Package 4-->
@@ -175,10 +170,8 @@
         </div>
         <img src="images/package-4.jpg" class="image" alt="">
         <h3 class="name">Lapland Package</h3>
-        <p class="address">Lapland, Finland</p>
         <a href="bookingform.html" class="btn">Send Enquiry</a>
         <a href="finland.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
       </div>
 
       <!--Package 5-->
@@ -193,10 +186,8 @@
         </div>
         <img src="images/package-5.jpg" class="image" alt="">
         <h3 class="name">Berlin Package</h3>
-        <p class="address">Berlin, Germany</p>
         <a href="bookingform.html" class="btn">Send Enquiry</a>
         <a href="berlin.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
       </div>
 
       <!--Package 6-->
@@ -212,13 +203,11 @@
         </div>
         <img src="images/package-6.jpg" class="image" alt="">
         <h3 class="name">New York Package</h3>
-        <p class="address">New York, USA</p>
         <a href="bookingform.html" class="btn">Send Enquiry</a>
         <a href="newyork.html" class="btn">Details</a>
-        <a href="cart.html" class="btn">Add to cart</a>
       </div>
-    </section>
   </div>
+  </section>
   <!-- Packages section ends -->
 
   <!-- Footer -->
@@ -275,17 +264,6 @@
   </footer>
   <!-- End Footer -->
 </body>
-
-<script src="cart.js"></script>
 <script src="packages.js"></script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
-
-  // AOS
-  AOS.init({
-    duration: 400,
-    delay: 200,
-  });
-</script>
 
 </html>
