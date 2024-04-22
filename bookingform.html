@@ -34,52 +34,47 @@
 
 
 <body>
-
-  <!-- Header -->
-
-  <nav>
-    <!-- Logo image -->
-    <div class="logo">
-      <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
-    </div>
-    <!-- Navigation links -->
-    <ul class="navbar">
-      <li><a href="index.html">Home</a></li>
-      <li class="submenu-parent">
-        <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Discover -->
-        <ul class="submenu">
-          <li><a href="upload.html">Upload</a></li>
-          <li><a href="bookingform.html">Bookingform</a></li>
-          <li><a href="packages.html">Packages</a></li>
+    <nav>
+        <!-- Logo image -->
+        <div class="logo">
+            <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+        </div>
+        <!-- Navigation links -->
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li class="submenu-parent">
+                <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="bookingform.html">Bookingform</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="to-do-list.html">To do list</a></li>
+                </ul>
+            </li>
+            <li class="submenu-parent">
+                <a href="#">Info</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
         </ul>
-      </li>
-      <li class="submenu-parent">
-        <a href="#">Info</a><i class="fas fa-caret-down"></i>
-        <!-- Submenu for Info -->
-        <ul class="submenu">
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="quiz.html">Quiz</a></li>
-          <li><a href="weather.html">Weather</a></li>
-          <li><a href="currency.html">Currency</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="aboutus.html">About Us</a></li>
-      <li class="submenu-parent">
-        <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-        <ul class="submenu">
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </li>
-      <li><a href="register.html">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a></li>
-      <li><a href="cart.html">
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </a></li>
-    </ul>
-  </nav>
+    </nav>
 
 
   <!-- Main Content -->
@@ -98,6 +93,11 @@
                     <div class="booking-form">
                         <form id="bookingForm" class="row g-3" action="https://formsubmit.co/odeje75@gmail.com"
                             method="POST">
+
+                            <!-- Disable Captcha -->
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <input type="hidden" name="_next" value="https://roamie.tech/success.html">
                             <div class="form-group">
                                 <span class="form-label">Your Destination</span>
                                 <select id="destinationSelect" class="form-control">
@@ -252,10 +252,6 @@
         alert("Booking successful!\n\nDestination: " + destination +
             "\nCheck-in: " + checkin + "\nCheck-out: " + checkout +
             "\nRooms: " + rooms + "\nAdults: " + adults + "\nChildren: " + children);
-
-        // Redirect to success page
-        window.location.href = "success.html";
-
 
         // Reset the form
         bookingForm.reset();
