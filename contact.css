@@ -3,12 +3,12 @@ section.contact-section {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-	background-image:url('imgages/photo04.jpg');
+	background-image:url('images/photo06.jpg');
 
 }
 
 section.contact-section h2 {
-    color: #0C7C59;
+    color: white;
 	font-family: 'Playfair Display', cursive;
 }
 
@@ -19,6 +19,8 @@ form {
 
 label {
     font-weight: bold;
+    color: white;
+    font-family: 'Playfair Display', cursive;
 }
 
 input,
@@ -29,7 +31,7 @@ textarea {
 }
 
 button {
-    background-color: #0C7C59;
+    background-color: #3FA7D6;
     color: #fff;
     padding: 10px 20px;
     border: none;
