@@ -167,41 +167,4 @@
 
 </body>
 <script src="to-do-list.js"></script>
-
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
-
-
-    // My web app's Firebase configuration
-    const firebaseConfig = {
-        apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
-        authDomain: "roamie-29b26.firebaseapp.com",
-        databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
-        projectId: "roamie-29b26",
-        storageBucket: "roamie-29b26.appspot.com",
-        messagingSenderId: "770720238385",
-        appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
-        measurementId: "G-VQBEZ429JG"
-    };
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-
-    // Get elements
-    const inputButton = document.getElementById('input-button');
-
-    //Authenticate user and get UID
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            // User is signed in, allow upload functionality
-            inputButton.style.display = 'block';
-            // No user is signed in, hide upload functionality and display alert
-            inputButton.style.display = 'none';
-            alert("Only logged-in users can add task to the to-do list. Please login first.");
-        }
-    });
-
-</script>
-
 </html>
