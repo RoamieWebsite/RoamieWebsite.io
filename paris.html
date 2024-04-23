@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
 
     <!-- Title of the webpage -->
-    <title>Roamie - Spain Package</title>
+    <title>Roamie - Paris Package</title>
 
     <!-- Link to external CSS file -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -33,52 +33,49 @@
 </head>
 
 <body>
-    <!-- Header -->
 
+    <!-- Header -->
     <nav>
         <!-- Logo image -->
         <div class="logo">
-          <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
+            <a href="#"><img src="logo.gif" alt="Logo" length="300" width="200"></a>
         </div>
         <!-- Navigation links -->
         <ul class="navbar">
-          <li><a href="index.html">Home</a></li>
-          <li class="submenu-parent">
-            <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
-            <!-- Submenu for Explore -->
-            <ul class="submenu">
-              <li><a href="bookingform.html">Bookingform</a></li>
-              <li><a href="packages.html">Packages</a></li>
-            </ul>
-          </li>
-          <li class="submenu-parent">
-            <a href="#">Info</a><i class="fas fa-caret-down"></i>
-            <!-- Submenu for Explore -->
-            <ul class="submenu">
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="quiz.html">Quiz</a></li>
-              <li><a href="weather.html">Weather</a></li>
-              <li><a href="currency.html">Currency</a></li>
-            </ul>
-          </li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="aboutus.html">About Us</a></li>
-          <li class="submenu-parent">
-            <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
-            <ul class="submenu">
-              <li><a href="faq.html">FAQ</a></li>
-            </ul>
-          </li>
-          <li><a href="register.html">
-              <i class="fa fa-user" aria-hidden="true"></i>
-            </a></li>
-          <li><a href="cart.html">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-            </a></li>
+            <li><a href="index.html">Home</a></li>
+            <li class="submenu-parent">
+                <a href="discover.html">Discover</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="upload.html">Upload</a></li>
+                    <li><a href="bookingform.html">Bookingform</a></li>
+                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="to-do-list.html">To do list</a></li>
+                </ul>
+            </li>
+            <li class="submenu-parent">
+                <a href="#">Info</a><i class="fas fa-caret-down"></i>
+                <!-- Submenu for Explore -->
+                <ul class="submenu">
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="currency.html">Currency</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li class="submenu-parent">
+                <a href="contact.html">Contact Us</a><i class="fas fa-caret-down"></i>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="register.html">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a></li>
         </ul>
-      </nav>
-
-
+    </nav>
 
     <!--Product details-->
 
@@ -130,6 +127,35 @@
             </div>
         </div>
     </div>
+
+    
+    <!-- Shopping Cart -->
+    <section class="container content-section" id="shopping-cart">
+        <h3 style="text-decoration: underline; text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
+        <div class="cart-items">
+            <table class="table table-hover table-cart">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="cart-total" style="margin-top: 20px;">
+            <strong class="cart-total-title">Total</strong>
+            <span class="cart-total-price" style="text-align: right;">€0.00</span>
+        </div>
+        <div class="btn btn-checkout" style="margin-top: 10%;">
+            <a href="payment.html" class="btn btn-dark btn-checkout"><i class="fa-solid fa-cart-shopping"
+                    style="margin-right: 6%;"></i>Checkout</button></a>
+        </div>
+        <div class="btn-clear-cart" style="margin-top: 10%;">
+            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark"
+                    style="margin-right: 6%;"></i>CLEAR CART</button>
+        </div>
+    </section>
 
 
 
@@ -186,6 +212,158 @@
     </footer>
     <!-- End Footer -->
 
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+    
+        // My web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBwHXyVf3Ed4fw_SggzrpifbRzcOBd2_Ec",
+            authDomain: "roamie-29b26.firebaseapp.com",
+            databaseURL: "https://roamie-29b26-default-rtdb.firebaseio.com",
+            projectId: "roamie-29b26",
+            storageBucket: "roamie-29b26.appspot.com",
+            messagingSenderId: "770720238385",
+            appId: "1:770720238385:web:e0dccbec84ad562b35fe10",
+            measurementId: "G-VQBEZ429JG"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkoutButton = document.querySelector('.btn-checkout');
+            const clearCartButton = document.querySelector('.btn-clear-cart');
+            const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
+    
+            // Authenticate user and get UID
+            const auth = getAuth();
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    // User is signed in, allow upload functionality
+                    addToCartButtons.forEach(function (button) {
+                        button.style.display = 'block';
+                    });
+                    checkoutButton.style.display = 'block';
+                    clearCartButton.style.display = 'block';
+                } else {
+                    // No user is signed in, hide upload functionality and display alert
+                    addToCartButtons.forEach(function (button) {
+                        button.style.display = 'none';
+                    });
+                    checkoutButton.style.display = 'none';
+                    clearCartButton.style.display = 'none';
+                    alert("Only logged-in users can add packages to cart.");
+                }
+            });
+    
+            addToCartButtons.forEach(function (button) {
+                button.addEventListener('click', addToCartClicked);
+            });
+            checkoutButton.addEventListener('click', checkoutClicked);
+            clearCartButton.addEventListener('click', clearCartClicked);
+        });
+    
+    function addToCartClicked(event) {
+        const card = event.target.closest('.card');
+        const title = card.querySelector('.name').textContent;
+        const imageSrc = card.querySelector('.main_image img').src;
+        const priceString = card.querySelector('.price').textContent;
+        const price = parseFloat(priceString.replace('€', '').trim());
+        const packageType = card.querySelector('.package-type').value;
+        const updatedPrice = getPackagePrice(price, packageType);
+    
+        addItemToCart(title, updatedPrice, imageSrc);
+        updateCartTotal();
+    }
+    
+    
+    function getPackagePrice(price, packageType) {
+        const multipliers = {
+            'Basic': 1,
+            'Premium': 2,
+            'Elite': 3
+        };
+        return price * multipliers[packageType];
+    }
+    
+    function addItemToCart(title, price, imageSrc) {
+        const cartItems = document.querySelector('.cart-items');
+    
+        // Check if the item is already in the cart
+        const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
+        if (existingItem) {
+            alert('This item is already added to the cart!');
+            return;
+        }
+    
+        const cartRow = document.createElement('div');
+        cartRow.classList.add('cart-row');
+        cartRow.innerHTML = `
+            <div class="cart-item cart-column">
+                <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
+                <span class="cart-item-title" data-title="${title}">${title}</span>                  
+            </div>
+            <span class="cart-price cart-column">${price.toFixed(2)}</span>
+            <div class="cart-item cart-column">
+                <input class="cart-quantity-input" type="number" value="1" min="1" style="width: 50px">
+                <button class="btn btn-danger" type="button">Remove</button>
+            </div>
+        `;
+        cartItems.appendChild(cartRow);
+    
+        // Add event listener for remove button
+        const removeButton = cartRow.querySelector('.btn-danger');
+        removeButton.addEventListener('click', removeCartItem);
+    
+        // Add event listener for quantity input
+        const quantityInput = cartRow.querySelector('.cart-quantity-input');
+        quantityInput.addEventListener('change', quantityChanged);
+    }
+    
+    function removeCartItem(event) {
+        const buttonClicked = event.target;
+        buttonClicked.closest('.cart-row').remove();
+        updateCartTotal();
+    }
+    
+    function quantityChanged(event) {
+        const input = event.target;
+        if (input.value <= 0) {
+            input.value = 1;
+        }
+        updateCartTotal();
+    }
+    
+    function updateCartTotal() {
+        let total = 0;
+        const cartRows = document.querySelectorAll('.cart-row');
+        cartRows.forEach(function (cartRow) {
+            const priceElement = cartRow.querySelector('.cart-price');
+            const quantityElement = cartRow.querySelector('.cart-quantity-input');
+            const price = parseFloat(priceElement.textContent);
+            const quantity = parseInt(quantityElement.value);
+            total += price * quantity;
+        });
+        document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
+    }
+    
+    function checkoutClicked() {
+        alert('You will be redirected to a payment area to complete your purchase.');
+        clearCart();
+    }
+    
+    function clearCartClicked() {
+        clearCart();
+    }
+    
+    function clearCart() {
+        const cartItems = document.querySelector('.cart-items');
+        cartItems.innerHTML = '';
+        updateCartTotal();
+    }
+    
+    </script>    
 
 
 </body>
