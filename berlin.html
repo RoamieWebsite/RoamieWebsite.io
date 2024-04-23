@@ -101,7 +101,7 @@
             <div class="col-md-6">
                 <div class="p-3 right-side">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3>Berlin Package</h3>
+                        <h3 class="name">Berlin Package</h3>
                     </div>
                     <div class="mt-2 pr-3 content">
                         <p>Start your trip by exploring the central district of Mitte. Visit the iconic Brandenburg Gate
@@ -129,7 +129,6 @@
                         <option value="Elite">Elite</option>
                         <option value="Premium">Premium</option>
                     </select>
-                      <input type="text" class="discount-code" placeholder="Enter discount code">
                     <a href="#" class="btn btn-add-to-cart">Add to cart</a>
                 </div>
             </div>
@@ -243,8 +242,8 @@
         const clearCartButton = document.querySelector('.btn-clear-cart');
         const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
 
-        // Authenticate user and get UID
-        const auth = getAuth();
+         // Authenticate user and get UID
+         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, allow upload functionality
@@ -278,20 +277,36 @@
         const priceString = card.querySelector('.price').textContent;
         const price = parseFloat(priceString.replace('€', '').trim());
         const packageType = card.querySelector('.package-type').value;
-        const updatedPrice = getPackagePrice(price, packageType);
+        const discountCode = card.querySelector('.discount-code').value;
+        const updatedPrice = getPackagePrice(price, packageType, discountCode);
 
         addItemToCart(title, updatedPrice, imageSrc);
         updateCartTotal();
     }
 
-
-    function getPackagePrice(price, packageType) {
+    function getPackagePrice(price, packageType, discountCode) {
         const multipliers = {
             'Basic': 1,
             'Premium': 2,
             'Elite': 3
         };
-        return price * multipliers[packageType];
+        let discount = 0;
+
+        switch (discountCode) {
+            case 'ROAMIEXFIVE':
+                discount = 0.05;
+                break;
+            case 'roamieXmedium':
+                discount = 0.10;
+                break;
+            case 'roamieXdifficult':
+                discount = 0.15;
+                break;
+            default:
+                discount = 0;
+        }
+
+        return price * multipliers[packageType] * (1 - discount);
     }
 
     function addItemToCart(title, price, imageSrc) {
@@ -369,7 +384,6 @@
         cartItems.innerHTML = '';
         updateCartTotal();
     }
-
 
 </script>
 
