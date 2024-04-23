@@ -26,8 +26,8 @@
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/c820918012.js" crossorigin="anonymous"></script>
 
-        <!-- Chat Bot -->
-        <script src="//code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
+    <!-- Chat Bot -->
+    <script src="https://code.tidio.co/upoaadkyewzgxzqstjjcqrmwvdjzvqye.js" async></script>
 </head>
 
 <body>
@@ -73,7 +73,7 @@
                 </a></li>
         </ul>
     </nav>
-    
+
     <!--Product details-->
 
     <div class="container mt-5 mb-5">
@@ -86,14 +86,10 @@
                         </div>
                         <div class="thumbnail_images">
                             <ul id="thumbnail">
-                                <li><img src="images/package-6.jpg" width="70">
-                                </li>
-                                <li><img src="images/image-7.png" width="70">
-                                </li>
-                                <li><img src="images/n.3.jpg" width="70">
-                                </li>
-                                <li><img src="images/photo16.jpg" width="70">
-                                </li>
+                                <li><img src="images/package-6.jpg" width="70"></li>
+                                <li><img src="images/image-7.png" width="70"></li>
+                                <li><img src="images/n.3.jpg" width="70"></li>
+                                <li><img src="images/photo16.jpg" width="70"></li>
                             </ul>
                         </div>
                     </div>
@@ -101,35 +97,42 @@
                 <div class="col-md-6">
                     <div class="p-3 right-side">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3>New York Package</h3>
+                            <h3 class="name">New York Package</h3>
                         </div>
                         <div class="mt-2 pr-3 content">
-                            <p>Arrive in Manhattan and check into your chosen accommodation. Whether it's a luxury hotel in Midtown or a trendy boutique hotel in SoHo, find your perfect spot.
-                                Take a leisurely walk through Central Park and grab dinner at a nearby restaurant. Start your day at Times Square, the heart of the Theater District. Explore Broadway and catch a matinee show if you're inclined.
-                                Visit the iconic Rockefeller Center and take the elevator to the Top of the Rock for panoramic views.
-                                Explore St. Patrick's Cathedral and have dinner in Hell's Kitchen or the Garment District. </p>
-                            <p>Spend the morning at the Metropolitan Museum of Art (the Met) or the Museum of Modern Art (MoMA).
-                                Afternoon stroll through Central Park. You can rent a rowboat at the Loeb Boathouse or simply enjoy the scenery.
+                            <p>Arrive in Manhattan and check into your chosen accommodation. Whether it's a luxury hotel
+                                in Midtown or a trendy boutique hotel in SoHo, find your perfect spot.
+                                Take a leisurely walk through Central Park and grab dinner at a nearby restaurant. Start
+                                your day at Times Square, the heart of the Theater District. Explore Broadway and catch
+                                a matinee show if you're inclined.
+                                Visit the iconic Rockefeller Center and take the elevator to the Top of the Rock for
+                                panoramic views.
+                                Explore St. Patrick's Cathedral and have dinner in Hell's Kitchen or the Garment
+                                District.</p>
+                            <p>Spend the morning at the Metropolitan Museum of Art (the Met) or the Museum of Modern Art
+                                (MoMA).
+                                Afternoon stroll through Central Park. You can rent a rowboat at the Loeb Boathouse or
+                                simply enjoy the scenery.
                                 Have dinner in the Upper West Side.</p>
-                                <p>Spend your last day shopping on Fifth Avenue, exploring the flagship stores and boutiques.
-                                    Visit the High Line, a unique elevated park built on a former railway track.
-                                    Have a farewell dinner in Chelsea or the Meatpacking District.
-                                    </p>€1825.00
+                            <p>Spend your last day shopping on Fifth Avenue, exploring the flagship stores and
+                                boutiques.
+                                Visit the High Line, a unique elevated park built on a former railway track.
+                                Have a farewell dinner in Chelsea or the Meatpacking District.</p>
+                            <h3 class="price">€1825.00</h3>
                         </div>
-                        <h3 class="price">€1825.00</h3>
                         <select class="package-type">
                             <option value="Basic">Basic</option>
                             <option value="Elite">Elite</option>
                             <option value="Premium">Premium</option>
                         </select>
-                        <a href="#" class="btn btn-add-to-cart">Add to cart</a>
+                        <input type="text" class="discount-code" placeholder="Enter discount code">
+                        <button class="btn btn-add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    
     <!-- Shopping Cart -->
     <section class="container content-section" id="shopping-cart">
         <h3 style="text-decoration: underline; text-align: center; margin-bottom: 7%;">Shopping Cart</h3>
@@ -149,10 +152,12 @@
             <span class="cart-total-price" style="text-align: right;">€0.00</span>
         </div>
         <div class="btn btn-checkout" style="margin-top: 10%;">
-            <a href="payment.html" class="btn btn-dark btn-checkout" ><i class="fa-solid fa-cart-shopping" style="margin-right: 6%;"></i>Checkout</button></a>
+            <a href="payment.html" class="btn btn-dark btn-checkout"><i class="fa-solid fa-cart-shopping"
+                    style="margin-right: 6%;"></i>Checkout</button></a>
         </div>
         <div class="btn-clear-cart" style="margin-top: 10%;">
-            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark" style="margin-right: 6%;"></i>CLEAR CART</button>
+            <button type="button" class="btn btn-danger btn-clear-cart"><i class="fa-solid fa-cart-xmark"
+                    style="margin-right: 6%;"></i>CLEAR CART</button>
         </div>
     </section>
 
@@ -212,7 +217,6 @@
     <!-- End Footer -->
 </body>
 
-
 <script type="module">
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
@@ -237,8 +241,8 @@
         const clearCartButton = document.querySelector('.btn-clear-cart');
         const addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
 
-        // Authenticate user and get UID
-        const auth = getAuth();
+         // Authenticate user and get UID
+         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, allow upload functionality
@@ -265,42 +269,58 @@
         clearCartButton.addEventListener('click', clearCartClicked);
     });
 
-function addToCartClicked(event) {
-    const card = event.target.closest('.card');
-    const title = card.querySelector('.name').textContent;
-    const imageSrc = card.querySelector('.main_image img').src;
-    const priceString = card.querySelector('.price').textContent;
-    const price = parseFloat(priceString.replace('€', '').trim());
-    const packageType = card.querySelector('.package-type').value;
-    const updatedPrice = getPackagePrice(price, packageType);
+    function addToCartClicked(event) {
+        const card = event.target.closest('.card');
+        const title = card.querySelector('.name').textContent;
+        const imageSrc = card.querySelector('.main_image img').src;
+        const priceString = card.querySelector('.price').textContent;
+        const price = parseFloat(priceString.replace('€', '').trim());
+        const packageType = card.querySelector('.package-type').value;
+        const discountCode = card.querySelector('.discount-code').value;
+        const updatedPrice = getPackagePrice(price, packageType, discountCode);
 
-    addItemToCart(title, updatedPrice, imageSrc);
-    updateCartTotal();
-}
-
-
-function getPackagePrice(price, packageType) {
-    const multipliers = {
-        'Basic': 1,
-        'Premium': 2,
-        'Elite': 3
-    };
-    return price * multipliers[packageType];
-}
-
-function addItemToCart(title, price, imageSrc) {
-    const cartItems = document.querySelector('.cart-items');
-
-    // Check if the item is already in the cart
-    const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
-    if (existingItem) {
-        alert('This item is already added to the cart!');
-        return;
+        addItemToCart(title, updatedPrice, imageSrc);
+        updateCartTotal();
     }
 
-    const cartRow = document.createElement('div');
-    cartRow.classList.add('cart-row');
-    cartRow.innerHTML = `
+    function getPackagePrice(price, packageType, discountCode) {
+        const multipliers = {
+            'Basic': 1,
+            'Premium': 2,
+            'Elite': 3
+        };
+        let discount = 0;
+
+        switch (discountCode) {
+            case 'ROAMIEXFIVE':
+                discount = 0.05;
+                break;
+            case 'roamieXmedium':
+                discount = 0.10;
+                break;
+            case 'roamieXdifficult':
+                discount = 0.15;
+                break;
+            default:
+                discount = 0;
+        }
+
+        return price * multipliers[packageType] * (1 - discount);
+    }
+
+    function addItemToCart(title, price, imageSrc) {
+        const cartItems = document.querySelector('.cart-items');
+
+        // Check if the item is already in the cart
+        const existingItem = cartItems.querySelector(`.cart-item-title[data-title="${title}"]`);
+        if (existingItem) {
+            alert('This item is already added to the cart!');
+            return;
+        }
+
+        const cartRow = document.createElement('div');
+        cartRow.classList.add('cart-row');
+        cartRow.innerHTML = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="50" height="50">
             <span class="cart-item-title" data-title="${title}">${title}</span>                  
@@ -311,58 +331,59 @@ function addItemToCart(title, price, imageSrc) {
             <button class="btn btn-danger" type="button">Remove</button>
         </div>
     `;
-    cartItems.appendChild(cartRow);
+        cartItems.appendChild(cartRow);
 
-    // Add event listener for remove button
-    const removeButton = cartRow.querySelector('.btn-danger');
-    removeButton.addEventListener('click', removeCartItem);
+        // Add event listener for remove button
+        const removeButton = cartRow.querySelector('.btn-danger');
+        removeButton.addEventListener('click', removeCartItem);
 
-    // Add event listener for quantity input
-    const quantityInput = cartRow.querySelector('.cart-quantity-input');
-    quantityInput.addEventListener('change', quantityChanged);
-}
-
-function removeCartItem(event) {
-    const buttonClicked = event.target;
-    buttonClicked.closest('.cart-row').remove();
-    updateCartTotal();
-}
-
-function quantityChanged(event) {
-    const input = event.target;
-    if (input.value <= 0) {
-        input.value = 1;
+        // Add event listener for quantity input
+        const quantityInput = cartRow.querySelector('.cart-quantity-input');
+        quantityInput.addEventListener('change', quantityChanged);
     }
-    updateCartTotal();
-}
 
-function updateCartTotal() {
-    let total = 0;
-    const cartRows = document.querySelectorAll('.cart-row');
-    cartRows.forEach(function (cartRow) {
-        const priceElement = cartRow.querySelector('.cart-price');
-        const quantityElement = cartRow.querySelector('.cart-quantity-input');
-        const price = parseFloat(priceElement.textContent);
-        const quantity = parseInt(quantityElement.value);
-        total += price * quantity;
-    });
-    document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
-}
+    function removeCartItem(event) {
+        const buttonClicked = event.target;
+        buttonClicked.closest('.cart-row').remove();
+        updateCartTotal();
+    }
 
-function checkoutClicked() {
-    alert('You will be redirected to a payment area to complete your purchase.');
-    clearCart();
-}
+    function quantityChanged(event) {
+        const input = event.target;
+        if (input.value <= 0) {
+            input.value = 1;
+        }
+        updateCartTotal();
+    }
 
-function clearCartClicked() {
-    clearCart();
-}
+    function updateCartTotal() {
+        let total = 0;
+        const cartRows = document.querySelectorAll('.cart-row');
+        cartRows.forEach(function (cartRow) {
+            const priceElement = cartRow.querySelector('.cart-price');
+            const quantityElement = cartRow.querySelector('.cart-quantity-input');
+            const price = parseFloat(priceElement.textContent);
+            const quantity = parseInt(quantityElement.value);
+            total += price * quantity;
+        });
+        document.querySelector('.cart-total-price').textContent = '€' + total.toFixed(2);
+    }
 
-function clearCart() {
-    const cartItems = document.querySelector('.cart-items');
-    cartItems.innerHTML = '';
-    updateCartTotal();
-}
+    function checkoutClicked() {
+        alert('You will be redirected to a payment area to complete your purchase.');
+        clearCart();
+    }
+
+    function clearCartClicked() {
+        clearCart();
+    }
+
+    function clearCart() {
+        const cartItems = document.querySelector('.cart-items');
+        cartItems.innerHTML = '';
+        updateCartTotal();
+    }
+
 
 
 </script>
